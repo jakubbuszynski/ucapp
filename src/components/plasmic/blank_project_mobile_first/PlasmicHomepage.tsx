@@ -31,6 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Weather from "../../Weather"; // plasmic-import: 0-CIISOwT0/component
 import Button from "../../Button"; // plasmic-import: eZM_gBMn2w/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -41,8 +42,8 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: 4V9pJe2SUwNn/
 import IconWifiIcon from "./icons/PlasmicIcon__IconWifi"; // plasmic-import: yUaWBRXGAT/icon
 import IconSettings2Icon from "./icons/PlasmicIcon__IconSettings2"; // plasmic-import: yyLUYFhoyS4/icon
 import Group39518Icon from "./icons/PlasmicIcon__Group39518"; // plasmic-import: QPyex1i8q_l/icon
-import IconArrowIcon from "./icons/PlasmicIcon__IconArrow"; // plasmic-import: -qhDoMlgc3n/icon
-import Group7Icon from "./icons/PlasmicIcon__Group7"; // plasmic-import: RfKpJouolhJ/icon
+import Group6Icon from "./icons/PlasmicIcon__Group6"; // plasmic-import: RrnStGHaMH_/icon
+import IconSadIcon from "./icons/PlasmicIcon__IconSad"; // plasmic-import: LSRU8DOeASe/icon
 import Ellipse262Icon from "./icons/PlasmicIcon__Ellipse262"; // plasmic-import: LpPtZzW5OtX/icon
 import IconHumidityIcon from "./icons/PlasmicIcon__IconHumidity"; // plasmic-import: qOIzQYGwswN/icon
 import IconComunityIcon from "./icons/PlasmicIcon__IconComunity"; // plasmic-import: bRMD7TZ0qg/icon
@@ -82,10 +83,7 @@ export type PlasmicHomepage__OverridesType = {
   frame3868?: p.Flex<"div">;
   group39512?: p.Flex<"div">;
   timeAndDate?: p.Flex<"div">;
-  weatherWidgetNoWifi?: p.Flex<"div">;
-  rectangle19?: p.Flex<"div">;
-  texticon?: p.Flex<"div">;
-  iconWeather?: p.Flex<"div">;
+  weather?: p.Flex<typeof Weather>;
   heatControlCircleButton?: p.Flex<"div">;
   aktulanie21?: p.Flex<"div">;
   humidity?: p.Flex<"div">;
@@ -235,61 +233,11 @@ function PlasmicHomepage__RenderFunc(props: {
             </div>
 
             <div className={classNames(projectcss.all, sty.freeBox__fv9V)}>
-              <div
-                data-plasmic-name={"weatherWidgetNoWifi"}
-                data-plasmic-override={overrides.weatherWidgetNoWifi}
-                className={classNames(projectcss.all, sty.weatherWidgetNoWifi)}
-              >
-                <div
-                  data-plasmic-name={"rectangle19"}
-                  data-plasmic-override={overrides.rectangle19}
-                  className={classNames(projectcss.all, sty.rectangle19)}
-                />
-
-                <div className={classNames(projectcss.all, sty.freeBox__vWwo)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sqT3W
-                    )}
-                  >
-                    {"Połącz z Wi-Fi, \nby uzyskać dostęp"}
-                  </div>
-
-                  <div
-                    data-plasmic-name={"texticon"}
-                    data-plasmic-override={overrides.texticon}
-                    className={classNames(projectcss.all, sty.texticon)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__cBaLk
-                      )}
-                    >
-                      {"do pogody"}
-                    </div>
-
-                    <IconArrowIcon
-                      className={classNames(projectcss.all, sty.svg__eqaKo)}
-                      role={"img"}
-                    />
-                  </div>
-
-                  <div
-                    data-plasmic-name={"iconWeather"}
-                    data-plasmic-override={overrides.iconWeather}
-                    className={classNames(projectcss.all, sty.iconWeather)}
-                  >
-                    <Group7Icon
-                      className={classNames(projectcss.all, sty.svg__jxazc)}
-                      role={"img"}
-                    />
-                  </div>
-                </div>
-              </div>
+              <Weather
+                data-plasmic-name={"weather"}
+                data-plasmic-override={overrides.weather}
+                className={classNames("__wab_instance", sty.weather)}
+              />
 
               <div
                 data-plasmic-name={"heatControlCircleButton"}
@@ -697,10 +645,7 @@ const PlasmicDescendants = {
     "frame3868",
     "group39512",
     "timeAndDate",
-    "weatherWidgetNoWifi",
-    "rectangle19",
-    "texticon",
-    "iconWeather",
+    "weather",
     "heatControlCircleButton",
     "aktulanie21",
     "humidity",
@@ -735,15 +680,7 @@ const PlasmicDescendants = {
   frame3868: ["frame3868", "group39512"],
   group39512: ["group39512"],
   timeAndDate: ["timeAndDate"],
-  weatherWidgetNoWifi: [
-    "weatherWidgetNoWifi",
-    "rectangle19",
-    "texticon",
-    "iconWeather"
-  ],
-  rectangle19: ["rectangle19"],
-  texticon: ["texticon"],
-  iconWeather: ["iconWeather"],
+  weather: ["weather"],
   heatControlCircleButton: [
     "heatControlCircleButton",
     "aktulanie21",
@@ -806,10 +743,7 @@ type NodeDefaultElementType = {
   frame3868: "div";
   group39512: "div";
   timeAndDate: "div";
-  weatherWidgetNoWifi: "div";
-  rectangle19: "div";
-  texticon: "div";
-  iconWeather: "div";
+  weather: typeof Weather;
   heatControlCircleButton: "div";
   aktulanie21: "div";
   humidity: "div";
@@ -902,10 +836,7 @@ export const PlasmicHomepage = Object.assign(
     frame3868: makeNodeComponent("frame3868"),
     group39512: makeNodeComponent("group39512"),
     timeAndDate: makeNodeComponent("timeAndDate"),
-    weatherWidgetNoWifi: makeNodeComponent("weatherWidgetNoWifi"),
-    rectangle19: makeNodeComponent("rectangle19"),
-    texticon: makeNodeComponent("texticon"),
-    iconWeather: makeNodeComponent("iconWeather"),
+    weather: makeNodeComponent("weather"),
     heatControlCircleButton: makeNodeComponent("heatControlCircleButton"),
     aktulanie21: makeNodeComponent("aktulanie21"),
     humidity: makeNodeComponent("humidity"),

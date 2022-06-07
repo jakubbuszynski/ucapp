@@ -1,0 +1,224 @@
+.root {
+  width: 224px;
+  height: 200px;
+  display: block;
+  position: relative;
+}
+.rectangle19 {
+  width: 224px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 15px;
+}
+.rectangle19online {
+  display: none;
+}
+.freeBox__psV6B {
+  width: 224px;
+  height: 144px;
+  display: block;
+  position: absolute;
+  top: 28px;
+  left: 0px;
+}
+.freeBoxonline__psV6BjYxjf {
+  display: none;
+}
+.text___0C2GR {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0px;
+  line-height: 28px;
+  color: rgba(33, 33, 33, 1);
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  width: 224px;
+}
+.texticon {
+  width: 131px;
+  height: 28px;
+  display: block;
+  position: absolute;
+  top: 116px;
+  left: 46px;
+}
+.text__nLBgu {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 28px;
+  color: rgba(33, 33, 33, 1);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.svg__wteMn {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #222;
+  width: 24px;
+  height: 24px;
+  display: block;
+  top: 2px;
+  left: 107px;
+  overflow: hidden;
+}
+.iconWeather {
+  width: 48px;
+  height: 48px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 88px;
+  overflow: hidden;
+}
+.svg__yj7Rg {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #b1b1b1;
+  transform: translate(-0.007px, 0px);
+  width: 48.006px;
+  height: 45px;
+  display: block;
+  top: 3px;
+  left: 0px;
+}
+.weather {
+  width: 216px;
+  height: 156px;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.freeBox__lyXw {
+  display: flex;
+  position: absolute;
+  top: 90px;
+  left: 123px;
+}
+.slotTargetAirQuality {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: rgba(33, 33, 33, 1);
+  text-align: right;
+  line-height: 38px;
+  letter-spacing: 0px;
+}
+.svg__e5RtC {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #e1e1e1;
+  transform: skew(-0.057295760414500616deg, 0deg);
+  width: 218px;
+  height: 2px;
+  transform-origin: top left;
+  top: 78px;
+  left: 0px;
+  display: none;
+}
+.svgonline__e5RtCjYxjf {
+  display: block;
+}
+.iconWeather2 {
+  width: 36px;
+  height: 36px;
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 12px;
+  overflow: hidden;
+}
+.freeBox___5VzaJ {
+  display: flex;
+  position: absolute;
+  top: 2px;
+  left: 0px;
+}
+.svg__qdO6E {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  color: #222;
+  transform: translate(-0.006px, 0.25px);
+  width: 36.005px;
+  height: 33.75px;
+  display: block;
+  top: auto;
+  left: auto;
+  flex-shrink: 0;
+}
+.text___3WQz {
+  display: block;
+  font-size: 18px;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 28px;
+  color: rgba(80, 80, 80, 1);
+  position: absolute;
+  top: 38px;
+  left: 102px;
+}
+.freeBox__drNxe {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 152px;
+  width: 64px;
+  height: 38px;
+}
+.slotTargetTemperature {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: rgba(33, 33, 33, 1);
+  text-align: right;
+  line-height: 38px;
+  letter-spacing: 0px;
+}
+.text__rJ28X {
+  display: block;
+  font-size: 18px;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 28px;
+  color: rgba(80, 80, 80, 1);
+  position: absolute;
+  top: 128px;
+  left: 59px;
+}
+.freeBox__sQg1R {
+  display: flex;
+  position: absolute;
+  top: 91px;
+  left: 12px;
+}
+.svg__wpvUi {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  color: #222;
+  width: 36px;
+  height: 36px;
+  display: block;
+  top: auto;
+  left: auto;
+  overflow: hidden;
+  flex-shrink: 0;
+}

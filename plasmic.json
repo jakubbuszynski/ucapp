@@ -253,6 +253,19 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "switch"
+        },
+        {
+          "id": "0-CIISOwT0",
+          "name": "Weather",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicWeather.tsx",
+          "importSpec": {
+            "modulePath": "Weather.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicWeather.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
