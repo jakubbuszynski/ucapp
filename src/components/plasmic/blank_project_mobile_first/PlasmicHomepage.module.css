@@ -428,9 +428,9 @@
   top: auto;
   grid-column-gap: 5px;
   grid-row-gap: 15px;
-  margin-bottom: 161px;
   min-width: 0;
   padding: 8px;
+  margin: 0px 0px 130px;
 }
 .button:global(.__wab_instance) {
   position: relative;
