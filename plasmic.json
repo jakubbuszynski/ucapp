@@ -158,7 +158,8 @@
           "name": "Tabs",
           "componentImportPath": "@plasmicpkgs/antd"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -437,6 +438,11 @@
         {
           "id": "YOPmKka_XJ",
           "name": "CompYoPmKkaXj",
+          "componentImportPath": ""
+        },
+        {
+          "id": "ObXZdO4VMb",
+          "name": "CompObXZdO4VMb",
           "componentImportPath": ""
         }
       ]

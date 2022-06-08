@@ -33,6 +33,7 @@ import {
 } from "@plasmicapp/react-web";
 import Topbar from "../../Topbar"; // plasmic-import: nsqmq6QdR8/component
 import Weather from "../../Weather"; // plasmic-import: 0-CIISOwT0/component
+import { CompObXZdO4VMb } from ""; // plasmic-import: ObXZdO4VMb/codeComponent
 import Button from "../../Button"; // plasmic-import: eZM_gBMn2w/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -85,6 +86,7 @@ export type PlasmicHomepage__OverridesType = {
   humidity?: p.Flex<"div">;
   notificationsMainPanel?: p.Flex<"div">;
   rectangle65?: p.Flex<"div">;
+  stackedCarouselComp?: p.Flex<typeof CompObXZdO4VMb>;
   buttonRecordMessage?: p.Flex<"div">;
   tryby2?: p.Flex<"div">;
   button?: p.Flex<typeof Button>;
@@ -314,6 +316,12 @@ function PlasmicHomepage__RenderFunc(props: {
                 {"7 kwietnia | 10:00"}
               </div>
             </div>
+
+            <CompObXZdO4VMb
+              data-plasmic-name={"stackedCarouselComp"}
+              data-plasmic-override={overrides.stackedCarouselComp}
+              className={classNames("__wab_instance", sty.stackedCarouselComp)}
+            />
 
             <div className={classNames(projectcss.all, sty.freeBox__mwUm)}>
               <div
@@ -614,6 +622,7 @@ const PlasmicDescendants = {
     "humidity",
     "notificationsMainPanel",
     "rectangle65",
+    "stackedCarouselComp",
     "buttonRecordMessage",
     "tryby2",
     "button",
@@ -651,6 +660,7 @@ const PlasmicDescendants = {
   humidity: ["humidity"],
   notificationsMainPanel: ["notificationsMainPanel", "rectangle65"],
   rectangle65: ["rectangle65"],
+  stackedCarouselComp: ["stackedCarouselComp"],
   buttonRecordMessage: ["buttonRecordMessage"],
   tryby2: [
     "tryby2",
@@ -708,6 +718,7 @@ type NodeDefaultElementType = {
   humidity: "div";
   notificationsMainPanel: "div";
   rectangle65: "div";
+  stackedCarouselComp: typeof CompObXZdO4VMb;
   buttonRecordMessage: "div";
   tryby2: "div";
   button: typeof Button;
@@ -799,6 +810,7 @@ export const PlasmicHomepage = Object.assign(
     humidity: makeNodeComponent("humidity"),
     notificationsMainPanel: makeNodeComponent("notificationsMainPanel"),
     rectangle65: makeNodeComponent("rectangle65"),
+    stackedCarouselComp: makeNodeComponent("stackedCarouselComp"),
     buttonRecordMessage: makeNodeComponent("buttonRecordMessage"),
     tryby2: makeNodeComponent("tryby2"),
     button: makeNodeComponent("button"),

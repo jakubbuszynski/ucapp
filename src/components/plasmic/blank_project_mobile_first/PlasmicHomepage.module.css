@@ -308,6 +308,10 @@
   left: 5.35%;
   width: 85.71%;
 }
+.stackedCarouselComp:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
 .freeBox__mwUm {
   display: flex;
   position: relative;
