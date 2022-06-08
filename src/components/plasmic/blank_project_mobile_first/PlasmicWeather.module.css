@@ -94,12 +94,13 @@
   left: 0px;
 }
 .weather {
-  width: 216px;
-  height: 156px;
+  width: auto;
+  height: auto;
   display: block;
-  position: absolute;
+  position: sticky;
   left: 0px;
   top: 0px;
+  z-index: 1;
 }
 .freeBox__lyXw {
   display: flex;
@@ -177,9 +178,11 @@
   display: flex;
   position: absolute;
   top: 0px;
-  left: 152px;
+  left: auto;
   width: 64px;
   height: 38px;
+  right: 8px;
+  justify-content: flex-end;
 }
 .slotTargetTemperature {
   font-family: "Montserrat", sans-serif;

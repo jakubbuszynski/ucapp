@@ -36,7 +36,7 @@
         {
           "id": "kv6Mk_JNYw",
           "name": "Button",
-          "componentImportPath": "antd"
+          "componentImportPath": "antd/lib/button"
         },
         {
           "id": "iBC45mjTXv",
@@ -46,7 +46,7 @@
         {
           "id": "tRueht1jub",
           "name": "Switch",
-          "componentImportPath": "antd"
+          "componentImportPath": "antd/lib/switch"
         },
         {
           "id": "YRr0RPAdEj",
@@ -61,7 +61,7 @@
         {
           "id": "2YpGIhkzkpc",
           "name": "Select",
-          "componentImportPath": "antd"
+          "componentImportPath": "antd/lib/select"
         },
         {
           "id": "yegZ392NLoV",
@@ -71,7 +71,7 @@
         {
           "id": "F10gpQ1ZhXY",
           "name": "Collapse",
-          "componentImportPath": "antd/lib/collapse/Collapse"
+          "componentImportPath": "@plasmicpkgs/antd"
         },
         {
           "id": "SAEWraOT2YV",
@@ -111,12 +111,12 @@
         {
           "id": "_C8wcdH3BDp",
           "name": "Carousel",
-          "componentImportPath": "antd"
+          "componentImportPath": "antd/lib/carousel"
         },
         {
           "id": "tO9wrxr8Nbb",
           "name": "Input",
-          "componentImportPath": "antd"
+          "componentImportPath": "antd/lib/input"
         },
         {
           "id": "ZJIPHLoTjkN",
@@ -158,8 +158,7 @@
           "name": "Tabs",
           "componentImportPath": "@plasmicpkgs/antd"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -215,19 +214,6 @@
           "componentType": "component"
         },
         {
-          "id": "TieMYXP64Ap",
-          "name": "Homepage2",
-          "type": "managed",
-          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
-          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicHomepage2.tsx",
-          "importSpec": {
-            "modulePath": "Homepage2.tsx"
-          },
-          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicHomepage2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "fM-PBE3gad",
           "name": "Popup",
           "type": "managed",
@@ -264,6 +250,19 @@
             "modulePath": "Weather.tsx"
           },
           "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicWeather.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "nsqmq6QdR8",
+          "name": "Topbar",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicTopbar.tsx",
+          "importSpec": {
+            "modulePath": "Topbar.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicTopbar.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -434,7 +433,13 @@
       ],
       "indirect": false,
       "globalContextsFilePath": "",
-      "codeComponents": []
+      "codeComponents": [
+        {
+          "id": "YOPmKka_XJ",
+          "name": "CompYoPmKkaXj",
+          "componentImportPath": ""
+        }
+      ]
     }
   ],
   "globalVariants": {
@@ -454,6 +459,6 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.178",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.178/dist/plasmic.schema.json"
+  "cliVersion": "0.1.180",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.180/dist/plasmic.schema.json"
 }

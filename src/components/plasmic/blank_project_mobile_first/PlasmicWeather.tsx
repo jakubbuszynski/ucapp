@@ -59,16 +59,16 @@ export const PlasmicWeather__VariantProps = new Array<VariantPropType>(
 export type PlasmicWeather__ArgsType = {
   airQuality?: React.ReactNode;
   temperature?: React.ReactNode;
-  children?: React.ReactNode;
-  slot?: React.ReactNode;
+  weatherIcon?: React.ReactNode;
+  airQualityIcon?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicWeather__ArgsType;
 export const PlasmicWeather__ArgProps = new Array<ArgPropType>(
   "airQuality",
   "temperature",
-  "children",
-  "slot"
+  "weatherIcon",
+  "airQualityIcon"
 );
 
 export type PlasmicWeather__OverridesType = {
@@ -83,8 +83,8 @@ export type PlasmicWeather__OverridesType = {
 export interface DefaultWeatherProps {
   airQuality?: React.ReactNode;
   temperature?: React.ReactNode;
-  children?: React.ReactNode;
-  slot?: React.ReactNode;
+  weatherIcon?: React.ReactNode;
+  airQualityIcon?: React.ReactNode;
   online?: SingleBooleanChoiceArg<"online">;
   className?: string;
 }
@@ -101,6 +101,7 @@ function PlasmicWeather__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
   const args = Object.assign({}, defaultWeather__Args, props.args);
   const $props = args;
+  const $ctx = ph.useDataEnv?.() || {};
 
   return (
     <div
@@ -237,7 +238,7 @@ function PlasmicWeather__RenderFunc(props: {
                   />
                 ),
 
-                value: args.children
+                value: args.weatherIcon
               })}
             </div>
           </div>
@@ -249,7 +250,16 @@ function PlasmicWeather__RenderFunc(props: {
               sty.text___3WQz
             )}
           >
-            {"Na zewnątrz"}
+            <React.Fragment>
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#FF0000" }}
+              >
+                {"Na zewnątrz"}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
+            </React.Fragment>
           </div>
 
           <div
@@ -295,7 +305,7 @@ function PlasmicWeather__RenderFunc(props: {
                 />
               ),
 
-              value: args.slot
+              value: args.airQualityIcon
             })}
           </div>
         </div>

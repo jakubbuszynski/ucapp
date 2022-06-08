@@ -1,0 +1,70 @@
+.root {
+  background: rgba(255, 255, 255, 1);
+  width: auto;
+  height: 100px;
+  display: block;
+  position: relative;
+}
+.svg__gp6MC {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #222;
+  width: 32px;
+  height: 32px;
+  display: block;
+  top: 24%;
+  left: 3.33%;
+  overflow: hidden;
+}
+.svg__vzsyi {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #222;
+  width: 52px;
+  height: 52px;
+  display: block;
+  top: 24%;
+  left: 85.83%;
+  overflow: hidden;
+}
+.frame3868 {
+  width: 125px;
+  height: 52px;
+  display: block;
+  position: absolute;
+  top: 24px;
+  left: 177px;
+}
+.text {
+  display: block;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 20px;
+  color: rgba(33, 33, 33, 1);
+  position: absolute;
+  top: 32px;
+  left: 0px;
+}
+.group39512 {
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+}
+.svg__eJFhb {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #222;
+  width: 24px;
+  height: 24px;
+  display: block;
+  top: 0px;
+  left: 0px;
+}
