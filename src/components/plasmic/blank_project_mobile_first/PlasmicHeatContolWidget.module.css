@@ -1,0 +1,94 @@
+.root {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: relative;
+}
+.svg__ylidb {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #fff;
+  box-shadow: 0px 24px 40px 0px rgba(33, 33, 33, 0.1);
+  transform: skew(-0.057295760414500616deg, 0deg);
+  width: 200px;
+  height: 200px;
+  display: block;
+  transform-origin: top left;
+  top: 0%;
+  left: 0%;
+  border-radius: 100px;
+}
+.freeBox {
+  display: flex;
+  position: absolute;
+  top: 18%;
+  left: 29.5%;
+  transform: translate(0.02300000000000324px, 0px);
+  justify-content: center;
+  flex-direction: row;
+}
+.slotTargetSlot {
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  color: rgba(54, 126, 181, 1);
+  text-align: center;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+.slotTargetSlot > *,
+.slotTargetSlot > .__wab_slot > *,
+.slotTargetSlot > .__wab_slot > .__wab_slot > *,
+.slotTargetSlot > .__wab_slot > .__wab_slot > .__wab_slot > *,
+.slotTargetSlot > picture > img,
+.slotTargetSlot > .__wab_slot > picture > img,
+.slotTargetSlot > .__wab_slot > .__wab_slot > picture > img,
+.slotTargetSlot > .__wab_slot > .__wab_slot > .__wab_slot > picture > img {
+  transition-property: all;
+  transition-duration: 1s;
+}
+.aktulanie21 {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 28px;
+  position: absolute;
+  top: 59%;
+  left: 19.5%;
+}
+.humidity {
+  width: 64px;
+  height: 28px;
+  display: block;
+  position: absolute;
+  top: 148px;
+  left: 68px;
+}
+.text {
+  display: block;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 28px;
+  color: rgba(33, 33, 33, 1);
+  position: absolute;
+  top: 0%;
+  left: 43.75%;
+}
+.svg__atk1 {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #96cdf7;
+  width: 24px;
+  height: 24px;
+  display: block;
+  top: 7.14%;
+  left: 0%;
+  overflow: hidden;
+}

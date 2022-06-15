@@ -158,8 +158,7 @@
           "name": "Tabs",
           "componentImportPath": "@plasmicpkgs/antd"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -178,8 +177,7 @@
           "name": "Slider",
           "componentImportPath": "react-slick"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
@@ -200,19 +198,6 @@
           "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicHomepage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
-        },
-        {
-          "id": "eZM_gBMn2w",
-          "name": "Button",
-          "type": "managed",
-          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
-          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicButton.tsx",
-          "importSpec": {
-            "modulePath": "Button.tsx"
-          },
-          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicButton.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         },
         {
           "id": "fM-PBE3gad",
@@ -242,28 +227,119 @@
           "plumeType": "switch"
         },
         {
-          "id": "0-CIISOwT0",
-          "name": "Weather",
+          "id": "eZM_gBMn2w",
+          "name": "FavouritesBtn",
           "type": "managed",
           "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
-          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicWeather.tsx",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicFavouritesBtn.tsx",
           "importSpec": {
-            "modulePath": "Weather.tsx"
+            "modulePath": "FavouritesBtn.tsx"
           },
-          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicWeather.module.css",
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicFavouritesBtn.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "0-CIISOwT0",
+          "name": "WeatherWidget",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicWeatherWidget.tsx",
+          "importSpec": {
+            "modulePath": "WeatherWidget.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicWeatherWidget.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         },
         {
           "id": "nsqmq6QdR8",
-          "name": "Topbar",
+          "name": "TopBar",
           "type": "managed",
           "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
-          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicTopbar.tsx",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicTopBar.tsx",
           "importSpec": {
-            "modulePath": "Topbar.tsx"
+            "modulePath": "TopBar.tsx"
           },
-          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicTopbar.module.css",
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicTopBar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "aWZ5Rm1too",
+          "name": "Note",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicNote.tsx",
+          "importSpec": {
+            "modulePath": "Note.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicNote.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Pi1SnN7SLJ",
+          "name": "Layout",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicLayout.tsx",
+          "importSpec": {
+            "modulePath": "Layout.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicLayout.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "jXKRlC2FpR",
+          "name": "NavBar",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicNavBar.tsx",
+          "importSpec": {
+            "modulePath": "NavBar.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicNavBar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "XyDUTZSPLI",
+          "name": "TimeDateWidget",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicTimeDateWidget.tsx",
+          "importSpec": {
+            "modulePath": "TimeDateWidget.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicTimeDateWidget.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "aoIUbV_IZ6",
+          "name": "HeatContolWidget",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicHeatContolWidget.tsx",
+          "importSpec": {
+            "modulePath": "HeatContolWidget.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicHeatContolWidget.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "g8sFvLHOQr",
+          "name": "RecordingBtnWidget",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicRecordingBtnWidget.tsx",
+          "importSpec": {
+            "modulePath": "RecordingBtnWidget.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicRecordingBtnWidget.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -423,6 +499,16 @@
           "id": "W7LggHx4Zm",
           "name": "IconSoundIcon",
           "moduleFilePath": "plasmic/blank_project_mobile_first/icons/PlasmicIcon__IconSound.tsx"
+        },
+        {
+          "id": "hI4_MAgG3a",
+          "name": "IconCheckMailIcon",
+          "moduleFilePath": "plasmic/blank_project_mobile_first/icons/PlasmicIcon__IconCheckMail.tsx"
+        },
+        {
+          "id": "xX_5xOFSAF",
+          "name": "IconWifi2Icon",
+          "moduleFilePath": "plasmic/blank_project_mobile_first/icons/PlasmicIcon__IconWifi2.tsx"
         }
       ],
       "images": [
@@ -436,35 +522,22 @@
       "globalContextsFilePath": "",
       "codeComponents": [
         {
-          "id": "YOPmKka_XJ",
-          "name": "CompYoPmKkaXj",
-          "componentImportPath": ""
+          "id": "NxyTyDLsO5",
+          "name": "HelloWorld",
+          "componentImportPath": "./src/components/HelloWorld"
         },
         {
-          "id": "ObXZdO4VMb",
-          "name": "CompObXZdO4VMb",
-          "componentImportPath": ""
+          "id": "tdaEBieN9k",
+          "name": "StackedCarouselComp",
+          "componentImportPath": "./src/components/StackedCarouselComp"
         }
       ]
     }
   ],
   "globalVariants": {
-    "variantGroups": [
-      {
-        "id": "QvtMAh6IevC",
-        "name": "Screen",
-        "projectId": "r3ASNrnyvLLLAtDvzUioQ",
-        "contextFilePath": "plasmic/react_slick/PlasmicGlobalVariant__Screen.tsx"
-      },
-      {
-        "id": "X5dfGFKQHT6sb",
-        "name": "Screen",
-        "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
-        "contextFilePath": "plasmic/blank_project_mobile_first/PlasmicGlobalVariant__Screen.tsx"
-      }
-    ]
+    "variantGroups": []
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.180",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.180/dist/plasmic.schema.json"
+  "cliVersion": "0.1.182",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.182/dist/plasmic.schema.json"
 }

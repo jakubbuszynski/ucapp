@@ -31,10 +31,14 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Topbar from "../../Topbar"; // plasmic-import: nsqmq6QdR8/component
-import Weather from "../../Weather"; // plasmic-import: 0-CIISOwT0/component
-import { CompObXZdO4VMb } from ""; // plasmic-import: ObXZdO4VMb/codeComponent
-import Button from "../../Button"; // plasmic-import: eZM_gBMn2w/component
+import TopBar from "../../TopBar"; // plasmic-import: nsqmq6QdR8/component
+import TimeDateWidget from "../../TimeDateWidget"; // plasmic-import: XyDUTZSPLI/component
+import WeatherWidget from "../../WeatherWidget"; // plasmic-import: 0-CIISOwT0/component
+import HeatContolWidget from "../../HeatContolWidget"; // plasmic-import: aoIUbV_IZ6/component
+import Note from "../../Note"; // plasmic-import: aWZ5Rm1too/component
+import RecordingBtnWidget from "../../RecordingBtnWidget"; // plasmic-import: g8sFvLHOQr/component
+import FavouritesBtn from "../../FavouritesBtn"; // plasmic-import: eZM_gBMn2w/component
+import NavBar from "../../NavBar"; // plasmic-import: jXKRlC2FpR/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -43,21 +47,12 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: 4V9pJe2SUwNn/
 
 import Group6Icon from "./icons/PlasmicIcon__Group6"; // plasmic-import: RrnStGHaMH_/icon
 import IconSadIcon from "./icons/PlasmicIcon__IconSad"; // plasmic-import: LSRU8DOeASe/icon
-import Ellipse262Icon from "./icons/PlasmicIcon__Ellipse262"; // plasmic-import: LpPtZzW5OtX/icon
-import IconHumidityIcon from "./icons/PlasmicIcon__IconHumidity"; // plasmic-import: qOIzQYGwswN/icon
 import IconComunityIcon from "./icons/PlasmicIcon__IconComunity"; // plasmic-import: bRMD7TZ0qg/icon
-import Ellipse36Icon from "./icons/PlasmicIcon__Ellipse36"; // plasmic-import: 2XixHAoBao/icon
-import IconMicPlusIcon from "./icons/PlasmicIcon__IconMicPlus"; // plasmic-import: ngJJ-GwnaY/icon
 import IconHeartIcon from "./icons/PlasmicIcon__IconHeart"; // plasmic-import: Jz_s8Wvzgq/icon
 import GroupIcon from "./icons/PlasmicIcon__Group"; // plasmic-import: zT1yyLrytDX/icon
 import Group2Icon from "./icons/PlasmicIcon__Group2"; // plasmic-import: zsir4Dm1UbC/icon
 import IconOutIcon from "./icons/PlasmicIcon__IconOut"; // plasmic-import: YJSks7-cKx/icon
 import Group3Icon from "./icons/PlasmicIcon__Group3"; // plasmic-import: 4WXBfYFgy/icon
-import Rectangle105Icon from "./icons/PlasmicIcon__Rectangle105"; // plasmic-import: AQaATkY-uE/icon
-import IconDomIcon from "./icons/PlasmicIcon__IconDom"; // plasmic-import: sOWy2b1yuZ/icon
-import Group4Icon from "./icons/PlasmicIcon__Group4"; // plasmic-import: e7xl9pDzGf/icon
-import Ellipse49Icon from "./icons/PlasmicIcon__Ellipse49"; // plasmic-import: P0uugp2jEe/icon
-import IconPanelGlownyIcon from "./icons/PlasmicIcon__IconPanelGlowny"; // plasmic-import: DKDrvPLykl/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -78,18 +73,13 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  topbar?: p.Flex<typeof Topbar>;
-  timeAndDate?: p.Flex<"div">;
-  weather?: p.Flex<typeof Weather>;
-  heatControlCircleButton?: p.Flex<"div">;
-  aktulanie21?: p.Flex<"div">;
-  humidity?: p.Flex<"div">;
-  notificationsMainPanel?: p.Flex<"div">;
-  rectangle65?: p.Flex<"div">;
-  stackedCarouselComp?: p.Flex<typeof CompObXZdO4VMb>;
-  buttonRecordMessage?: p.Flex<"div">;
+  topBar?: p.Flex<typeof TopBar>;
+  timeDateWidget?: p.Flex<typeof TimeDateWidget>;
+  weatherWidget?: p.Flex<typeof WeatherWidget>;
+  heatContolWidget?: p.Flex<typeof HeatContolWidget>;
+  recordingBtnWidget?: p.Flex<typeof RecordingBtnWidget>;
   tryby2?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
+  favouritesBtn?: p.Flex<typeof FavouritesBtn>;
   ulubione?: p.Flex<"div">;
   rectangle28?: p.Flex<"div">;
   dzien5?: p.Flex<"div">;
@@ -106,11 +96,7 @@ export type PlasmicHomepage__OverridesType = {
   przywolajWinde?: p.Flex<"div">;
   rectangle29?: p.Flex<"div">;
   iconLift?: p.Flex<"div">;
-  menu?: p.Flex<"div">;
-  dom?: p.Flex<"div">;
-  tryby?: p.Flex<"div">;
-  iconModes?: p.Flex<"div">;
-  glowna?: p.Flex<"div">;
+  navBar?: p.Flex<typeof NavBar>;
 };
 
 export interface DefaultHomepageProps {
@@ -152,51 +138,38 @@ function PlasmicHomepage__RenderFunc(props: {
         )}
       >
         <div className={classNames(projectcss.all, sty.freeBox__p2DhG)}>
-          <Topbar
-            data-plasmic-name={"topbar"}
-            data-plasmic-override={overrides.topbar}
-            className={classNames("__wab_instance", sty.topbar)}
+          <TopBar
+            data-plasmic-name={"topBar"}
+            data-plasmic-override={overrides.topBar}
+            className={classNames("__wab_instance", sty.topBar)}
           />
 
-          <div
-            data-plasmic-name={"timeAndDate"}
-            data-plasmic-override={overrides.timeAndDate}
-            className={classNames(projectcss.all, sty.timeAndDate)}
+          <TimeDateWidget
+            data-plasmic-name={"timeDateWidget"}
+            data-plasmic-override={overrides.timeDateWidget}
+            className={classNames("__wab_instance", sty.timeDateWidget)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__rpyA)}>
-              {p.renderPlasmicSlot({
-                defaultContents: (
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hZvOv
-                    )}
-                  >
-                    {"12:30"}
-                  </div>
-                ),
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oicxm
+                  )}
+                >
+                  {"12:30"}
+                </div>
+              ),
 
-                value: args.children,
-                className: classNames(sty.slotTargetChildren)
-              })}
-            </div>
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__katb3
-              )}
-            >
-              {"Czwartek, 3 luty 2020"}
-            </div>
-          </div>
+              value: args.children
+            })}
+          </TimeDateWidget>
 
           <div className={classNames(projectcss.all, sty.freeBox__fv9V)}>
-            <Weather
-              data-plasmic-name={"weather"}
-              data-plasmic-override={overrides.weather}
+            <WeatherWidget
+              data-plasmic-name={"weatherWidget"}
+              data-plasmic-override={overrides.weatherWidget}
               airQuality={
                 <div
                   className={classNames(
@@ -208,149 +181,47 @@ function PlasmicHomepage__RenderFunc(props: {
                   {"PM2.5"}
                 </div>
               }
-              className={classNames("__wab_instance", sty.weather)}
+              className={classNames("__wab_instance", sty.weatherWidget)}
               online={true}
               temperature={"12°C"}
             />
 
-            <div
-              data-plasmic-name={"heatControlCircleButton"}
-              data-plasmic-override={overrides.heatControlCircleButton}
-              className={classNames(
-                projectcss.all,
-                sty.heatControlCircleButton
-              )}
-            >
-              <Ellipse262Icon
-                className={classNames(projectcss.all, sty.svg___6Vpcf)}
-                role={"img"}
-              />
-
-              <div className={classNames(projectcss.all, sty.freeBox__hb2N0)}>
-                {p.renderPlasmicSlot({
-                  defaultContents: "10°",
-                  value: args.slot,
-                  className: classNames(sty.slotTargetSlot)
-                })}
-              </div>
-
-              <div
-                data-plasmic-name={"aktulanie21"}
-                data-plasmic-override={overrides.aktulanie21}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.aktulanie21
-                )}
-              >
-                {"Aktulanie: 21° "}
-              </div>
-
-              <div
-                data-plasmic-name={"humidity"}
-                data-plasmic-override={overrides.humidity}
-                className={classNames(projectcss.all, sty.humidity)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rlFM
-                  )}
-                >
-                  {"55%"}
-                </div>
-
-                <IconHumidityIcon
-                  className={classNames(projectcss.all, sty.svg__rZgM)}
-                  role={"img"}
-                />
-              </div>
-            </div>
+            <HeatContolWidget
+              data-plasmic-name={"heatContolWidget"}
+              data-plasmic-override={overrides.heatContolWidget}
+              className={classNames("__wab_instance", sty.heatContolWidget)}
+              slot={p.renderPlasmicSlot({
+                defaultContents: "10°",
+                value: args.slot
+              })}
+            />
           </div>
 
           <div className={classNames(projectcss.all, sty.freeBox__jmF3N)}>
-            <div
-              data-plasmic-name={"notificationsMainPanel"}
-              data-plasmic-override={overrides.notificationsMainPanel}
-              className={classNames(projectcss.all, sty.notificationsMainPanel)}
-            >
-              <div
-                data-plasmic-name={"rectangle65"}
-                data-plasmic-override={overrides.rectangle65}
-                className={classNames(projectcss.all, sty.rectangle65)}
-              />
+            <Note className={classNames("__wab_instance", sty.note__cNo)} />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wSzjd
-                )}
-              >
-                {"Witamy w UNICOMM, Twoim inteligentnym mieszkaniu. Domo..."}
-              </div>
-
-              <IconComunityIcon
-                className={classNames(projectcss.all, sty.svg__qH2X9)}
-                role={"img"}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___2IB6D
-                )}
-              >
-                {"Domofon XXI wieku"}
-              </div>
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___8F5RN
-                )}
-              >
-                {"7 kwietnia | 10:00"}
-              </div>
-            </div>
-
-            <CompObXZdO4VMb
-              data-plasmic-name={"stackedCarouselComp"}
-              data-plasmic-override={overrides.stackedCarouselComp}
-              className={classNames("__wab_instance", sty.stackedCarouselComp)}
+            <RecordingBtnWidget
+              data-plasmic-name={"recordingBtnWidget"}
+              data-plasmic-override={overrides.recordingBtnWidget}
+              className={classNames("__wab_instance", sty.recordingBtnWidget)}
             />
-
-            <div className={classNames(projectcss.all, sty.freeBox__mwUm)}>
-              <div
-                data-plasmic-name={"buttonRecordMessage"}
-                data-plasmic-override={overrides.buttonRecordMessage}
-                className={classNames(projectcss.all, sty.buttonRecordMessage)}
-              >
-                <Ellipse36Icon
-                  className={classNames(projectcss.all, sty.svg__kT8Aq)}
-                  role={"img"}
-                />
-
-                <IconMicPlusIcon
-                  className={classNames(projectcss.all, sty.svg__eiu5Q)}
-                  role={"img"}
-                />
-              </div>
-            </div>
           </div>
+
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__aEu7S)}>
+              <Note className={classNames("__wab_instance", sty.note__lgLxn)} />
+            </div>
+          ) : null}
 
           <div
             data-plasmic-name={"tryby2"}
             data-plasmic-override={overrides.tryby2}
             className={classNames(projectcss.all, sty.tryby2)}
           >
-            <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
+            <FavouritesBtn
+              data-plasmic-name={"favouritesBtn"}
+              data-plasmic-override={overrides.favouritesBtn}
+              className={classNames("__wab_instance", sty.favouritesBtn)}
             />
 
             <div
@@ -514,96 +385,11 @@ function PlasmicHomepage__RenderFunc(props: {
           </div>
 
           <div className={classNames(projectcss.all, sty.freeBox___4R2Vh)}>
-            <div
-              data-plasmic-name={"menu"}
-              data-plasmic-override={overrides.menu}
-              className={classNames(projectcss.all, sty.menu)}
-            >
-              <Rectangle105Icon
-                className={classNames(projectcss.all, sty.svg___3Fdf2)}
-                role={"img"}
-              />
-
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"dom"}
-                data-plasmic-override={overrides.dom}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.dom)}
-              >
-                <IconDomIcon
-                  className={classNames(projectcss.all, sty.svg__kvOCk)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xal5N
-                  )}
-                >
-                  {"Dom"}
-                </div>
-              </p.Stack>
-
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"tryby"}
-                data-plasmic-override={overrides.tryby}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.tryby)}
-              >
-                <div
-                  data-plasmic-name={"iconModes"}
-                  data-plasmic-override={overrides.iconModes}
-                  className={classNames(projectcss.all, sty.iconModes)}
-                >
-                  <Group4Icon
-                    className={classNames(projectcss.all, sty.svg__gkbbh)}
-                    role={"img"}
-                  />
-                </div>
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kah4H
-                  )}
-                >
-                  {"Tryby"}
-                </div>
-              </p.Stack>
-
-              <div
-                data-plasmic-name={"glowna"}
-                data-plasmic-override={overrides.glowna}
-                className={classNames(projectcss.all, sty.glowna)}
-              >
-                {false ? (
-                  <Ellipse49Icon
-                    className={classNames(projectcss.all, sty.svg__k3GdO)}
-                    role={"img"}
-                  />
-                ) : null}
-
-                <IconPanelGlownyIcon
-                  className={classNames(projectcss.all, sty.svg__cqdbl)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lmUks
-                  )}
-                >
-                  {"Główna"}
-                </div>
-              </div>
-            </div>
+            <NavBar
+              data-plasmic-name={"navBar"}
+              data-plasmic-override={overrides.navBar}
+              className={classNames("__wab_instance", sty.navBar)}
+            />
           </div>
         </div>
       </div>
@@ -614,18 +400,13 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "topbar",
-    "timeAndDate",
-    "weather",
-    "heatControlCircleButton",
-    "aktulanie21",
-    "humidity",
-    "notificationsMainPanel",
-    "rectangle65",
-    "stackedCarouselComp",
-    "buttonRecordMessage",
+    "topBar",
+    "timeDateWidget",
+    "weatherWidget",
+    "heatContolWidget",
+    "recordingBtnWidget",
     "tryby2",
-    "button",
+    "favouritesBtn",
     "ulubione",
     "rectangle28",
     "dzien5",
@@ -642,29 +423,16 @@ const PlasmicDescendants = {
     "przywolajWinde",
     "rectangle29",
     "iconLift",
-    "menu",
-    "dom",
-    "tryby",
-    "iconModes",
-    "glowna"
+    "navBar"
   ],
-  topbar: ["topbar"],
-  timeAndDate: ["timeAndDate"],
-  weather: ["weather"],
-  heatControlCircleButton: [
-    "heatControlCircleButton",
-    "aktulanie21",
-    "humidity"
-  ],
-  aktulanie21: ["aktulanie21"],
-  humidity: ["humidity"],
-  notificationsMainPanel: ["notificationsMainPanel", "rectangle65"],
-  rectangle65: ["rectangle65"],
-  stackedCarouselComp: ["stackedCarouselComp"],
-  buttonRecordMessage: ["buttonRecordMessage"],
+  topBar: ["topBar"],
+  timeDateWidget: ["timeDateWidget"],
+  weatherWidget: ["weatherWidget"],
+  heatContolWidget: ["heatContolWidget"],
+  recordingBtnWidget: ["recordingBtnWidget"],
   tryby2: [
     "tryby2",
-    "button",
+    "favouritesBtn",
     "ulubione",
     "rectangle28",
     "dzien5",
@@ -682,7 +450,7 @@ const PlasmicDescendants = {
     "rectangle29",
     "iconLift"
   ],
-  button: ["button"],
+  favouritesBtn: ["favouritesBtn"],
   ulubione: ["ulubione", "rectangle28", "dzien5"],
   rectangle28: ["rectangle28"],
   dzien5: ["dzien5"],
@@ -699,29 +467,20 @@ const PlasmicDescendants = {
   przywolajWinde: ["przywolajWinde", "rectangle29", "iconLift"],
   rectangle29: ["rectangle29"],
   iconLift: ["iconLift"],
-  menu: ["menu", "dom", "tryby", "iconModes", "glowna"],
-  dom: ["dom"],
-  tryby: ["tryby", "iconModes"],
-  iconModes: ["iconModes"],
-  glowna: ["glowna"]
+  navBar: ["navBar"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  topbar: typeof Topbar;
-  timeAndDate: "div";
-  weather: typeof Weather;
-  heatControlCircleButton: "div";
-  aktulanie21: "div";
-  humidity: "div";
-  notificationsMainPanel: "div";
-  rectangle65: "div";
-  stackedCarouselComp: typeof CompObXZdO4VMb;
-  buttonRecordMessage: "div";
+  topBar: typeof TopBar;
+  timeDateWidget: typeof TimeDateWidget;
+  weatherWidget: typeof WeatherWidget;
+  heatContolWidget: typeof HeatContolWidget;
+  recordingBtnWidget: typeof RecordingBtnWidget;
   tryby2: "div";
-  button: typeof Button;
+  favouritesBtn: typeof FavouritesBtn;
   ulubione: "div";
   rectangle28: "div";
   dzien5: "div";
@@ -738,11 +497,7 @@ type NodeDefaultElementType = {
   przywolajWinde: "div";
   rectangle29: "div";
   iconLift: "div";
-  menu: "div";
-  dom: "div";
-  tryby: "div";
-  iconModes: "div";
-  glowna: "div";
+  navBar: typeof NavBar;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -802,18 +557,13 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    topbar: makeNodeComponent("topbar"),
-    timeAndDate: makeNodeComponent("timeAndDate"),
-    weather: makeNodeComponent("weather"),
-    heatControlCircleButton: makeNodeComponent("heatControlCircleButton"),
-    aktulanie21: makeNodeComponent("aktulanie21"),
-    humidity: makeNodeComponent("humidity"),
-    notificationsMainPanel: makeNodeComponent("notificationsMainPanel"),
-    rectangle65: makeNodeComponent("rectangle65"),
-    stackedCarouselComp: makeNodeComponent("stackedCarouselComp"),
-    buttonRecordMessage: makeNodeComponent("buttonRecordMessage"),
+    topBar: makeNodeComponent("topBar"),
+    timeDateWidget: makeNodeComponent("timeDateWidget"),
+    weatherWidget: makeNodeComponent("weatherWidget"),
+    heatContolWidget: makeNodeComponent("heatContolWidget"),
+    recordingBtnWidget: makeNodeComponent("recordingBtnWidget"),
     tryby2: makeNodeComponent("tryby2"),
-    button: makeNodeComponent("button"),
+    favouritesBtn: makeNodeComponent("favouritesBtn"),
     ulubione: makeNodeComponent("ulubione"),
     rectangle28: makeNodeComponent("rectangle28"),
     dzien5: makeNodeComponent("dzien5"),
@@ -830,11 +580,7 @@ export const PlasmicHomepage = Object.assign(
     przywolajWinde: makeNodeComponent("przywolajWinde"),
     rectangle29: makeNodeComponent("rectangle29"),
     iconLift: makeNodeComponent("iconLift"),
-    menu: makeNodeComponent("menu"),
-    dom: makeNodeComponent("dom"),
-    tryby: makeNodeComponent("tryby"),
-    iconModes: makeNodeComponent("iconModes"),
-    glowna: makeNodeComponent("glowna"),
+    navBar: makeNodeComponent("navBar"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
