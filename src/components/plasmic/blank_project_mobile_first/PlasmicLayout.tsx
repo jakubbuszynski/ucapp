@@ -42,17 +42,20 @@ import sty from "./PlasmicLayout.module.css"; // plasmic-import: Pi1SnN7SLJ/css
 export type PlasmicLayout__VariantMembers = {
   shortTopBar: "shortTopBar";
   withoutNavBar: "withoutNavBar";
+  displayNone: "displayNone";
 };
 
 export type PlasmicLayout__VariantsArgs = {
   shortTopBar?: SingleBooleanChoiceArg<"shortTopBar">;
   withoutNavBar?: SingleBooleanChoiceArg<"withoutNavBar">;
+  displayNone?: SingleBooleanChoiceArg<"displayNone">;
 };
 
 type VariantPropType = keyof PlasmicLayout__VariantsArgs;
 export const PlasmicLayout__VariantProps = new Array<VariantPropType>(
   "shortTopBar",
-  "withoutNavBar"
+  "withoutNavBar",
+  "displayNone"
 );
 
 export type PlasmicLayout__ArgsType = {
@@ -73,6 +76,7 @@ export interface DefaultLayoutProps {
   children?: React.ReactNode;
   shortTopBar?: SingleBooleanChoiceArg<"shortTopBar">;
   withoutNavBar?: SingleBooleanChoiceArg<"withoutNavBar">;
+  displayNone?: SingleBooleanChoiceArg<"displayNone">;
   className?: string;
 }
 
@@ -103,6 +107,11 @@ function PlasmicLayout__RenderFunc(props: {
         projectcss.plasmic_mixins,
         sty.root,
         {
+          [sty.rootdisplayNone]: hasVariant(
+            variants,
+            "displayNone",
+            "displayNone"
+          ),
           [sty.rootshortTopBar]: hasVariant(
             variants,
             "shortTopBar",
@@ -133,37 +142,52 @@ function PlasmicLayout__RenderFunc(props: {
         })}
       </div>
 
-      <TopBar
-        data-plasmic-name={"topBar"}
-        data-plasmic-override={overrides.topBar}
-        className={classNames("__wab_instance", sty.topBar, {
-          [sty.topBarshortTopBar]: hasVariant(
-            variants,
-            "shortTopBar",
-            "shortTopBar"
-          ),
-          [sty.topBarwithoutNavBar]: hasVariant(
-            variants,
-            "withoutNavBar",
-            "withoutNavBar"
-          )
-        })}
-        colapsed={
-          hasVariant(variants, "withoutNavBar", "withoutNavBar")
-            ? true
-            : hasVariant(variants, "shortTopBar", "shortTopBar")
-            ? true
-            : undefined
-        }
-      />
-
+      {(hasVariant(variants, "displayNone", "displayNone") ? true : true) ? (
+        <TopBar
+          data-plasmic-name={"topBar"}
+          data-plasmic-override={overrides.topBar}
+          className={classNames("__wab_instance", sty.topBar, {
+            [sty.topBardisplayNone]: hasVariant(
+              variants,
+              "displayNone",
+              "displayNone"
+            ),
+            [sty.topBarshortTopBar]: hasVariant(
+              variants,
+              "shortTopBar",
+              "shortTopBar"
+            ),
+            [sty.topBarwithoutNavBar]: hasVariant(
+              variants,
+              "withoutNavBar",
+              "withoutNavBar"
+            )
+          })}
+          colapsed={
+            hasVariant(variants, "withoutNavBar", "withoutNavBar")
+              ? true
+              : hasVariant(variants, "shortTopBar", "shortTopBar")
+              ? true
+              : undefined
+          }
+        />
+      ) : null}
       {(
-        hasVariant(variants, "withoutNavBar", "withoutNavBar") ? true : true
+        hasVariant(variants, "displayNone", "displayNone")
+          ? true
+          : hasVariant(variants, "withoutNavBar", "withoutNavBar")
+          ? true
+          : true
       ) ? (
         <NavBar
           data-plasmic-name={"navBar"}
           data-plasmic-override={overrides.navBar}
           className={classNames("__wab_instance", sty.navBar, {
+            [sty.navBardisplayNone]: hasVariant(
+              variants,
+              "displayNone",
+              "displayNone"
+            ),
             [sty.navBarshortTopBar]: hasVariant(
               variants,
               "shortTopBar",

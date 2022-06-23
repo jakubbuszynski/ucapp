@@ -48,22 +48,29 @@ export const PlasmicHeatContolWidget__VariantProps =
   new Array<VariantPropType>();
 
 export type PlasmicHeatContolWidget__ArgsType = {
-  slot?: React.ReactNode;
+  temperatureText?: React.ReactNode;
+  homeTemperatureText?: React.ReactNode;
+  humidityText?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicHeatContolWidget__ArgsType;
-export const PlasmicHeatContolWidget__ArgProps = new Array<ArgPropType>("slot");
+export const PlasmicHeatContolWidget__ArgProps = new Array<ArgPropType>(
+  "temperatureText",
+  "homeTemperatureText",
+  "humidityText"
+);
 
 export type PlasmicHeatContolWidget__OverridesType = {
   root?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
-  aktulanie21?: p.Flex<"div">;
+  heatersHeatControlCircleButton?: p.Flex<"div">;
+  _10?: p.Flex<"div">;
   humidity?: p.Flex<"div">;
-  text?: p.Flex<"div">;
 };
 
 export interface DefaultHeatContolWidgetProps {
-  slot?: React.ReactNode;
+  temperatureText?: React.ReactNode;
+  homeTemperatureText?: React.ReactNode;
+  humidityText?: React.ReactNode;
   className?: string;
 }
 
@@ -96,77 +103,91 @@ function PlasmicHeatContolWidget__RenderFunc(props: {
         sty.root
       )}
     >
-      <Ellipse262Icon
-        className={classNames(projectcss.all, sty.svg__ylidb)}
-        role={"img"}
-      />
-
       <div
-        data-plasmic-name={"freeBox"}
-        data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox)}
-      >
-        {p.renderPlasmicSlot({
-          defaultContents: "10°",
-          value: args.slot,
-          className: classNames(sty.slotTargetSlot)
-        })}
-      </div>
-
-      <div
-        data-plasmic-name={"aktulanie21"}
-        data-plasmic-override={overrides.aktulanie21}
+        data-plasmic-name={"heatersHeatControlCircleButton"}
+        data-plasmic-override={overrides.heatersHeatControlCircleButton}
         className={classNames(
           projectcss.all,
-          projectcss.__wab_text,
-          sty.aktulanie21
+          sty.heatersHeatControlCircleButton
         )}
       >
-        {"Aktulanie: 21° "}
-      </div>
-
-      <div
-        data-plasmic-name={"humidity"}
-        data-plasmic-override={overrides.humidity}
-        className={classNames(projectcss.all, sty.humidity)}
-      >
-        <div
-          data-plasmic-name={"text"}
-          data-plasmic-override={overrides.text}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text
-          )}
-        >
-          {"55%"}
-        </div>
-
-        <IconHumidityIcon
-          className={classNames(projectcss.all, sty.svg__atk1)}
+        <Ellipse262Icon
+          className={classNames(projectcss.all, sty.svg__m0U0)}
           role={"img"}
         />
+
+        <div
+          data-plasmic-name={"_10"}
+          data-plasmic-override={overrides._10}
+          className={classNames(projectcss.all, sty._10)}
+        >
+          {p.renderPlasmicSlot({
+            defaultContents: "20°c",
+            value: args.temperatureText,
+            className: classNames(sty.slotTargetTemperatureText)
+          })}
+        </div>
+
+        <div className={classNames(projectcss.all, sty.freeBox__huBpD)}>
+          {p.renderPlasmicSlot({
+            defaultContents: (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___8A3O5
+                )}
+              >
+                {"W domu: 21° "}
+              </div>
+            ),
+
+            value: args.homeTemperatureText,
+            className: classNames(sty.slotTargetHomeTemperatureText)
+          })}
+        </div>
+
+        <div
+          data-plasmic-name={"humidity"}
+          data-plasmic-override={overrides.humidity}
+          className={classNames(projectcss.all, sty.humidity)}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__zJqEs)}>
+            {p.renderPlasmicSlot({
+              defaultContents: "55%",
+              value: args.humidityText,
+              className: classNames(sty.slotTargetHumidityText)
+            })}
+          </div>
+
+          <IconHumidityIcon
+            className={classNames(projectcss.all, sty.svg__q44Fq)}
+            role={"img"}
+          />
+        </div>
       </div>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "aktulanie21", "humidity", "text"],
-  freeBox: ["freeBox"],
-  aktulanie21: ["aktulanie21"],
-  humidity: ["humidity", "text"],
-  text: ["text"]
+  root: ["root", "heatersHeatControlCircleButton", "_10", "humidity"],
+  heatersHeatControlCircleButton: [
+    "heatersHeatControlCircleButton",
+    "_10",
+    "humidity"
+  ],
+  _10: ["_10"],
+  humidity: ["humidity"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
-  aktulanie21: "div";
+  heatersHeatControlCircleButton: "div";
+  _10: "div";
   humidity: "div";
-  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -226,10 +247,11 @@ export const PlasmicHeatContolWidget = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
-    aktulanie21: makeNodeComponent("aktulanie21"),
+    heatersHeatControlCircleButton: makeNodeComponent(
+      "heatersHeatControlCircleButton"
+    ),
+    _10: makeNodeComponent("_10"),
     humidity: makeNodeComponent("humidity"),
-    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicHeatContolWidget
     internalVariantProps: PlasmicHeatContolWidget__VariantProps,

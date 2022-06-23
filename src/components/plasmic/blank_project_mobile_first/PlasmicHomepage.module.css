@@ -20,7 +20,7 @@
   height: auto;
   max-width: 100%;
   left: 0px;
-  top: 0px;
+  top: 315px;
   background: #f6f6f6;
   min-width: 0;
   padding: 8px;
@@ -33,17 +33,6 @@
   z-index: 1;
   height: 100px;
   flex-shrink: 0;
-}
-.timeDateWidget:global(.__wab_instance) {
-  position: relative;
-  top: auto;
-  left: auto;
-  margin-top: 132px;
-  flex-shrink: 0;
-}
-.text__oicxm {
-  font-weight: 500;
-  position: relative;
 }
 .freeBox__fv9V {
   display: flex;
@@ -182,6 +171,15 @@
 }
 .favouritesBtn:global(.__wab_instance) {
   position: relative;
+  top: auto;
+  left: auto;
+}
+.svg__gQ5Tc {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 48px;
+  height: 48px;
   top: auto;
   left: auto;
 }
@@ -450,4 +448,9 @@
   position: absolute;
   top: 0px;
   left: 0px;
+}
+.dateTimeWidget:global(.__wab_instance) {
+  position: absolute;
+  top: 175px;
+  left: 20px;
 }

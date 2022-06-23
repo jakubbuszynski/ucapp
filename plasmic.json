@@ -158,7 +158,8 @@
           "name": "Tabs",
           "componentImportPath": "@plasmicpkgs/antd"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -177,12 +178,13 @@
           "name": "Slider",
           "componentImportPath": "react-slick"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
       "projectApiToken": "NwEAQBPTlYdMuHGJvIeOaiawFKGqTZXzlCcKURyjDiCO3qa2l5nn4PDzXOn7u8Vd6Pt30y9f8tK1e8fi5h53A",
-      "projectName": "Blank project (mobile-first)",
+      "projectName": "Unicomm frontend",
       "version": "latest",
       "cssFilePath": "plasmic/blank_project_mobile_first/plasmic_blank_project_mobile_first.module.css",
       "components": [
@@ -305,19 +307,6 @@
           "componentType": "component"
         },
         {
-          "id": "XyDUTZSPLI",
-          "name": "TimeDateWidget",
-          "type": "managed",
-          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
-          "renderModuleFilePath": "plasmic/blank_project_mobile_first/PlasmicTimeDateWidget.tsx",
-          "importSpec": {
-            "modulePath": "TimeDateWidget.tsx"
-          },
-          "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicTimeDateWidget.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "aoIUbV_IZ6",
           "name": "HeatContolWidget",
           "type": "managed",
@@ -340,6 +329,85 @@
             "modulePath": "RecordingBtnWidget.tsx"
           },
           "cssFilePath": "plasmic/blank_project_mobile_first/PlasmicRecordingBtnWidget.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "0OH69dlSQ5",
+          "name": "IncommingCallPage",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicIncommingCallPage.tsx",
+          "importSpec": {
+            "modulePath": "IncommingCallPage.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicIncommingCallPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "_jlAiRe8-_",
+          "name": "MuteIcon",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicMuteIcon.tsx",
+          "importSpec": {
+            "modulePath": "MuteIcon.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicMuteIcon.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "gP-HYzHmfTq",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "6K82epA0cI",
+          "name": "Btn",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicBtn.tsx",
+          "importSpec": {
+            "modulePath": "Btn.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicBtn.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "t1tce5B7Zb",
+          "name": "Header",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicHeader.tsx",
+          "importSpec": {
+            "modulePath": "Header.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicHeader.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "PKQxjs1wgm",
+          "name": "DateTimeWidget",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicDateTimeWidget.tsx",
+          "importSpec": {
+            "modulePath": "DateTimeWidget.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicDateTimeWidget.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -509,6 +577,51 @@
           "id": "xX_5xOFSAF",
           "name": "IconWifi2Icon",
           "moduleFilePath": "plasmic/blank_project_mobile_first/icons/PlasmicIcon__IconWifi2.tsx"
+        },
+        {
+          "id": "QjsvoVgKAl",
+          "name": "Group8Icon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__Group8.tsx"
+        },
+        {
+          "id": "OMXFNCG8JY",
+          "name": "IconArrow2Icon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__IconArrow2.tsx"
+        },
+        {
+          "id": "da9sopleIS",
+          "name": "IconDoorCloseIcon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__IconDoorClose.tsx"
+        },
+        {
+          "id": "eE8WHR2991",
+          "name": "Group9Icon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__Group9.tsx"
+        },
+        {
+          "id": "oO4s45yxlg",
+          "name": "IconConfirmCallIcon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__IconConfirmCall.tsx"
+        },
+        {
+          "id": "uAbKMBtqI6u",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "tnEAR3AGGw-",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "l6zKJEbUS",
+          "name": "Ellipse263Icon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__Ellipse263.tsx"
+        },
+        {
+          "id": "Y72ZX9FUhc",
+          "name": "IconSettings3Icon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__IconSettings3.tsx"
         }
       ],
       "images": [
@@ -516,22 +629,16 @@
           "id": "83Sos8jb2zv",
           "name": "pobrane__4_-removebg-preview 1",
           "filePath": "plasmic/blank_project_mobile_first/images/pobrane4RemovebgPreview1.png"
+        },
+        {
+          "id": "7zRAUhSY-",
+          "name": "image 34",
+          "filePath": "plasmic/unicomm_frontend/images/image34.png"
         }
       ],
       "indirect": false,
       "globalContextsFilePath": "",
-      "codeComponents": [
-        {
-          "id": "NxyTyDLsO5",
-          "name": "HelloWorld",
-          "componentImportPath": "./src/components/HelloWorld"
-        },
-        {
-          "id": "tdaEBieN9k",
-          "name": "StackedCarouselComp",
-          "componentImportPath": "./src/components/StackedCarouselComp"
-        }
-      ]
+      "codeComponents": []
     }
   ],
   "globalVariants": {

@@ -1,0 +1,20 @@
+.root {
+  opacity: 0.75;
+  width: 96px;
+  height: 96px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.svg {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #fff;
+  transform: translate(-0.12400000000000055px, 0.016px);
+  width: 76.248px;
+  height: 95.983px;
+  display: block;
+  top: 0px;
+  left: 10px;
+}

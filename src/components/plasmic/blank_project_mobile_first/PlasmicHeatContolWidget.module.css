@@ -4,12 +4,20 @@
   display: block;
   position: relative;
 }
-.svg__ylidb {
+.heatersHeatControlCircleButton {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.svg__m0U0 {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
   color: #fff;
-  box-shadow: 0px 24px 40px 0px rgba(33, 33, 33, 0.1);
+  box-shadow: 0px 8px 40px 0px rgba(33, 33, 33, 0.1);
   transform: skew(-0.057295760414500616deg, 0deg);
   width: 200px;
   height: 200px;
@@ -17,48 +25,38 @@
   transform-origin: top left;
   top: 0%;
   left: 0%;
-  border-radius: 100px;
+  border-radius: 50%;
 }
-.freeBox {
+._10 {
   display: flex;
   position: absolute;
-  top: 18%;
-  left: 29.5%;
+  top: 19.5%;
+  left: 17.5%;
   transform: translate(0.02300000000000324px, 0px);
   justify-content: center;
   flex-direction: row;
 }
-.slotTargetSlot {
-  font-family: "Montserrat", sans-serif;
+.slotTargetTemperatureText {
   font-size: 64px;
   font-weight: 500;
-  color: rgba(54, 126, 181, 1);
+  color: rgba(33, 33, 33, 1);
   text-align: center;
-  line-height: 100%;
   letter-spacing: 0px;
 }
-.slotTargetSlot > *,
-.slotTargetSlot > .__wab_slot > *,
-.slotTargetSlot > .__wab_slot > .__wab_slot > *,
-.slotTargetSlot > .__wab_slot > .__wab_slot > .__wab_slot > *,
-.slotTargetSlot > picture > img,
-.slotTargetSlot > .__wab_slot > picture > img,
-.slotTargetSlot > .__wab_slot > .__wab_slot > picture > img,
-.slotTargetSlot > .__wab_slot > .__wab_slot > .__wab_slot > picture > img {
-  transition-property: all;
-  transition-duration: 1s;
-}
-.aktulanie21 {
-  display: block;
-  font-size: 18px;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0px;
-  line-height: 28px;
+.freeBox__huBpD {
+  display: flex;
   position: absolute;
   top: 59%;
-  left: 19.5%;
+  left: 21.5%;
+}
+.slotTargetHomeTemperatureText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(33, 33, 33, 1);
+  text-align: center;
+  line-height: 28px;
+  letter-spacing: 0px;
 }
 .humidity {
   width: 64px;
@@ -68,23 +66,25 @@
   top: 148px;
   left: 68px;
 }
-.text {
-  display: block;
-  font-size: 18px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0px;
-  line-height: 28px;
-  color: rgba(33, 33, 33, 1);
+.freeBox__zJqEs {
+  display: flex;
   position: absolute;
   top: 0%;
   left: 43.75%;
 }
-.svg__atk1 {
+.slotTargetHumidityText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(33, 33, 33, 1);
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+.svg__q44Fq {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
-  color: #96cdf7;
+  color: #222;
   width: 24px;
   height: 24px;
   display: block;

@@ -40,27 +40,45 @@ import sty from "./PlasmicFavouritesBtn.module.css"; // plasmic-import: eZM_gBMn
 import IconLightsIcon from "./icons/PlasmicIcon__IconLights"; // plasmic-import: iMhy_reGSmx/icon
 import GroupIcon from "./icons/PlasmicIcon__Group"; // plasmic-import: zT1yyLrytDX/icon
 
-export type PlasmicFavouritesBtn__VariantMembers = {};
+export type PlasmicFavouritesBtn__VariantMembers = {
+  active: "active";
+};
 
-export type PlasmicFavouritesBtn__VariantsArgs = {};
+export type PlasmicFavouritesBtn__VariantsArgs = {
+  active?: SingleBooleanChoiceArg<"active">;
+};
+
 type VariantPropType = keyof PlasmicFavouritesBtn__VariantsArgs;
-export const PlasmicFavouritesBtn__VariantProps = new Array<VariantPropType>();
+export const PlasmicFavouritesBtn__VariantProps = new Array<VariantPropType>(
+  "active"
+);
 
-export type PlasmicFavouritesBtn__ArgsType = {};
+export type PlasmicFavouritesBtn__ArgsType = {
+  text?: React.ReactNode;
+  icon?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicFavouritesBtn__ArgsType;
-export const PlasmicFavouritesBtn__ArgProps = new Array<ArgPropType>();
+export const PlasmicFavouritesBtn__ArgProps = new Array<ArgPropType>(
+  "text",
+  "icon"
+);
 
 export type PlasmicFavouritesBtn__OverridesType = {
   root?: p.Flex<"div">;
+  rectangle25?: p.Flex<"div">;
   rectangle27?: p.Flex<"div">;
-  dzien4?: p.Flex<"div">;
   dzien?: p.Flex<"div">;
   rectangle24?: p.Flex<"div">;
   text?: p.Flex<"div">;
   iconSun?: p.Flex<"div">;
+  svg?: p.Flex<"svg">;
 };
 
 export interface DefaultFavouritesBtnProps {
+  text?: React.ReactNode;
+  icon?: React.ReactNode;
+  active?: SingleBooleanChoiceArg<"active">;
   className?: string;
 }
 
@@ -99,28 +117,77 @@ function PlasmicFavouritesBtn__RenderFunc(props: {
       )}
       data-plasmic-trigger-props={[triggerRootActiveProps]}
     >
-      <div
-        data-plasmic-name={"rectangle27"}
-        data-plasmic-override={overrides.rectangle27}
-        className={classNames(projectcss.all, sty.rectangle27)}
-      />
+      {(hasVariant(variants, "active", "active") ? true : false) ? (
+        <div
+          data-plasmic-name={"rectangle25"}
+          data-plasmic-override={overrides.rectangle25}
+          className={classNames(projectcss.all, sty.rectangle25, {
+            [sty.rectangle25active]: hasVariant(variants, "active", "active")
+          })}
+        />
+      ) : null}
+      {(hasVariant(variants, "active", "active") ? true : true) ? (
+        <div
+          data-plasmic-name={"rectangle27"}
+          data-plasmic-override={overrides.rectangle27}
+          className={classNames(projectcss.all, sty.rectangle27, {
+            [sty.rectangle27active]: hasVariant(variants, "active", "active")
+          })}
+        />
+      ) : null}
 
       <div
-        data-plasmic-name={"dzien4"}
-        data-plasmic-override={overrides.dzien4}
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.dzien4
-        )}
+        className={classNames(projectcss.all, sty.freeBox__suxgQ, {
+          [sty.freeBoxactive__suxgQGiuno]: hasVariant(
+            variants,
+            "active",
+            "active"
+          )
+        })}
       >
-        {"Światła"}
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___7VIIx
+              )}
+            >
+              {"Światła"}
+            </div>
+          ),
+
+          value: args.text,
+          className: classNames(sty.slotTargetText, {
+            [sty.slotTargetTextactive]: hasVariant(variants, "active", "active")
+          })
+        })}
       </div>
 
-      <IconLightsIcon
-        className={classNames(projectcss.all, sty.svg__o55Se)}
-        role={"img"}
-      />
+      <div
+        className={classNames(projectcss.all, sty.freeBox__nKv7J, {
+          [sty.freeBoxactive__nKv7JGiuno]: hasVariant(
+            variants,
+            "active",
+            "active"
+          )
+        })}
+      >
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <IconLightsIcon
+              className={classNames(projectcss.all, sty.svg__tvdiQ)}
+              role={"img"}
+            />
+          ),
+
+          value: args.icon,
+          className: classNames(sty.slotTargetIcon, {
+            [sty.slotTargetIconactive]: hasVariant(variants, "active", "active")
+          })
+        })}
+      </div>
 
       {(triggers.active_root ? true : false) ? (
         <div
@@ -152,7 +219,9 @@ function PlasmicFavouritesBtn__RenderFunc(props: {
             className={classNames(projectcss.all, sty.iconSun)}
           >
             <GroupIcon
-              className={classNames(projectcss.all, sty.svg__a4UXa)}
+              data-plasmic-name={"svg"}
+              data-plasmic-override={overrides.svg}
+              className={classNames(projectcss.all, sty.svg)}
               role={"img"}
             />
           </div>
@@ -165,31 +234,34 @@ function PlasmicFavouritesBtn__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "rectangle25",
     "rectangle27",
-    "dzien4",
     "dzien",
     "rectangle24",
     "text",
-    "iconSun"
+    "iconSun",
+    "svg"
   ],
+  rectangle25: ["rectangle25"],
   rectangle27: ["rectangle27"],
-  dzien4: ["dzien4"],
-  dzien: ["dzien", "rectangle24", "text", "iconSun"],
+  dzien: ["dzien", "rectangle24", "text", "iconSun", "svg"],
   rectangle24: ["rectangle24"],
   text: ["text"],
-  iconSun: ["iconSun"]
+  iconSun: ["iconSun", "svg"],
+  svg: ["svg"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  rectangle25: "div";
   rectangle27: "div";
-  dzien4: "div";
   dzien: "div";
   rectangle24: "div";
   text: "div";
   iconSun: "div";
+  svg: "svg";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -249,12 +321,13 @@ export const PlasmicFavouritesBtn = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    rectangle25: makeNodeComponent("rectangle25"),
     rectangle27: makeNodeComponent("rectangle27"),
-    dzien4: makeNodeComponent("dzien4"),
     dzien: makeNodeComponent("dzien"),
     rectangle24: makeNodeComponent("rectangle24"),
     text: makeNodeComponent("text"),
     iconSun: makeNodeComponent("iconSun"),
+    svg: makeNodeComponent("svg"),
 
     // Metadata about props expected for PlasmicFavouritesBtn
     internalVariantProps: PlasmicFavouritesBtn__VariantProps,

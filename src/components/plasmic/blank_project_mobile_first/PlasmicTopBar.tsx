@@ -37,22 +37,26 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_blank_project_mobile_first.module.css"; // plasmic-import: wGQNdEnY25VfiXqc2ZGJrZ/projectcss
 import sty from "./PlasmicTopBar.module.css"; // plasmic-import: nsqmq6QdR8/css
 
-import IconWifiIcon from "./icons/PlasmicIcon__IconWifi"; // plasmic-import: yUaWBRXGAT/icon
-import Group39518Icon from "./icons/PlasmicIcon__Group39518"; // plasmic-import: QPyex1i8q_l/icon
-import IconSettings2Icon from "./icons/PlasmicIcon__IconSettings2"; // plasmic-import: yyLUYFhoyS4/icon
 import IconWifi2Icon from "./icons/PlasmicIcon__IconWifi2"; // plasmic-import: xX_5xOFSAF/icon
+import IconWifiIcon from "./icons/PlasmicIcon__IconWifi"; // plasmic-import: yUaWBRXGAT/icon
+import Ellipse263Icon from "../unicomm_frontend/icons/PlasmicIcon__Ellipse263"; // plasmic-import: l6zKJEbUS/icon
+import IconSettings3Icon from "../unicomm_frontend/icons/PlasmicIcon__IconSettings3"; // plasmic-import: Y72ZX9FUhc/icon
+import Group39518Icon from "./icons/PlasmicIcon__Group39518"; // plasmic-import: QPyex1i8q_l/icon
 
 export type PlasmicTopBar__VariantMembers = {
   colapsed: "colapsed";
+  offline: "offline";
 };
 
 export type PlasmicTopBar__VariantsArgs = {
   colapsed?: SingleBooleanChoiceArg<"colapsed">;
+  offline?: SingleBooleanChoiceArg<"offline">;
 };
 
 type VariantPropType = keyof PlasmicTopBar__VariantsArgs;
 export const PlasmicTopBar__VariantProps = new Array<VariantPropType>(
-  "colapsed"
+  "colapsed",
+  "offline"
 );
 
 export type PlasmicTopBar__ArgsType = {};
@@ -60,15 +64,21 @@ type ArgPropType = keyof PlasmicTopBar__ArgsType;
 export const PlasmicTopBar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTopBar__OverridesType = {
-  root?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
+  root2?: p.Flex<"div">;
+  barTop?: p.Flex<"div">;
+  topBarMainPanel?: p.Flex<"div">;
+  buttonCircleSettings?: p.Flex<"div">;
+  frame3869?: p.Flex<"div">;
+  group39513?: p.Flex<"div">;
+  topBarMainPanel2?: p.Flex<"div">;
+  buttonCircleSettings2?: p.Flex<"div">;
   frame3868?: p.Flex<"div">;
   group39512?: p.Flex<"div">;
-  barTop?: p.Flex<"div">;
 };
 
 export interface DefaultTopBarProps {
   colapsed?: SingleBooleanChoiceArg<"colapsed">;
+  offline?: SingleBooleanChoiceArg<"offline">;
   className?: string;
 }
 
@@ -88,8 +98,8 @@ function PlasmicTopBar__RenderFunc(props: {
 
   return (
     <div
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
+      data-plasmic-name={"root2"}
+      data-plasmic-override={overrides.root2}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
@@ -97,79 +107,14 @@ function PlasmicTopBar__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
-        sty.root,
-        { [sty.rootcolapsed]: hasVariant(variants, "colapsed", "colapsed") }
+        sty.root2,
+        {
+          [sty.root2colapsed]: hasVariant(variants, "colapsed", "colapsed"),
+          [sty.root2offline]: hasVariant(variants, "offline", "offline")
+        }
       )}
     >
       {(hasVariant(variants, "colapsed", "colapsed") ? true : true) ? (
-        <div
-          data-plasmic-name={"freeBox"}
-          data-plasmic-override={overrides.freeBox}
-          className={classNames(projectcss.all, sty.freeBox, {
-            [sty.freeBoxcolapsed]: hasVariant(variants, "colapsed", "colapsed")
-          })}
-        >
-          {(hasVariant(variants, "colapsed", "colapsed") ? true : true) ? (
-            <IconWifiIcon
-              className={classNames(projectcss.all, sty.svg__gp6MC, {
-                [sty.svgcolapsed__gp6MCfwsv]: hasVariant(
-                  variants,
-                  "colapsed",
-                  "colapsed"
-                )
-              })}
-              role={"img"}
-            />
-          ) : null}
-          {(hasVariant(variants, "colapsed", "colapsed") ? true : true) ? (
-            <div
-              data-plasmic-name={"frame3868"}
-              data-plasmic-override={overrides.frame3868}
-              className={classNames(projectcss.all, sty.frame3868, {
-                [sty.frame3868colapsed]: hasVariant(
-                  variants,
-                  "colapsed",
-                  "colapsed"
-                )
-              })}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__al0UB
-                )}
-              >
-                {"Logo dewelopera"}
-              </div>
-
-              <div
-                data-plasmic-name={"group39512"}
-                data-plasmic-override={overrides.group39512}
-                className={classNames(projectcss.all, sty.group39512)}
-              >
-                <Group39518Icon
-                  className={classNames(projectcss.all, sty.svg__eJFhb)}
-                  role={"img"}
-                />
-              </div>
-            </div>
-          ) : null}
-          {(hasVariant(variants, "colapsed", "colapsed") ? true : true) ? (
-            <IconSettings2Icon
-              className={classNames(projectcss.all, sty.svg__vzsyi, {
-                [sty.svgcolapsed__vzsyiFwsv]: hasVariant(
-                  variants,
-                  "colapsed",
-                  "colapsed"
-                )
-              })}
-              role={"img"}
-            />
-          ) : null}
-        </div>
-      ) : null}
-      {(hasVariant(variants, "colapsed", "colapsed") ? true : false) ? (
         <div
           data-plasmic-name={"barTop"}
           data-plasmic-override={overrides.barTop}
@@ -205,26 +150,200 @@ function PlasmicTopBar__RenderFunc(props: {
           </div>
         </div>
       ) : null}
+      {false ? (
+        <div
+          data-plasmic-name={"topBarMainPanel"}
+          data-plasmic-override={overrides.topBarMainPanel}
+          className={classNames(projectcss.all, sty.topBarMainPanel)}
+        >
+          {true ? (
+            <IconWifiIcon
+              className={classNames(projectcss.all, sty.svg__d6U99)}
+              role={"img"}
+            />
+          ) : null}
+
+          <div
+            data-plasmic-name={"buttonCircleSettings"}
+            data-plasmic-override={overrides.buttonCircleSettings}
+            className={classNames(projectcss.all, sty.buttonCircleSettings)}
+          >
+            {true ? (
+              <Ellipse263Icon
+                className={classNames(projectcss.all, sty.svg___9Kmz)}
+                role={"img"}
+              />
+            ) : null}
+            {true ? (
+              <IconSettings3Icon
+                className={classNames(projectcss.all, sty.svg__k2CSy)}
+                role={"img"}
+              />
+            ) : null}
+          </div>
+
+          <div
+            data-plasmic-name={"frame3869"}
+            data-plasmic-override={overrides.frame3869}
+            className={classNames(projectcss.all, sty.frame3869)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ms6S
+              )}
+            >
+              {"Logo dewelopera"}
+            </div>
+
+            <div
+              data-plasmic-name={"group39513"}
+              data-plasmic-override={overrides.group39513}
+              className={classNames(projectcss.all, sty.group39513)}
+            >
+              {true ? (
+                <Group39518Icon
+                  className={classNames(projectcss.all, sty.svg___1C8Hr)}
+                  role={"img"}
+                />
+              ) : null}
+            </div>
+          </div>
+        </div>
+      ) : null}
+      {(hasVariant(variants, "colapsed", "colapsed") ? true : true) ? (
+        <div
+          data-plasmic-name={"topBarMainPanel2"}
+          data-plasmic-override={overrides.topBarMainPanel2}
+          className={classNames(projectcss.all, sty.topBarMainPanel2, {
+            [sty.topBarMainPanel2colapsed]: hasVariant(
+              variants,
+              "colapsed",
+              "colapsed"
+            ),
+            [sty.topBarMainPanel2offline]: hasVariant(
+              variants,
+              "offline",
+              "offline"
+            )
+          })}
+        >
+          {(hasVariant(variants, "offline", "offline") ? true : true) ? (
+            <IconWifiIcon
+              className={classNames(projectcss.all, sty.svg__eq4JT, {
+                [sty.svgoffline__eq4JTZwiJf]: hasVariant(
+                  variants,
+                  "offline",
+                  "offline"
+                )
+              })}
+              role={"img"}
+            />
+          ) : null}
+
+          <div
+            data-plasmic-name={"buttonCircleSettings2"}
+            data-plasmic-override={overrides.buttonCircleSettings2}
+            className={classNames(projectcss.all, sty.buttonCircleSettings2)}
+          >
+            <Ellipse263Icon
+              className={classNames(projectcss.all, sty.svg__u2Sww)}
+              role={"img"}
+            />
+
+            <IconSettings3Icon
+              className={classNames(projectcss.all, sty.svg__isewu)}
+              role={"img"}
+            />
+          </div>
+
+          <div
+            data-plasmic-name={"frame3868"}
+            data-plasmic-override={overrides.frame3868}
+            className={classNames(projectcss.all, sty.frame3868)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__hoNoS,
+                {
+                  [sty.textoffline__hoNoSZwiJf]: hasVariant(
+                    variants,
+                    "offline",
+                    "offline"
+                  )
+                }
+              )}
+            >
+              {"Logo dewelopera"}
+            </div>
+
+            <div
+              data-plasmic-name={"group39512"}
+              data-plasmic-override={overrides.group39512}
+              className={classNames(projectcss.all, sty.group39512)}
+            >
+              <Group39518Icon
+                className={classNames(projectcss.all, sty.svg__gUxdZ)}
+                role={"img"}
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "frame3868", "group39512", "barTop"],
-  freeBox: ["freeBox", "frame3868", "group39512"],
+  root2: [
+    "root2",
+    "barTop",
+    "topBarMainPanel",
+    "buttonCircleSettings",
+    "frame3869",
+    "group39513",
+    "topBarMainPanel2",
+    "buttonCircleSettings2",
+    "frame3868",
+    "group39512"
+  ],
+  barTop: ["barTop"],
+  topBarMainPanel: [
+    "topBarMainPanel",
+    "buttonCircleSettings",
+    "frame3869",
+    "group39513"
+  ],
+  buttonCircleSettings: ["buttonCircleSettings"],
+  frame3869: ["frame3869", "group39513"],
+  group39513: ["group39513"],
+  topBarMainPanel2: [
+    "topBarMainPanel2",
+    "buttonCircleSettings2",
+    "frame3868",
+    "group39512"
+  ],
+  buttonCircleSettings2: ["buttonCircleSettings2"],
   frame3868: ["frame3868", "group39512"],
-  group39512: ["group39512"],
-  barTop: ["barTop"]
+  group39512: ["group39512"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
-  root: "div";
-  freeBox: "div";
+  root2: "div";
+  barTop: "div";
+  topBarMainPanel: "div";
+  buttonCircleSettings: "div";
+  frame3869: "div";
+  group39513: "div";
+  topBarMainPanel2: "div";
+  buttonCircleSettings2: "div";
   frame3868: "div";
   group39512: "div";
-  barTop: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -271,7 +390,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "root2") {
     func.displayName = "PlasmicTopBar";
   } else {
     func.displayName = `PlasmicTopBar.${nodeName}`;
@@ -281,13 +400,18 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicTopBar = Object.assign(
   // Top-level PlasmicTopBar renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("root2"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
+    barTop: makeNodeComponent("barTop"),
+    topBarMainPanel: makeNodeComponent("topBarMainPanel"),
+    buttonCircleSettings: makeNodeComponent("buttonCircleSettings"),
+    frame3869: makeNodeComponent("frame3869"),
+    group39513: makeNodeComponent("group39513"),
+    topBarMainPanel2: makeNodeComponent("topBarMainPanel2"),
+    buttonCircleSettings2: makeNodeComponent("buttonCircleSettings2"),
     frame3868: makeNodeComponent("frame3868"),
     group39512: makeNodeComponent("group39512"),
-    barTop: makeNodeComponent("barTop"),
 
     // Metadata about props expected for PlasmicTopBar
     internalVariantProps: PlasmicTopBar__VariantProps,

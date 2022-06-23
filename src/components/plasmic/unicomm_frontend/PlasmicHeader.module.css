@@ -1,0 +1,35 @@
+.root {
+  width: 448px;
+  height: 75px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.powiadomienia {
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 38px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 6.66%;
+  left: 31.91%;
+}
+.svg {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #fff;
+  transform: scale(1.000000499999875, 0.999999500000375)
+    rotate(-179.94270423958343deg) skew(0.05729570311883569deg, 0deg);
+  width: 36px;
+  height: 36px;
+  display: block;
+  transform-origin: top left;
+  top: 56%;
+  left: 8.03%;
+  overflow: hidden;
+}
