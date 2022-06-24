@@ -7,6 +7,8 @@
   transform: translateX(0px) translateY(0px) translateZ(0px);
   max-width: 480px;
   min-width: 480px;
+  min-height: 100px;
+  max-height: 100px;
 }
 .root2colapsed {
   height: auto;
@@ -188,8 +190,9 @@
   position: absolute;
   top: 0px;
   left: 384px;
+  border: 1px solid #d3d3d300;
 }
-.svg__u2Sww {
+.button {
   position: absolute;
   object-fit: cover;
   max-width: 100%;

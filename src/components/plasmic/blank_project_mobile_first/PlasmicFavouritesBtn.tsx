@@ -38,7 +38,6 @@ import projectcss from "./plasmic_blank_project_mobile_first.module.css"; // pla
 import sty from "./PlasmicFavouritesBtn.module.css"; // plasmic-import: eZM_gBMn2w/css
 
 import IconLightsIcon from "./icons/PlasmicIcon__IconLights"; // plasmic-import: iMhy_reGSmx/icon
-import GroupIcon from "./icons/PlasmicIcon__Group"; // plasmic-import: zT1yyLrytDX/icon
 
 export type PlasmicFavouritesBtn__VariantMembers = {
   active: "active";
@@ -68,11 +67,6 @@ export type PlasmicFavouritesBtn__OverridesType = {
   root?: p.Flex<"div">;
   rectangle25?: p.Flex<"div">;
   rectangle27?: p.Flex<"div">;
-  dzien?: p.Flex<"div">;
-  rectangle24?: p.Flex<"div">;
-  text?: p.Flex<"div">;
-  iconSun?: p.Flex<"div">;
-  svg?: p.Flex<"svg">;
 };
 
 export interface DefaultFavouritesBtnProps {
@@ -97,11 +91,6 @@ function PlasmicFavouritesBtn__RenderFunc(props: {
   const $props = args;
   const $ctx = ph.useDataEnv?.() || {};
 
-  const [isRootActive, triggerRootActiveProps] = useTrigger("usePressed", {});
-  const triggers = {
-    active_root: isRootActive
-  };
-
   return (
     <div
       data-plasmic-name={"root"}
@@ -115,7 +104,6 @@ function PlasmicFavouritesBtn__RenderFunc(props: {
         projectcss.plasmic_mixins,
         sty.root
       )}
-      data-plasmic-trigger-props={[triggerRootActiveProps]}
     >
       {(hasVariant(variants, "active", "active") ? true : false) ? (
         <div
@@ -188,67 +176,14 @@ function PlasmicFavouritesBtn__RenderFunc(props: {
           })
         })}
       </div>
-
-      {(triggers.active_root ? true : false) ? (
-        <div
-          data-plasmic-name={"dzien"}
-          data-plasmic-override={overrides.dzien}
-          className={classNames(projectcss.all, sty.dzien)}
-        >
-          <div
-            data-plasmic-name={"rectangle24"}
-            data-plasmic-override={overrides.rectangle24}
-            className={classNames(projectcss.all, sty.rectangle24)}
-          />
-
-          <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text
-            )}
-          >
-            {"Dzień"}
-          </div>
-
-          <div
-            data-plasmic-name={"iconSun"}
-            data-plasmic-override={overrides.iconSun}
-            className={classNames(projectcss.all, sty.iconSun)}
-          >
-            <GroupIcon
-              data-plasmic-name={"svg"}
-              data-plasmic-override={overrides.svg}
-              className={classNames(projectcss.all, sty.svg)}
-              role={"img"}
-            />
-          </div>
-        </div>
-      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "rectangle25",
-    "rectangle27",
-    "dzien",
-    "rectangle24",
-    "text",
-    "iconSun",
-    "svg"
-  ],
+  root: ["root", "rectangle25", "rectangle27"],
   rectangle25: ["rectangle25"],
-  rectangle27: ["rectangle27"],
-  dzien: ["dzien", "rectangle24", "text", "iconSun", "svg"],
-  rectangle24: ["rectangle24"],
-  text: ["text"],
-  iconSun: ["iconSun", "svg"],
-  svg: ["svg"]
+  rectangle27: ["rectangle27"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -257,11 +192,6 @@ type NodeDefaultElementType = {
   root: "div";
   rectangle25: "div";
   rectangle27: "div";
-  dzien: "div";
-  rectangle24: "div";
-  text: "div";
-  iconSun: "div";
-  svg: "svg";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -323,11 +253,6 @@ export const PlasmicFavouritesBtn = Object.assign(
     // Helper components rendering sub-elements
     rectangle25: makeNodeComponent("rectangle25"),
     rectangle27: makeNodeComponent("rectangle27"),
-    dzien: makeNodeComponent("dzien"),
-    rectangle24: makeNodeComponent("rectangle24"),
-    text: makeNodeComponent("text"),
-    iconSun: makeNodeComponent("iconSun"),
-    svg: makeNodeComponent("svg"),
 
     // Metadata about props expected for PlasmicFavouritesBtn
     internalVariantProps: PlasmicFavouritesBtn__VariantProps,

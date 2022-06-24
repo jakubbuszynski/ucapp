@@ -107,18 +107,6 @@
   position: relative;
   flex-shrink: 0;
 }
-.svg__ipXdE {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  color: #222;
-  width: 32px;
-  height: 32px;
-  display: block;
-  top: auto;
-  left: auto;
-  overflow: hidden;
-}
 .recordingBtnWidget:global(.__wab_instance) {
   position: relative;
   align-self: center;
@@ -142,18 +130,6 @@
   left: auto;
   flex-shrink: 0;
 }
-.svg___6Agkj {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  color: #222;
-  width: 32px;
-  height: 32px;
-  display: block;
-  top: auto;
-  left: auto;
-  overflow: hidden;
-}
 .tryby2 {
   display: grid;
   position: relative;
@@ -174,7 +150,7 @@
   top: auto;
   left: auto;
 }
-.svg__gQ5Tc {
+.svg__xtdBi {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -451,6 +427,6 @@
 }
 .dateTimeWidget:global(.__wab_instance) {
   position: absolute;
-  top: 175px;
-  left: 20px;
+  top: 125px;
+  left: 1px;
 }

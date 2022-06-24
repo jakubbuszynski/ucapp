@@ -410,6 +410,33 @@
           "cssFilePath": "plasmic/unicomm_frontend/PlasmicDateTimeWidget.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "mXVkPhZNDb",
+          "name": "Settings",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicSettings.tsx",
+          "importSpec": {
+            "modulePath": "Settings.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicSettings.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "s_QabdfozE0",
+          "name": "Button2",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicButton2.tsx",
+          "importSpec": {
+            "modulePath": "Button2.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicButton2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
       "icons": [
@@ -622,6 +649,11 @@
           "id": "Y72ZX9FUhc",
           "name": "IconSettings3Icon",
           "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__IconSettings3.tsx"
+        },
+        {
+          "id": "gT8hvACrhq",
+          "name": "IconCheckMail2Icon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__IconCheckMail2.tsx"
         }
       ],
       "images": [

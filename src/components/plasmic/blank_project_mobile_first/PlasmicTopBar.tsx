@@ -71,7 +71,8 @@ export type PlasmicTopBar__OverridesType = {
   frame3869?: p.Flex<"div">;
   group39513?: p.Flex<"div">;
   topBarMainPanel2?: p.Flex<"div">;
-  buttonCircleSettings2?: p.Flex<"div">;
+  buttonCircleSettings2?: p.Flex<"a">;
+  button?: p.Flex<"svg">;
   frame3868?: p.Flex<"div">;
   group39512?: p.Flex<"div">;
 };
@@ -242,13 +243,22 @@ function PlasmicTopBar__RenderFunc(props: {
             />
           ) : null}
 
-          <div
+          <a
             data-plasmic-name={"buttonCircleSettings2"}
             data-plasmic-override={overrides.buttonCircleSettings2}
-            className={classNames(projectcss.all, sty.buttonCircleSettings2)}
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              sty.buttonCircleSettings2
+            )}
+            href={"/settings" as const}
           >
             <Ellipse263Icon
-              className={classNames(projectcss.all, sty.svg__u2Sww)}
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames(projectcss.all, sty.button)}
+              onClick={"click" as const}
+              path={"/settings" as const}
               role={"img"}
             />
 
@@ -256,7 +266,7 @@ function PlasmicTopBar__RenderFunc(props: {
               className={classNames(projectcss.all, sty.svg__isewu)}
               role={"img"}
             />
-          </div>
+          </a>
 
           <div
             data-plasmic-name={"frame3868"}
@@ -307,6 +317,7 @@ const PlasmicDescendants = {
     "group39513",
     "topBarMainPanel2",
     "buttonCircleSettings2",
+    "button",
     "frame3868",
     "group39512"
   ],
@@ -323,10 +334,12 @@ const PlasmicDescendants = {
   topBarMainPanel2: [
     "topBarMainPanel2",
     "buttonCircleSettings2",
+    "button",
     "frame3868",
     "group39512"
   ],
-  buttonCircleSettings2: ["buttonCircleSettings2"],
+  buttonCircleSettings2: ["buttonCircleSettings2", "button"],
+  button: ["button"],
   frame3868: ["frame3868", "group39512"],
   group39512: ["group39512"]
 } as const;
@@ -341,7 +354,8 @@ type NodeDefaultElementType = {
   frame3869: "div";
   group39513: "div";
   topBarMainPanel2: "div";
-  buttonCircleSettings2: "div";
+  buttonCircleSettings2: "a";
+  button: "svg";
   frame3868: "div";
   group39512: "div";
 };
@@ -410,6 +424,7 @@ export const PlasmicTopBar = Object.assign(
     group39513: makeNodeComponent("group39513"),
     topBarMainPanel2: makeNodeComponent("topBarMainPanel2"),
     buttonCircleSettings2: makeNodeComponent("buttonCircleSettings2"),
+    button: makeNodeComponent("button"),
     frame3868: makeNodeComponent("frame3868"),
     group39512: makeNodeComponent("group39512"),
 

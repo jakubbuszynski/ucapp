@@ -47,7 +47,6 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: 4V9pJe2SUwNn/
 
 import Group6Icon from "./icons/PlasmicIcon__Group6"; // plasmic-import: RrnStGHaMH_/icon
 import IconSadIcon from "./icons/PlasmicIcon__IconSad"; // plasmic-import: LSRU8DOeASe/icon
-import IconComunityIcon from "./icons/PlasmicIcon__IconComunity"; // plasmic-import: bRMD7TZ0qg/icon
 import IconLightsIcon from "./icons/PlasmicIcon__IconLights"; // plasmic-import: iMhy_reGSmx/icon
 import IconHeartIcon from "./icons/PlasmicIcon__IconHeart"; // plasmic-import: Jz_s8Wvzgq/icon
 import GroupIcon from "./icons/PlasmicIcon__Group"; // plasmic-import: zT1yyLrytDX/icon

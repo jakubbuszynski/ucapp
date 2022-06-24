@@ -37,66 +37,43 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_blank_project_mobile_first.module.css"; // plasmic-import: wGQNdEnY25VfiXqc2ZGJrZ/projectcss
 import sty from "./PlasmicNote.module.css"; // plasmic-import: aWZ5Rm1too/css
 
-import IconVideoIcon from "./icons/PlasmicIcon__IconVideo"; // plasmic-import: Lc1kRyUVa2/icon
 import IconMissedCallIcon from "./icons/PlasmicIcon__IconMissedCall"; // plasmic-import: nlVS5Yl-X/icon
+import IconCheckMail2Icon from "../unicomm_frontend/icons/PlasmicIcon__IconCheckMail2"; // plasmic-import: gT8hvACrhq/icon
 import IconFamilyHouseIcon from "./icons/PlasmicIcon__IconFamilyHouse"; // plasmic-import: fa-x8YpM-j/icon
-import IconSoundIcon from "./icons/PlasmicIcon__IconSound"; // plasmic-import: W7LggHx4Zm/icon
 import IconComunityIcon from "./icons/PlasmicIcon__IconComunity"; // plasmic-import: bRMD7TZ0qg/icon
-import IconCheckMailIcon from "./icons/PlasmicIcon__IconCheckMail"; // plasmic-import: hI4_MAgG3a/icon
 
 export type PlasmicNote__VariantMembers = {
-  types: "video" | "audio" | "empty";
+  types: "community" | "audio" | "empty";
 };
 
 export type PlasmicNote__VariantsArgs = {
-  types?: SingleChoiceArg<"video" | "audio" | "empty">;
+  types?: SingleChoiceArg<"community" | "audio" | "empty">;
 };
 
 type VariantPropType = keyof PlasmicNote__VariantsArgs;
 export const PlasmicNote__VariantProps = new Array<VariantPropType>("types");
 
-export type PlasmicNote__ArgsType = {
-  icon?: React.ReactNode;
-  title?: React.ReactNode;
-  datetime?: React.ReactNode;
-  body?: React.ReactNode;
-};
-
+export type PlasmicNote__ArgsType = {};
 type ArgPropType = keyof PlasmicNote__ArgsType;
-export const PlasmicNote__ArgProps = new Array<ArgPropType>(
-  "icon",
-  "title",
-  "datetime",
-  "body"
-);
+export const PlasmicNote__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNote__OverridesType = {
   root?: p.Flex<"div">;
-  rectangle65?: p.Flex<"div">;
-  notificationsMainPanel?: p.Flex<"div">;
-  rectangle66?: p.Flex<"div">;
-  buttonsSmallNotifications?: p.Flex<"div">;
-  frame3870?: p.Flex<"div">;
-  rectangle62?: p.Flex<"div">;
-  odtworz?: p.Flex<"div">;
   notificationsMainPanel2?: p.Flex<"div">;
-  rectangle67?: p.Flex<"div">;
-  buttonsSmallNotifications2?: p.Flex<"div">;
-  frame3869?: p.Flex<"div">;
-  rectangle63?: p.Flex<"div">;
+  frame3958?: p.Flex<"div">;
+  frame3957?: p.Flex<"div">;
   notificationsMainPanel3?: p.Flex<"div">;
-  rectangle68?: p.Flex<"div">;
-  buttonsSmallNotifications3?: p.Flex<"div">;
-  frame3871?: p.Flex<"div">;
-  rectangle64?: p.Flex<"div">;
+  frame3959?: p.Flex<"div">;
+  frame3960?: p.Flex<"div">;
+  notificationsMainPanel4?: p.Flex<"div">;
+  frame3953?: p.Flex<"div">;
+  frame3951?: p.Flex<"div">;
+  notificationsMainPanel?: p.Flex<"div">;
+  frame3950?: p.Flex<"div">;
 };
 
 export interface DefaultNoteProps {
-  icon?: React.ReactNode;
-  title?: React.ReactNode;
-  datetime?: React.ReactNode;
-  body?: React.ReactNode;
-  types?: SingleChoiceArg<"video" | "audio" | "empty">;
+  types?: SingleChoiceArg<"community" | "audio" | "empty">;
   className?: string;
 }
 
@@ -125,296 +102,82 @@ function PlasmicNote__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
-        sty.root
+        sty.root,
+        {
+          [sty.roottypes_audio]: hasVariant(variants, "types", "audio"),
+          [sty.roottypes_community]: hasVariant(variants, "types", "community"),
+          [sty.roottypes_empty]: hasVariant(variants, "types", "empty")
+        }
       )}
     >
-      <div
-        data-plasmic-name={"rectangle65"}
-        data-plasmic-override={overrides.rectangle65}
-        className={classNames(projectcss.all, sty.rectangle65, {
-          [sty.rectangle65types_audio]: hasVariant(variants, "types", "audio"),
-          [sty.rectangle65types_video]: hasVariant(variants, "types", "video")
-        })}
-      >
-        {(hasVariant(variants, "types", "video") ? true : false) ? (
-          <div
-            data-plasmic-name={"notificationsMainPanel"}
-            data-plasmic-override={overrides.notificationsMainPanel}
-            className={classNames(projectcss.all, sty.notificationsMainPanel, {
-              [sty.notificationsMainPaneltypes_video]: hasVariant(
-                variants,
-                "types",
-                "video"
-              )
-            })}
+      {(hasVariant(variants, "types", "audio") ? true : false) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"notificationsMainPanel2"}
+          data-plasmic-override={overrides.notificationsMainPanel2}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.notificationsMainPanel2, {
+            [sty.notificationsMainPanel2types_audio]: hasVariant(
+              variants,
+              "types",
+              "audio"
+            )
+          })}
+        >
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"frame3958"}
+            data-plasmic-override={overrides.frame3958}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.frame3958)}
           >
             <div
-              data-plasmic-name={"rectangle66"}
-              data-plasmic-override={overrides.rectangle66}
-              className={classNames(projectcss.all, sty.rectangle66)}
-            />
-
-            <div
-              data-plasmic-name={"buttonsSmallNotifications"}
-              data-plasmic-override={overrides.buttonsSmallNotifications}
-              className={classNames(
-                projectcss.all,
-                sty.buttonsSmallNotifications
-              )}
+              data-plasmic-name={"frame3957"}
+              data-plasmic-override={overrides.frame3957}
+              className={classNames(projectcss.all, sty.frame3957)}
             >
-              <div
-                data-plasmic-name={"frame3870"}
-                data-plasmic-override={overrides.frame3870}
-                className={classNames(projectcss.all, sty.frame3870)}
-              >
-                <div
-                  data-plasmic-name={"rectangle62"}
-                  data-plasmic-override={overrides.rectangle62}
-                  className={classNames(projectcss.all, sty.rectangle62)}
+              {(hasVariant(variants, "types", "audio") ? true : true) ? (
+                <IconMissedCallIcon
+                  className={classNames(projectcss.all, sty.svg___7WL1X, {
+                    [sty.svgtypes_audio___7WL1XpXcbj]: hasVariant(
+                      variants,
+                      "types",
+                      "audio"
+                    )
+                  })}
+                  role={"img"}
                 />
+              ) : null}
 
-                <div
-                  data-plasmic-name={"odtworz"}
-                  data-plasmic-override={overrides.odtworz}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.odtworz
-                  )}
-                >
-                  {"Odtwórz "}
-                </div>
-
-                {(hasVariant(variants, "types", "video") ? true : true) ? (
-                  <IconVideoIcon
-                    className={classNames(projectcss.all, sty.svg___2F3L, {
-                      [sty.svgtypes_video___2F3L7Q8L9]: hasVariant(
-                        variants,
-                        "types",
-                        "video"
-                      )
-                    })}
-                    role={"img"}
-                  />
-                ) : null}
-              </div>
-            </div>
-
-            {(hasVariant(variants, "types", "video") ? true : true) ? (
-              <IconMissedCallIcon
-                className={classNames(projectcss.all, sty.svg__io6K5, {
-                  [sty.svgtypes_video__io6K57Q8L9]: hasVariant(
-                    variants,
-                    "types",
-                    "video"
-                  )
-                })}
-                role={"img"}
-              />
-            ) : null}
-            {(hasVariant(variants, "types", "video") ? true : true) ? (
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__wEmN1,
-                  {
-                    [sty.texttypes_video__wEmN17Q8L9]: hasVariant(
-                      variants,
-                      "types",
-                      "video"
-                    )
-                  }
+                  sty.text___0Dyv8
+                )}
+              >
+                {"Nieodebrane #1"}
+              </div>
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___0JEHa
                 )}
               >
                 {"7 kwietnia | 10:00"}
               </div>
-            ) : null}
-          </div>
-        ) : null}
-        {(hasVariant(variants, "types", "audio") ? true : false) ? (
-          <div
-            data-plasmic-name={"notificationsMainPanel2"}
-            data-plasmic-override={overrides.notificationsMainPanel2}
-            className={classNames(projectcss.all, sty.notificationsMainPanel2, {
-              [sty.notificationsMainPanel2types_audio]: hasVariant(
-                variants,
-                "types",
-                "audio"
-              )
-            })}
-          >
-            <div
-              data-plasmic-name={"rectangle67"}
-              data-plasmic-override={overrides.rectangle67}
-              className={classNames(projectcss.all, sty.rectangle67)}
-            />
-
-            {(hasVariant(variants, "types", "audio") ? true : true) ? (
-              <IconFamilyHouseIcon
-                className={classNames(projectcss.all, sty.svg__pJiC9, {
-                  [sty.svgtypes_audio__pJiC9PXcbj]: hasVariant(
-                    variants,
-                    "types",
-                    "audio"
-                  )
-                })}
-                role={"img"}
-              />
-            ) : null}
-
-            <div
-              data-plasmic-name={"buttonsSmallNotifications2"}
-              data-plasmic-override={overrides.buttonsSmallNotifications2}
-              className={classNames(
-                projectcss.all,
-                sty.buttonsSmallNotifications2
-              )}
-            >
-              <div
-                data-plasmic-name={"frame3869"}
-                data-plasmic-override={overrides.frame3869}
-                className={classNames(projectcss.all, sty.frame3869)}
-              >
-                <div
-                  data-plasmic-name={"rectangle63"}
-                  data-plasmic-override={overrides.rectangle63}
-                  className={classNames(projectcss.all, sty.rectangle63)}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__noYqJ
-                  )}
-                >
-                  {"Odsłuchaj"}
-                </div>
-
-                {(hasVariant(variants, "types", "audio") ? true : true) ? (
-                  <IconSoundIcon
-                    className={classNames(projectcss.all, sty.svg___1NhsF, {
-                      [sty.svgtypes_audio___1NhsFpXcbj]: hasVariant(
-                        variants,
-                        "types",
-                        "audio"
-                      )
-                    })}
-                    role={"img"}
-                  />
-                ) : null}
-              </div>
             </div>
-          </div>
-        ) : null}
-      </div>
-
-      {(
-        hasVariant(variants, "types", "audio")
-          ? true
-          : hasVariant(variants, "types", "video")
-          ? true
-          : true
-      ) ? (
-        <div
-          className={classNames(projectcss.all, sty.freeBox__h4Yr2, {
-            [sty.freeBoxtypes_audio__h4Yr2PXcbj]: hasVariant(
-              variants,
-              "types",
-              "audio"
-            ),
-            [sty.freeBoxtypes_video__h4Yr27Q8L9]: hasVariant(
-              variants,
-              "types",
-              "video"
-            )
-          })}
-        >
-          {p.renderPlasmicSlot({
-            defaultContents:
-              "Witamy w UNICOMM, Twoim inteligentnym mieszkaniu. Domo...",
-            value: args.body,
-            className: classNames(sty.slotTargetBody)
-          })}
-        </div>
-      ) : null}
-      {(hasVariant(variants, "types", "video") ? true : true) ? (
-        <div
-          className={classNames(projectcss.all, sty.freeBox__jn2Fv, {
-            [sty.freeBoxtypes_video__jn2Fv7Q8L9]: hasVariant(
-              variants,
-              "types",
-              "video"
-            )
-          })}
-        >
-          {(hasVariant(variants, "types", "audio") ? false : true)
-            ? p.renderPlasmicSlot({
-                defaultContents: (
-                  <IconComunityIcon
-                    className={classNames(projectcss.all, sty.svg__qpaeI)}
-                    role={"img"}
-                  />
-                ),
-
-                value: args.icon
-              })
-            : null}
-        </div>
-      ) : null}
-      {(hasVariant(variants, "types", "video") ? true : true) ? (
-        <div
-          className={classNames(projectcss.all, sty.freeBox__nChz8, {
-            [sty.freeBoxtypes_video__nChz87Q8L9]: hasVariant(
-              variants,
-              "types",
-              "video"
-            )
-          })}
-        >
-          {p.renderPlasmicSlot({
-            defaultContents: "Domofon XXI wieku",
-            value: args.title,
-            className: classNames(sty.slotTargetTitle, {
-              [sty.slotTargetTitletypes_audio]: hasVariant(
-                variants,
-                "types",
-                "audio"
-              )
-            })
-          })}
-        </div>
-      ) : null}
-      {(hasVariant(variants, "types", "video") ? true : true) ? (
-        <div
-          className={classNames(projectcss.all, sty.freeBox___8E8, {
-            [sty.freeBoxtypes_video___8E87Q8L9]: hasVariant(
-              variants,
-              "types",
-              "video"
-            )
-          })}
-        >
-          {(hasVariant(variants, "types", "video") ? true : true)
-            ? p.renderPlasmicSlot({
-                defaultContents: "7 kwietnia | 10:00",
-                value: args.datetime,
-                className: classNames(sty.slotTargetDatetime, {
-                  [sty.slotTargetDatetimetypes_video]: hasVariant(
-                    variants,
-                    "types",
-                    "video"
-                  )
-                })
-              })
-            : null}
-        </div>
+          </p.Stack>
+        </p.Stack>
       ) : null}
       {(hasVariant(variants, "types", "empty") ? true : false) ? (
-        <div
+        <p.Stack
+          as={"div"}
           data-plasmic-name={"notificationsMainPanel3"}
           data-plasmic-override={overrides.notificationsMainPanel3}
+          hasGap={true}
           className={classNames(projectcss.all, sty.notificationsMainPanel3, {
             [sty.notificationsMainPanel3types_empty]: hasVariant(
               variants,
@@ -423,66 +186,168 @@ function PlasmicNote__RenderFunc(props: {
             )
           })}
         >
-          <div
-            data-plasmic-name={"rectangle68"}
-            data-plasmic-override={overrides.rectangle68}
-            className={classNames(projectcss.all, sty.rectangle68)}
-          />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__mbEcv
-            )}
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"frame3959"}
+            data-plasmic-override={overrides.frame3959}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.frame3959)}
           >
-            {"0 nieodczytanych"}
-          </div>
+            <div
+              data-plasmic-name={"frame3960"}
+              data-plasmic-override={overrides.frame3960}
+              className={classNames(projectcss.all, sty.frame3960)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___2YwFd
+                )}
+              >
+                {"Panel powiadomień"}
+              </div>
 
-          {(hasVariant(variants, "types", "empty") ? true : true) ? (
-            <IconCheckMailIcon
-              className={classNames(projectcss.all, sty.svg__g9Uzu, {
-                [sty.svgtypes_empty__g9Uzugo9Q4]: hasVariant(
+              {(hasVariant(variants, "types", "empty") ? true : true) ? (
+                <IconCheckMail2Icon
+                  className={classNames(projectcss.all, sty.svg__tswx8, {
+                    [sty.svgtypes_empty__tswx8Go9Q4]: hasVariant(
+                      variants,
+                      "types",
+                      "empty"
+                    )
+                  })}
+                  role={"img"}
+                />
+              ) : null}
+            </div>
+          </p.Stack>
+        </p.Stack>
+      ) : null}
+      {(
+        hasVariant(variants, "types", "empty")
+          ? true
+          : hasVariant(variants, "types", "community")
+          ? true
+          : true
+      ) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"notificationsMainPanel4"}
+          data-plasmic-override={overrides.notificationsMainPanel4}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.notificationsMainPanel4, {
+            [sty.notificationsMainPanel4types_community]: hasVariant(
+              variants,
+              "types",
+              "community"
+            ),
+            [sty.notificationsMainPanel4types_empty]: hasVariant(
+              variants,
+              "types",
+              "empty"
+            )
+          })}
+        >
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"frame3953"}
+            data-plasmic-override={overrides.frame3953}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.frame3953)}
+          >
+            <div
+              data-plasmic-name={"frame3951"}
+              data-plasmic-override={overrides.frame3951}
+              className={classNames(projectcss.all, sty.frame3951, {
+                [sty.frame3951types_empty]: hasVariant(
                   variants,
                   "types",
                   "empty"
                 )
               })}
-              role={"img"}
-            />
-          ) : null}
-
-          <div
-            data-plasmic-name={"buttonsSmallNotifications3"}
-            data-plasmic-override={overrides.buttonsSmallNotifications3}
-            className={classNames(
-              projectcss.all,
-              sty.buttonsSmallNotifications3
-            )}
-          >
-            <div
-              data-plasmic-name={"frame3871"}
-              data-plasmic-override={overrides.frame3871}
-              className={classNames(projectcss.all, sty.frame3871)}
             >
-              <div
-                data-plasmic-name={"rectangle64"}
-                data-plasmic-override={overrides.rectangle64}
-                className={classNames(projectcss.all, sty.rectangle64)}
+              <IconFamilyHouseIcon
+                className={classNames(projectcss.all, sty.svg__cetFb)}
+                role={"img"}
               />
 
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__h1SuX
+                  sty.text___0RfI6
                 )}
               >
-                {"Panel powiadomień"}
+                {"Notatka #1"}
+              </div>
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dJxIq
+                )}
+              >
+                {"7 kwietnia | 10:00"}
               </div>
             </div>
+          </p.Stack>
+        </p.Stack>
+      ) : null}
+      {(hasVariant(variants, "types", "community") ? true : false) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"notificationsMainPanel"}
+          data-plasmic-override={overrides.notificationsMainPanel}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.notificationsMainPanel, {
+            [sty.notificationsMainPaneltypes_community]: hasVariant(
+              variants,
+              "types",
+              "community"
+            )
+          })}
+        >
+          <div
+            data-plasmic-name={"frame3950"}
+            data-plasmic-override={overrides.frame3950}
+            className={classNames(projectcss.all, sty.frame3950)}
+          >
+            {(hasVariant(variants, "types", "community") ? true : true) ? (
+              <IconComunityIcon
+                className={classNames(projectcss.all, sty.svg__qOwnF, {
+                  [sty.svgtypes_community__qOwnF7Q8L9]: hasVariant(
+                    variants,
+                    "types",
+                    "community"
+                  )
+                })}
+                role={"img"}
+              />
+            ) : null}
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__uhwI4
+              )}
+            >
+              {"Domofon XXI wieku"}
+            </div>
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__n6B1H
+              )}
+            >
+              {"7 kwietnia | 10:00"}
+            </div>
           </div>
-        </div>
+        </p.Stack>
       ) : null}
     </div>
   ) as React.ReactElement | null;
@@ -491,109 +356,58 @@ function PlasmicNote__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "rectangle65",
-    "notificationsMainPanel",
-    "rectangle66",
-    "buttonsSmallNotifications",
-    "frame3870",
-    "rectangle62",
-    "odtworz",
     "notificationsMainPanel2",
-    "rectangle67",
-    "buttonsSmallNotifications2",
-    "frame3869",
-    "rectangle63",
+    "frame3958",
+    "frame3957",
     "notificationsMainPanel3",
-    "rectangle68",
-    "buttonsSmallNotifications3",
-    "frame3871",
-    "rectangle64"
-  ],
-  rectangle65: [
-    "rectangle65",
+    "frame3959",
+    "frame3960",
+    "notificationsMainPanel4",
+    "frame3953",
+    "frame3951",
     "notificationsMainPanel",
-    "rectangle66",
-    "buttonsSmallNotifications",
-    "frame3870",
-    "rectangle62",
-    "odtworz",
-    "notificationsMainPanel2",
-    "rectangle67",
-    "buttonsSmallNotifications2",
-    "frame3869",
-    "rectangle63"
+    "frame3950"
   ],
-  notificationsMainPanel: [
-    "notificationsMainPanel",
-    "rectangle66",
-    "buttonsSmallNotifications",
-    "frame3870",
-    "rectangle62",
-    "odtworz"
-  ],
-  rectangle66: ["rectangle66"],
-  buttonsSmallNotifications: [
-    "buttonsSmallNotifications",
-    "frame3870",
-    "rectangle62",
-    "odtworz"
-  ],
-  frame3870: ["frame3870", "rectangle62", "odtworz"],
-  rectangle62: ["rectangle62"],
-  odtworz: ["odtworz"],
   notificationsMainPanel2: [
     "notificationsMainPanel2",
-    "rectangle67",
-    "buttonsSmallNotifications2",
-    "frame3869",
-    "rectangle63"
+    "frame3958",
+    "frame3957"
   ],
-  rectangle67: ["rectangle67"],
-  buttonsSmallNotifications2: [
-    "buttonsSmallNotifications2",
-    "frame3869",
-    "rectangle63"
-  ],
-  frame3869: ["frame3869", "rectangle63"],
-  rectangle63: ["rectangle63"],
+  frame3958: ["frame3958", "frame3957"],
+  frame3957: ["frame3957"],
   notificationsMainPanel3: [
     "notificationsMainPanel3",
-    "rectangle68",
-    "buttonsSmallNotifications3",
-    "frame3871",
-    "rectangle64"
+    "frame3959",
+    "frame3960"
   ],
-  rectangle68: ["rectangle68"],
-  buttonsSmallNotifications3: [
-    "buttonsSmallNotifications3",
-    "frame3871",
-    "rectangle64"
+  frame3959: ["frame3959", "frame3960"],
+  frame3960: ["frame3960"],
+  notificationsMainPanel4: [
+    "notificationsMainPanel4",
+    "frame3953",
+    "frame3951"
   ],
-  frame3871: ["frame3871", "rectangle64"],
-  rectangle64: ["rectangle64"]
+  frame3953: ["frame3953", "frame3951"],
+  frame3951: ["frame3951"],
+  notificationsMainPanel: ["notificationsMainPanel", "frame3950"],
+  frame3950: ["frame3950"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  rectangle65: "div";
-  notificationsMainPanel: "div";
-  rectangle66: "div";
-  buttonsSmallNotifications: "div";
-  frame3870: "div";
-  rectangle62: "div";
-  odtworz: "div";
   notificationsMainPanel2: "div";
-  rectangle67: "div";
-  buttonsSmallNotifications2: "div";
-  frame3869: "div";
-  rectangle63: "div";
+  frame3958: "div";
+  frame3957: "div";
   notificationsMainPanel3: "div";
-  rectangle68: "div";
-  buttonsSmallNotifications3: "div";
-  frame3871: "div";
-  rectangle64: "div";
+  frame3959: "div";
+  frame3960: "div";
+  notificationsMainPanel4: "div";
+  frame3953: "div";
+  frame3951: "div";
+  notificationsMainPanel: "div";
+  frame3950: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -653,23 +467,17 @@ export const PlasmicNote = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    rectangle65: makeNodeComponent("rectangle65"),
-    notificationsMainPanel: makeNodeComponent("notificationsMainPanel"),
-    rectangle66: makeNodeComponent("rectangle66"),
-    buttonsSmallNotifications: makeNodeComponent("buttonsSmallNotifications"),
-    frame3870: makeNodeComponent("frame3870"),
-    rectangle62: makeNodeComponent("rectangle62"),
-    odtworz: makeNodeComponent("odtworz"),
     notificationsMainPanel2: makeNodeComponent("notificationsMainPanel2"),
-    rectangle67: makeNodeComponent("rectangle67"),
-    buttonsSmallNotifications2: makeNodeComponent("buttonsSmallNotifications2"),
-    frame3869: makeNodeComponent("frame3869"),
-    rectangle63: makeNodeComponent("rectangle63"),
+    frame3958: makeNodeComponent("frame3958"),
+    frame3957: makeNodeComponent("frame3957"),
     notificationsMainPanel3: makeNodeComponent("notificationsMainPanel3"),
-    rectangle68: makeNodeComponent("rectangle68"),
-    buttonsSmallNotifications3: makeNodeComponent("buttonsSmallNotifications3"),
-    frame3871: makeNodeComponent("frame3871"),
-    rectangle64: makeNodeComponent("rectangle64"),
+    frame3959: makeNodeComponent("frame3959"),
+    frame3960: makeNodeComponent("frame3960"),
+    notificationsMainPanel4: makeNodeComponent("notificationsMainPanel4"),
+    frame3953: makeNodeComponent("frame3953"),
+    frame3951: makeNodeComponent("frame3951"),
+    notificationsMainPanel: makeNodeComponent("notificationsMainPanel"),
+    frame3950: makeNodeComponent("frame3950"),
 
     // Metadata about props expected for PlasmicNote
     internalVariantProps: PlasmicNote__VariantProps,

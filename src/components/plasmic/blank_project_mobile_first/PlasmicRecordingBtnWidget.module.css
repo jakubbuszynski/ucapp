@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: 200px;
   max-height: 100%;
   flex-direction: column;
   justify-content: center;
@@ -11,16 +11,21 @@
   min-width: 0;
   padding: 8px;
 }
-.buttonRecordMessage {
+.voiceMessage {
+  width: 172px;
+  height: 116px;
+  display: block;
+  flex-shrink: 0;
+}
+.buttonRecordMessage2 {
   width: 72px;
   height: 72px;
   display: block;
-  position: relative;
-  top: auto;
-  left: auto;
-  flex-shrink: 0;
+  position: absolute;
+  top: 0px;
+  left: 50px;
 }
-.svg__oxRpy {
+.svg__aTVtj {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
@@ -31,9 +36,9 @@
   display: block;
   top: 0%;
   left: 0%;
-  border-radius: 36px;
+  border-radius: 50%;
 }
-.svg__i49C {
+.svg__wM2Q {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
@@ -45,4 +50,17 @@
   top: 23.61%;
   left: 23.61%;
   overflow: hidden;
+}
+.text {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 28px;
+  color: rgba(33, 33, 33, 1);
+  position: absolute;
+  top: 75.86%;
+  left: 10.46%;
 }

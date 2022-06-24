@@ -139,6 +139,7 @@
   overflow: hidden;
   width: 48px;
   height: 48px;
+  color: #535353;
   flex-shrink: 0;
 }
 .text {

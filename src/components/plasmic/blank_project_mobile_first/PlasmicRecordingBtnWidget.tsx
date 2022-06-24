@@ -53,7 +53,9 @@ export const PlasmicRecordingBtnWidget__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicRecordingBtnWidget__OverridesType = {
   root?: p.Flex<"div">;
-  buttonRecordMessage?: p.Flex<"div">;
+  voiceMessage?: p.Flex<"div">;
+  buttonRecordMessage2?: p.Flex<"div">;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultRecordingBtnWidgetProps {
@@ -90,34 +92,56 @@ function PlasmicRecordingBtnWidget__RenderFunc(props: {
       )}
     >
       <div
-        data-plasmic-name={"buttonRecordMessage"}
-        data-plasmic-override={overrides.buttonRecordMessage}
-        className={classNames(projectcss.all, sty.buttonRecordMessage)}
+        data-plasmic-name={"voiceMessage"}
+        data-plasmic-override={overrides.voiceMessage}
+        className={classNames(projectcss.all, sty.voiceMessage)}
       >
-        <Ellipse36Icon
-          className={classNames(projectcss.all, sty.svg__oxRpy)}
-          role={"img"}
-        />
+        <div
+          data-plasmic-name={"buttonRecordMessage2"}
+          data-plasmic-override={overrides.buttonRecordMessage2}
+          className={classNames(projectcss.all, sty.buttonRecordMessage2)}
+        >
+          <Ellipse36Icon
+            className={classNames(projectcss.all, sty.svg__aTVtj)}
+            role={"img"}
+          />
 
-        <IconMicPlusIcon
-          className={classNames(projectcss.all, sty.svg__i49C)}
-          role={"img"}
-        />
+          <IconMicPlusIcon
+            className={classNames(projectcss.all, sty.svg__wM2Q)}
+            role={"img"}
+          />
+        </div>
+
+        <div
+          data-plasmic-name={"text"}
+          data-plasmic-override={overrides.text}
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text
+          )}
+        >
+          {"Nagraj notatkę"}
+        </div>
       </div>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "buttonRecordMessage"],
-  buttonRecordMessage: ["buttonRecordMessage"]
+  root: ["root", "voiceMessage", "buttonRecordMessage2", "text"],
+  voiceMessage: ["voiceMessage", "buttonRecordMessage2", "text"],
+  buttonRecordMessage2: ["buttonRecordMessage2"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  buttonRecordMessage: "div";
+  voiceMessage: "div";
+  buttonRecordMessage2: "div";
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -177,7 +201,9 @@ export const PlasmicRecordingBtnWidget = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    buttonRecordMessage: makeNodeComponent("buttonRecordMessage"),
+    voiceMessage: makeNodeComponent("voiceMessage"),
+    buttonRecordMessage2: makeNodeComponent("buttonRecordMessage2"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicRecordingBtnWidget
     internalVariantProps: PlasmicRecordingBtnWidget__VariantProps,

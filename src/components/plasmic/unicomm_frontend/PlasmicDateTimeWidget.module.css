@@ -1,19 +1,29 @@
 .root {
   background: rgba(246, 246, 246, 1);
-  width: 448px;
+  width: 480px;
   height: 126px;
-  display: block;
+  display: flex;
   overflow: hidden;
   position: relative;
+  min-width: 448px;
+  max-width: 448px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 126px;
+  max-height: 126px;
   border-radius: 10px;
+  padding: 0px;
+  margin: 36px 16px;
 }
 .frame4010 {
   width: 432px;
   height: 78px;
   display: block;
-  position: absolute;
-  top: 24px;
-  left: 16px;
+  position: relative;
+  top: auto;
+  left: auto;
+  flex-shrink: 0;
 }
 .freeBox__gvgzt {
   display: flex;

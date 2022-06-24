@@ -94,112 +94,114 @@ function PlasmicBtn__RenderFunc(props: {
   const $ctx = ph.useDataEnv?.() || {};
 
   return (
-    <p.Stack
-      as={"div"}
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
-      data-plasmic-root={true}
-      data-plasmic-for-node={forNode}
-      hasGap={true}
-      className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
-        sty.root,
-        {
-          [sty.rootcolor_grey]: hasVariant(variants, "color", "grey"),
-          [sty.rootcolor_highContrast]: hasVariant(
-            variants,
-            "color",
-            "highContrast"
-          ),
-          [sty.rootcolor_highContrast_shape_short]:
-            hasVariant(variants, "color", "highContrast") &&
-            hasVariant(variants, "shape", "short"),
-          [sty.rootisDisabled]: hasVariant(
-            variants,
-            "isDisabled",
-            "isDisabled"
-          ),
-          [sty.rootisDisabled_color_grey]:
-            hasVariant(variants, "isDisabled", "isDisabled") &&
-            hasVariant(variants, "color", "grey"),
-          [sty.rootshape_short]: hasVariant(variants, "shape", "short"),
-          [sty.rootshape_vertical]: hasVariant(variants, "shape", "vertical")
-        }
-      )}
-    >
+    true ? (
       <p.Stack
         as={"div"}
-        data-plasmic-name={"frame3946"}
-        data-plasmic-override={overrides.frame3946}
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
         hasGap={true}
-        className={classNames(projectcss.all, sty.frame3946, {
-          [sty.frame3946color_grey]: hasVariant(variants, "color", "grey"),
-          [sty.frame3946color_highContrast_shape_short]:
-            hasVariant(variants, "color", "highContrast") &&
-            hasVariant(variants, "shape", "short"),
-          [sty.frame3946shape_vertical]: hasVariant(
-            variants,
-            "shape",
-            "vertical"
-          )
-        })}
-      >
-        {p.renderPlasmicSlot({
-          defaultContents: (
-            <IconConfirmCallIcon
-              className={classNames(projectcss.all, sty.svg__iRr3I)}
-              role={"img"}
-            />
-          ),
-
-          value: args.icon,
-          className: classNames(sty.slotTargetIcon, {
-            [sty.slotTargetIconcolor_grey]: hasVariant(
+        className={classNames(
+          projectcss.all,
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          sty.root,
+          {
+            [sty.rootcolor_grey]: hasVariant(variants, "color", "grey"),
+            [sty.rootcolor_highContrast]: hasVariant(
               variants,
               "color",
-              "grey"
+              "highContrast"
             ),
-            [sty.slotTargetIconcolor_highContrast_shape_short]:
+            [sty.rootcolor_highContrast_shape_short]:
               hasVariant(variants, "color", "highContrast") &&
               hasVariant(variants, "shape", "short"),
-            [sty.slotTargetIconshape_short]: hasVariant(
+            [sty.rootisDisabled]: hasVariant(
               variants,
-              "shape",
-              "short"
+              "isDisabled",
+              "isDisabled"
             ),
-            [sty.slotTargetIconshape_vertical]: hasVariant(
+            [sty.rootisDisabled_color_grey]:
+              hasVariant(variants, "isDisabled", "isDisabled") &&
+              hasVariant(variants, "color", "grey"),
+            [sty.rootshape_short]: hasVariant(variants, "shape", "short"),
+            [sty.rootshape_vertical]: hasVariant(variants, "shape", "vertical")
+          }
+        )}
+      >
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"frame3946"}
+          data-plasmic-override={overrides.frame3946}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.frame3946, {
+            [sty.frame3946color_grey]: hasVariant(variants, "color", "grey"),
+            [sty.frame3946color_highContrast_shape_short]:
+              hasVariant(variants, "color", "highContrast") &&
+              hasVariant(variants, "shape", "short"),
+            [sty.frame3946shape_vertical]: hasVariant(
               variants,
               "shape",
               "vertical"
             )
-          })
-        })}
+          })}
+        >
+          {p.renderPlasmicSlot({
+            defaultContents: (
+              <IconConfirmCallIcon
+                className={classNames(projectcss.all, sty.svg__iRr3I)}
+                role={"img"}
+              />
+            ),
 
-        <div
-          data-plasmic-name={"text"}
-          data-plasmic-override={overrides.text}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text,
-            {
-              [sty.textcolor_grey]: hasVariant(variants, "color", "grey"),
-              [sty.textshape_short]: hasVariant(variants, "shape", "short"),
-              [sty.textshape_vertical]: hasVariant(
+            value: args.icon,
+            className: classNames(sty.slotTargetIcon, {
+              [sty.slotTargetIconcolor_grey]: hasVariant(
+                variants,
+                "color",
+                "grey"
+              ),
+              [sty.slotTargetIconcolor_highContrast_shape_short]:
+                hasVariant(variants, "color", "highContrast") &&
+                hasVariant(variants, "shape", "short"),
+              [sty.slotTargetIconshape_short]: hasVariant(
+                variants,
+                "shape",
+                "short"
+              ),
+              [sty.slotTargetIconshape_vertical]: hasVariant(
                 variants,
                 "shape",
                 "vertical"
               )
-            }
-          )}
-        >
-          {"Odbierz"}
-        </div>
+            })
+          })}
+
+          <div
+            data-plasmic-name={"text"}
+            data-plasmic-override={overrides.text}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text,
+              {
+                [sty.textcolor_grey]: hasVariant(variants, "color", "grey"),
+                [sty.textshape_short]: hasVariant(variants, "shape", "short"),
+                [sty.textshape_vertical]: hasVariant(
+                  variants,
+                  "shape",
+                  "vertical"
+                )
+              }
+            )}
+          >
+            {"Odbierz"}
+          </div>
+        </p.Stack>
       </p.Stack>
-    </p.Stack>
+    ) : null
   ) as React.ReactElement | null;
 }
 
