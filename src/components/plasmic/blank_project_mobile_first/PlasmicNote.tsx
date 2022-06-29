@@ -70,6 +70,9 @@ export type PlasmicNote__OverridesType = {
   frame3951?: p.Flex<"div">;
   notificationsMainPanel?: p.Flex<"div">;
   frame3950?: p.Flex<"div">;
+  notificationsMainPanel5?: p.Flex<"div">;
+  frame3961?: p.Flex<"div">;
+  frame3962?: p.Flex<"div">;
 };
 
 export interface DefaultNoteProps {
@@ -227,6 +230,8 @@ function PlasmicNote__RenderFunc(props: {
       {(
         hasVariant(variants, "types", "empty")
           ? true
+          : hasVariant(variants, "types", "audio")
+          ? true
           : hasVariant(variants, "types", "community")
           ? true
           : true
@@ -237,6 +242,11 @@ function PlasmicNote__RenderFunc(props: {
           data-plasmic-override={overrides.notificationsMainPanel4}
           hasGap={true}
           className={classNames(projectcss.all, sty.notificationsMainPanel4, {
+            [sty.notificationsMainPanel4types_audio]: hasVariant(
+              variants,
+              "types",
+              "audio"
+            ),
             [sty.notificationsMainPanel4types_community]: hasVariant(
               variants,
               "types",
@@ -349,6 +359,68 @@ function PlasmicNote__RenderFunc(props: {
           </div>
         </p.Stack>
       ) : null}
+      {(hasVariant(variants, "types", "audio") ? true : false) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"notificationsMainPanel5"}
+          data-plasmic-override={overrides.notificationsMainPanel5}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.notificationsMainPanel5, {
+            [sty.notificationsMainPanel5types_audio]: hasVariant(
+              variants,
+              "types",
+              "audio"
+            )
+          })}
+        >
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"frame3961"}
+            data-plasmic-override={overrides.frame3961}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.frame3961)}
+          >
+            <div
+              data-plasmic-name={"frame3962"}
+              data-plasmic-override={overrides.frame3962}
+              className={classNames(projectcss.all, sty.frame3962)}
+            >
+              {(hasVariant(variants, "types", "audio") ? true : true) ? (
+                <IconMissedCallIcon
+                  className={classNames(projectcss.all, sty.svg__p1VP, {
+                    [sty.svgtypes_audio__p1VPpXcbj]: hasVariant(
+                      variants,
+                      "types",
+                      "audio"
+                    )
+                  })}
+                  role={"img"}
+                />
+              ) : null}
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__nsI8
+                )}
+              >
+                {"Nieodebrane #1"}
+              </div>
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ePWq3
+                )}
+              >
+                {"7 kwietnia | 10:00"}
+              </div>
+            </div>
+          </p.Stack>
+        </p.Stack>
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
@@ -366,7 +438,10 @@ const PlasmicDescendants = {
     "frame3953",
     "frame3951",
     "notificationsMainPanel",
-    "frame3950"
+    "frame3950",
+    "notificationsMainPanel5",
+    "frame3961",
+    "frame3962"
   ],
   notificationsMainPanel2: [
     "notificationsMainPanel2",
@@ -390,7 +465,14 @@ const PlasmicDescendants = {
   frame3953: ["frame3953", "frame3951"],
   frame3951: ["frame3951"],
   notificationsMainPanel: ["notificationsMainPanel", "frame3950"],
-  frame3950: ["frame3950"]
+  frame3950: ["frame3950"],
+  notificationsMainPanel5: [
+    "notificationsMainPanel5",
+    "frame3961",
+    "frame3962"
+  ],
+  frame3961: ["frame3961", "frame3962"],
+  frame3962: ["frame3962"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -408,6 +490,9 @@ type NodeDefaultElementType = {
   frame3951: "div";
   notificationsMainPanel: "div";
   frame3950: "div";
+  notificationsMainPanel5: "div";
+  frame3961: "div";
+  frame3962: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -478,6 +563,9 @@ export const PlasmicNote = Object.assign(
     frame3951: makeNodeComponent("frame3951"),
     notificationsMainPanel: makeNodeComponent("notificationsMainPanel"),
     frame3950: makeNodeComponent("frame3950"),
+    notificationsMainPanel5: makeNodeComponent("notificationsMainPanel5"),
+    frame3961: makeNodeComponent("frame3961"),
+    frame3962: makeNodeComponent("frame3962"),
 
     // Metadata about props expected for PlasmicNote
     internalVariantProps: PlasmicNote__VariantProps,

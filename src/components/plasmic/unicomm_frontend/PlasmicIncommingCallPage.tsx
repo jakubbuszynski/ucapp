@@ -33,19 +33,17 @@ import {
 } from "@plasmicapp/react-web";
 import MuteIcon from "../../MuteIcon"; // plasmic-import: _jlAiRe8-_/component
 import Header from "../../Header"; // plasmic-import: t1tce5B7Zb/component
-import Btn from "../../Btn"; // plasmic-import: 6K82epA0cI/component
-import Button from "../../Button"; // plasmic-import: gP-HYzHmfTq/component
+import Btn from "../../Btn"; // plasmic-import: s_QabdfozE0/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../blank_project_mobile_first/plasmic_blank_project_mobile_first.module.css"; // plasmic-import: wGQNdEnY25VfiXqc2ZGJrZ/projectcss
 import sty from "./PlasmicIncommingCallPage.module.css"; // plasmic-import: 0OH69dlSQ5/css
 
-import IconDoorCloseIcon from "./icons/PlasmicIcon__IconDoorClose"; // plasmic-import: da9sopleIS/icon
-import Group9Icon from "./icons/PlasmicIcon__Group9"; // plasmic-import: eE8WHR2991/icon
 import IconConfirmCallIcon from "./icons/PlasmicIcon__IconConfirmCall"; // plasmic-import: oO4s45yxlg/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: uAbKMBtqI6u/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: tnEAR3AGGw-/icon
+import IconRingIcon from "./icons/PlasmicIcon__IconRing"; // plasmic-import: kHX0obXfnO/icon
+import IconDoorCloseIcon from "./icons/PlasmicIcon__IconDoorClose"; // plasmic-import: da9sopleIS/icon
 
 export type PlasmicIncommingCallPage__VariantMembers = {};
 
@@ -69,12 +67,10 @@ export type PlasmicIncommingCallPage__OverridesType = {
   rectangle50?: p.Flex<"div">;
   image34?: p.Flex<"div">;
   rectangle31?: p.Flex<"div">;
+  link?: p.Flex<"a">;
   muteIcon?: p.Flex<typeof MuteIcon>;
   header?: p.Flex<typeof Header>;
-  buttonsOpenTheDoor?: p.Flex<"div">;
-  buttonsMute?: p.Flex<"div">;
-  rectangle51?: p.Flex<"div">;
-  iconSound?: p.Flex<"div">;
+  odbierz?: p.Flex<"div">;
   text?: p.Flex<"div">;
 };
 
@@ -147,11 +143,17 @@ function PlasmicIncommingCallPage__RenderFunc(props: {
               />
             ) : null}
 
-            <MuteIcon
-              data-plasmic-name={"muteIcon"}
-              data-plasmic-override={overrides.muteIcon}
-              className={classNames("__wab_instance", sty.muteIcon)}
-            />
+            <a
+              data-plasmic-name={"link"}
+              data-plasmic-override={overrides.link}
+              className={classNames(projectcss.all, projectcss.a, sty.link)}
+            >
+              <MuteIcon
+                data-plasmic-name={"muteIcon"}
+                data-plasmic-override={overrides.muteIcon}
+                className={classNames("__wab_instance", sty.muteIcon)}
+              />
+            </a>
 
             <Header
               data-plasmic-name={"header"}
@@ -159,88 +161,75 @@ function PlasmicIncommingCallPage__RenderFunc(props: {
               className={classNames("__wab_instance", sty.header)}
             />
 
-            <div
-              data-plasmic-name={"buttonsOpenTheDoor"}
-              data-plasmic-override={overrides.buttonsOpenTheDoor}
-              className={classNames(projectcss.all, sty.buttonsOpenTheDoor)}
-            >
-              <Btn
-                className={classNames("__wab_instance", sty.btn__m2DiL)}
-                color={["grey"]}
-                icon={
-                  <IconDoorCloseIcon
-                    className={classNames(projectcss.all, sty.svg__lGmec)}
-                    role={"img"}
-                  />
-                }
-                shape={"vertical" as const}
-              />
-            </div>
-
-            <div
-              data-plasmic-name={"buttonsMute"}
-              data-plasmic-override={overrides.buttonsMute}
-              className={classNames(projectcss.all, sty.buttonsMute)}
-            >
-              <div
-                data-plasmic-name={"rectangle51"}
-                data-plasmic-override={overrides.rectangle51}
-                className={classNames(projectcss.all, sty.rectangle51)}
-              />
-
-              <div
-                data-plasmic-name={"iconSound"}
-                data-plasmic-override={overrides.iconSound}
-                className={classNames(projectcss.all, sty.iconSound)}
-              >
-                <Group9Icon
-                  className={classNames(projectcss.all, sty.svg__tfMrW)}
-                  role={"img"}
-                />
-              </div>
-
-              <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text
-                )}
-              >
-                {"Wycisz"}
-              </div>
-            </div>
-
             {true ? (
               <p.Stack
                 as={"div"}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.freeBox__zx53I)}
               >
-                <Btn className={classNames("__wab_instance", sty.btn__l7JvM)} />
-
                 {true ? (
                   <p.Stack
                     as={"div"}
                     hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox__dS3Cx)}
                   >
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__khOmI
-                      )}
-                    />
+                    <Btn
+                      className={classNames("__wab_instance", sty.btn__pQwLx)}
+                      showStartIcon={true}
+                    >
+                      <div
+                        data-plasmic-name={"odbierz"}
+                        data-plasmic-override={overrides.odbierz}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.odbierz
+                        )}
+                      >
+                        {"Odbierz"}
+                      </div>
+                    </Btn>
 
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__g1Lja
-                      )}
-                    />
+                    <Btn
+                      className={classNames("__wab_instance", sty.btn___6KPnA)}
+                      color={"grey" as const}
+                      shape={"iconOnly" as const}
+                      showStartIcon={true}
+                      startIcon={
+                        <IconRingIcon
+                          className={classNames(projectcss.all, sty.svg__gfjoh)}
+                          role={"img"}
+                        />
+                      }
+                    >
+                      <div
+                        data-plasmic-name={"text"}
+                        data-plasmic-override={overrides.text}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text
+                        )}
+                      >
+                        {"\n"}
+                      </div>
+                    </Btn>
                   </p.Stack>
                 ) : null}
+
+                <Btn
+                  className={classNames("__wab_instance", sty.btn__fJikp)}
+                  color={"dark" as const}
+                  showStartIcon={true}
+                  startIcon={
+                    <IconDoorCloseIcon
+                      className={classNames(projectcss.all, sty.svg__wSu6)}
+                      role={"img"}
+                    />
+                  }
+                >
+                  {"Otwórz drzwi"}
+                </Btn>
               </p.Stack>
             ) : null}
           </div>
@@ -257,12 +246,10 @@ const PlasmicDescendants = {
     "rectangle50",
     "image34",
     "rectangle31",
+    "link",
     "muteIcon",
     "header",
-    "buttonsOpenTheDoor",
-    "buttonsMute",
-    "rectangle51",
-    "iconSound",
+    "odbierz",
     "text"
   ],
   _0121DomofonDzwoni: [
@@ -270,23 +257,19 @@ const PlasmicDescendants = {
     "rectangle50",
     "image34",
     "rectangle31",
+    "link",
     "muteIcon",
     "header",
-    "buttonsOpenTheDoor",
-    "buttonsMute",
-    "rectangle51",
-    "iconSound",
+    "odbierz",
     "text"
   ],
   rectangle50: ["rectangle50"],
   image34: ["image34"],
   rectangle31: ["rectangle31"],
+  link: ["link", "muteIcon"],
   muteIcon: ["muteIcon"],
   header: ["header"],
-  buttonsOpenTheDoor: ["buttonsOpenTheDoor"],
-  buttonsMute: ["buttonsMute", "rectangle51", "iconSound", "text"],
-  rectangle51: ["rectangle51"],
-  iconSound: ["iconSound"],
+  odbierz: ["odbierz"],
   text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -298,12 +281,10 @@ type NodeDefaultElementType = {
   rectangle50: "div";
   image34: "div";
   rectangle31: "div";
+  link: "a";
   muteIcon: typeof MuteIcon;
   header: typeof Header;
-  buttonsOpenTheDoor: "div";
-  buttonsMute: "div";
-  rectangle51: "div";
-  iconSound: "div";
+  odbierz: "div";
   text: "div";
 };
 
@@ -368,12 +349,10 @@ export const PlasmicIncommingCallPage = Object.assign(
     rectangle50: makeNodeComponent("rectangle50"),
     image34: makeNodeComponent("image34"),
     rectangle31: makeNodeComponent("rectangle31"),
+    link: makeNodeComponent("link"),
     muteIcon: makeNodeComponent("muteIcon"),
     header: makeNodeComponent("header"),
-    buttonsOpenTheDoor: makeNodeComponent("buttonsOpenTheDoor"),
-    buttonsMute: makeNodeComponent("buttonsMute"),
-    rectangle51: makeNodeComponent("rectangle51"),
-    iconSound: makeNodeComponent("iconSound"),
+    odbierz: makeNodeComponent("odbierz"),
     text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicIncommingCallPage

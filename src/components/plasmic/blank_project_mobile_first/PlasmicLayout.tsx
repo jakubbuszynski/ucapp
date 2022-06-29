@@ -32,6 +32,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import TopBar from "../../TopBar"; // plasmic-import: nsqmq6QdR8/component
+import SettingsButton from "../../SettingsButton"; // plasmic-import: 5o0BGUmfu3/component
 import NavBar from "../../NavBar"; // plasmic-import: jXKRlC2FpR/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";

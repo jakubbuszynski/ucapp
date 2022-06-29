@@ -34,6 +34,11 @@
   height: 100px;
   flex-shrink: 0;
 }
+.settingsButton__n7RJ3:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
 .freeBox__fv9V {
   display: flex;
   position: relative;

@@ -37,6 +37,25 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "../blank_project_mobile_first/plasmic_blank_project_mobile_first.module.css"; // plasmic-import: wGQNdEnY25VfiXqc2ZGJrZ/projectcss
 import sty from "./PlasmicSettings.module.css"; // plasmic-import: mXVkPhZNDb/css
 
+import IconArrow2Icon from "./icons/PlasmicIcon__IconArrow2"; // plasmic-import: OMXFNCG8JY/icon
+import Ellipse263Icon from "./icons/PlasmicIcon__Ellipse263"; // plasmic-import: l6zKJEbUS/icon
+import IconEditIcon from "./icons/PlasmicIcon__IconEdit"; // plasmic-import: ejEGL8nzuet/icon
+import Group10Icon from "./icons/PlasmicIcon__Group10"; // plasmic-import: _gZ-ciJg2R/icon
+import IconPawIcon from "./icons/PlasmicIcon__IconPaw"; // plasmic-import: yYCyOmPyLP/icon
+import AlwaysOnIcon from "./icons/PlasmicIcon__AlwaysOn"; // plasmic-import: trfK7-EUa1/icon
+import IconHeartIcon from "../blank_project_mobile_first/icons/PlasmicIcon__IconHeart"; // plasmic-import: Jz_s8Wvzgq/icon
+import IconWifi3Icon from "./icons/PlasmicIcon__IconWifi3"; // plasmic-import: x4jDXlPaO7/icon
+import IconCustomerServiceIcon from "./icons/PlasmicIcon__IconCustomerService"; // plasmic-import: 8pSvQtUDn_/icon
+import IconSettings4Icon from "./icons/PlasmicIcon__IconSettings4"; // plasmic-import: g6sc0MMX_E/icon
+import Ellipse296Icon from "./icons/PlasmicIcon__Ellipse296"; // plasmic-import: UMJTqO7TiA/icon
+import IconSound2Icon from "./icons/PlasmicIcon__IconSound2"; // plasmic-import: MEDI51SRKX/icon
+import IconEyeiconMusicIcon from "./icons/PlasmicIcon__IconEyeiconMusic"; // plasmic-import: EQpdBr4iOZ/icon
+import Ellipse49Icon from "../blank_project_mobile_first/icons/PlasmicIcon__Ellipse49"; // plasmic-import: P0uugp2jEe/icon
+import Ellipse3Icon from "./icons/PlasmicIcon__Ellipse3"; // plasmic-import: Y23DXZWNxA/icon
+import IconBrightnessIcon from "./icons/PlasmicIcon__IconBrightness"; // plasmic-import: dSMbvxuWvc/icon
+import _42X42Switch2Tf8QfSrOTw from "./images/_42X42Switch2.svg"; // plasmic-import: tf8QFSrOTw/picture
+import _42X42SwitchAGeBiT2U1 from "./images/_42X42Switch.svg"; // plasmic-import: A_GEBiT2u1/picture
+
 export type PlasmicSettings__VariantMembers = {};
 
 export type PlasmicSettings__VariantsArgs = {};
@@ -49,6 +68,66 @@ export const PlasmicSettings__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSettings__OverridesType = {
   root?: p.Flex<"div">;
+  figmaPaste?: p.Flex<"div">;
+  mainLabels?: p.Flex<"div">;
+  tryby?: p.Flex<"div">;
+  circleButtonSettings?: p.Flex<"div">;
+  smartSuggestions?: p.Flex<"div">;
+  rectangle20?: p.Flex<"div">;
+  yekst?: p.Flex<"div">;
+  loremIpsum?: p.Flex<"div">;
+  iconSmartOptimization?: p.Flex<"div">;
+  petAtHome?: p.Flex<"div">;
+  rectangle21?: p.Flex<"div">;
+  yekst2?: p.Flex<"div">;
+  loremIpsum2?: p.Flex<"div">;
+  alwaysOn?: p.Flex<"div">;
+  rectangle22?: p.Flex<"div">;
+  alwaysOn48X48?: p.Flex<"div">;
+  rectangle4486?: p.Flex<"div">;
+  yekst3?: p.Flex<"div">;
+  loremIpsum3?: p.Flex<"div">;
+  favourites?: p.Flex<"div">;
+  rectangle23?: p.Flex<"div">;
+  yekst4?: p.Flex<"div">;
+  loremIpsum4?: p.Flex<"div">;
+  wiFi?: p.Flex<"div">;
+  rectangle24?: p.Flex<"div">;
+  yekst5?: p.Flex<"div">;
+  loremIpsum5?: p.Flex<"div">;
+  customerService?: p.Flex<"div">;
+  rectangle25?: p.Flex<"div">;
+  yekst6?: p.Flex<"div">;
+  loremIpsum6?: p.Flex<"div">;
+  service?: p.Flex<"div">;
+  rectangle26?: p.Flex<"div">;
+  yekst7?: p.Flex<"div">;
+  loremIpsum7?: p.Flex<"div">;
+  settingsLoudness?: p.Flex<"div">;
+  rectangle1123?: p.Flex<"div">;
+  slider?: p.Flex<"div">;
+  rectangle1128?: p.Flex<"div">;
+  rectangle1131?: p.Flex<"div">;
+  group1321?: p.Flex<"div">;
+  settingsRingBell?: p.Flex<"div">;
+  rectangle1124?: p.Flex<"div">;
+  group1322?: p.Flex<"div">;
+  ringtones?: p.Flex<"div">;
+  circleButtons?: p.Flex<"div">;
+  _1?: p.Flex<"div">;
+  circleButtons2?: p.Flex<"div">;
+  _2?: p.Flex<"div">;
+  circleButtons3?: p.Flex<"div">;
+  _3?: p.Flex<"div">;
+  circleButtons4?: p.Flex<"div">;
+  _4?: p.Flex<"div">;
+  circleButtons5?: p.Flex<"div">;
+  settingsBrightness?: p.Flex<"div">;
+  rectangle1125?: p.Flex<"div">;
+  slider2?: p.Flex<"div">;
+  rectangle1129?: p.Flex<"div">;
+  rectangle1132?: p.Flex<"div">;
+  group1323?: p.Flex<"div">;
 };
 
 export interface DefaultSettingsProps {
@@ -87,20 +166,957 @@ function PlasmicSettings__RenderFunc(props: {
             projectcss.plasmic_mixins,
             sty.root
           )}
-        />
+        >
+          <div
+            data-plasmic-name={"figmaPaste"}
+            data-plasmic-override={overrides.figmaPaste}
+            className={classNames(projectcss.all, sty.figmaPaste)}
+          >
+            <div
+              data-plasmic-name={"mainLabels"}
+              data-plasmic-override={overrides.mainLabels}
+              className={classNames(projectcss.all, sty.mainLabels)}
+            >
+              <IconArrow2Icon
+                className={classNames(projectcss.all, sty.svg___5BaTs)}
+                href={"/home" as const}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"tryby"}
+                data-plasmic-override={overrides.tryby}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.tryby
+                )}
+              >
+                {"Ustawienia"}
+              </div>
+
+              {false ? (
+                <div
+                  data-plasmic-name={"circleButtonSettings"}
+                  data-plasmic-override={overrides.circleButtonSettings}
+                  className={classNames(
+                    projectcss.all,
+                    sty.circleButtonSettings
+                  )}
+                >
+                  <Ellipse263Icon
+                    className={classNames(projectcss.all, sty.svg__fpn3O)}
+                    role={"img"}
+                  />
+
+                  <IconEditIcon
+                    className={classNames(projectcss.all, sty.svg__xxoRp)}
+                    role={"img"}
+                  />
+                </div>
+              ) : null}
+            </div>
+
+            <div
+              data-plasmic-name={"smartSuggestions"}
+              data-plasmic-override={overrides.smartSuggestions}
+              className={classNames(projectcss.all, sty.smartSuggestions)}
+            >
+              <div
+                data-plasmic-name={"rectangle20"}
+                data-plasmic-override={overrides.rectangle20}
+                className={classNames(projectcss.all, sty.rectangle20)}
+              />
+
+              <div
+                data-plasmic-name={"yekst"}
+                data-plasmic-override={overrides.yekst}
+                className={classNames(projectcss.all, sty.yekst)}
+              >
+                <div
+                  data-plasmic-name={"loremIpsum"}
+                  data-plasmic-override={overrides.loremIpsum}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.loremIpsum
+                  )}
+                >
+                  {"Inteligentne sugestie"}
+                </div>
+              </div>
+
+              <div
+                data-plasmic-name={"iconSmartOptimization"}
+                data-plasmic-override={overrides.iconSmartOptimization}
+                className={classNames(
+                  projectcss.all,
+                  sty.iconSmartOptimization
+                )}
+              >
+                <Group10Icon
+                  className={classNames(projectcss.all, sty.svg__oUlam)}
+                  role={"img"}
+                />
+              </div>
+
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__eaKwO)}
+                displayHeight={"40px" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"80px" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: _42X42Switch2Tf8QfSrOTw,
+                  fullWidth: 80,
+                  fullHeight: 40,
+                  aspectRatio: 2
+                }}
+              />
+            </div>
+
+            <div
+              data-plasmic-name={"petAtHome"}
+              data-plasmic-override={overrides.petAtHome}
+              className={classNames(projectcss.all, sty.petAtHome)}
+            >
+              <div
+                data-plasmic-name={"rectangle21"}
+                data-plasmic-override={overrides.rectangle21}
+                className={classNames(projectcss.all, sty.rectangle21)}
+              />
+
+              <div
+                data-plasmic-name={"yekst2"}
+                data-plasmic-override={overrides.yekst2}
+                className={classNames(projectcss.all, sty.yekst2)}
+              >
+                <div
+                  data-plasmic-name={"loremIpsum2"}
+                  data-plasmic-override={overrides.loremIpsum2}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.loremIpsum2
+                  )}
+                >
+                  {"Zwierzę w domu"}
+                </div>
+              </div>
+
+              <IconPawIcon
+                className={classNames(projectcss.all, sty.svg__y1Bhu)}
+                role={"img"}
+              />
+
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__fzOUn)}
+                displayHeight={"40px" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"80px" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: _42X42SwitchAGeBiT2U1,
+                  fullWidth: 80,
+                  fullHeight: 40,
+                  aspectRatio: 2
+                }}
+              />
+            </div>
+
+            <div
+              data-plasmic-name={"alwaysOn"}
+              data-plasmic-override={overrides.alwaysOn}
+              className={classNames(projectcss.all, sty.alwaysOn)}
+            >
+              <div
+                data-plasmic-name={"rectangle22"}
+                data-plasmic-override={overrides.rectangle22}
+                className={classNames(projectcss.all, sty.rectangle22)}
+              />
+
+              <IconArrow2Icon
+                className={classNames(projectcss.all, sty.svg__iwfu7)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"alwaysOn48X48"}
+                data-plasmic-override={overrides.alwaysOn48X48}
+                className={classNames(projectcss.all, sty.alwaysOn48X48)}
+              >
+                <div
+                  data-plasmic-name={"rectangle4486"}
+                  data-plasmic-override={overrides.rectangle4486}
+                  className={classNames(projectcss.all, sty.rectangle4486)}
+                />
+
+                <AlwaysOnIcon
+                  className={classNames(projectcss.all, sty.svg__gn1)}
+                  role={"img"}
+                />
+              </div>
+
+              <div
+                data-plasmic-name={"yekst3"}
+                data-plasmic-override={overrides.yekst3}
+                className={classNames(projectcss.all, sty.yekst3)}
+              >
+                <div
+                  data-plasmic-name={"loremIpsum3"}
+                  data-plasmic-override={overrides.loremIpsum3}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.loremIpsum3
+                  )}
+                >
+                  {"Stałe zasilanie"}
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"favourites"}
+              data-plasmic-override={overrides.favourites}
+              className={classNames(projectcss.all, sty.favourites)}
+            >
+              <div
+                data-plasmic-name={"rectangle23"}
+                data-plasmic-override={overrides.rectangle23}
+                className={classNames(projectcss.all, sty.rectangle23)}
+              />
+
+              <IconArrow2Icon
+                className={classNames(projectcss.all, sty.svg__zjdH9)}
+                role={"img"}
+              />
+
+              <IconHeartIcon
+                className={classNames(projectcss.all, sty.svg__qmvtx)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"yekst4"}
+                data-plasmic-override={overrides.yekst4}
+                className={classNames(projectcss.all, sty.yekst4)}
+              >
+                <div
+                  data-plasmic-name={"loremIpsum4"}
+                  data-plasmic-override={overrides.loremIpsum4}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.loremIpsum4
+                  )}
+                >
+                  {"Ulubione"}
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"wiFi"}
+              data-plasmic-override={overrides.wiFi}
+              className={classNames(projectcss.all, sty.wiFi)}
+            >
+              <div
+                data-plasmic-name={"rectangle24"}
+                data-plasmic-override={overrides.rectangle24}
+                className={classNames(projectcss.all, sty.rectangle24)}
+              />
+
+              <IconArrow2Icon
+                className={classNames(projectcss.all, sty.svg__qYeS)}
+                role={"img"}
+              />
+
+              <IconWifi3Icon
+                className={classNames(projectcss.all, sty.svg__fo6YL)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"yekst5"}
+                data-plasmic-override={overrides.yekst5}
+                className={classNames(projectcss.all, sty.yekst5)}
+              >
+                <div
+                  data-plasmic-name={"loremIpsum5"}
+                  data-plasmic-override={overrides.loremIpsum5}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.loremIpsum5
+                  )}
+                >
+                  {"Wi-Fi"}
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"customerService"}
+              data-plasmic-override={overrides.customerService}
+              className={classNames(projectcss.all, sty.customerService)}
+            >
+              <div
+                data-plasmic-name={"rectangle25"}
+                data-plasmic-override={overrides.rectangle25}
+                className={classNames(projectcss.all, sty.rectangle25)}
+              />
+
+              <IconArrow2Icon
+                className={classNames(projectcss.all, sty.svg__nwcyt)}
+                role={"img"}
+              />
+
+              <IconCustomerServiceIcon
+                className={classNames(projectcss.all, sty.svg__ml3Nu)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"yekst6"}
+                data-plasmic-override={overrides.yekst6}
+                className={classNames(projectcss.all, sty.yekst6)}
+              >
+                <div
+                  data-plasmic-name={"loremIpsum6"}
+                  data-plasmic-override={overrides.loremIpsum6}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.loremIpsum6
+                  )}
+                >
+                  {"Obsługa klienta"}
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"service"}
+              data-plasmic-override={overrides.service}
+              className={classNames(projectcss.all, sty.service)}
+            >
+              <div
+                data-plasmic-name={"rectangle26"}
+                data-plasmic-override={overrides.rectangle26}
+                className={classNames(projectcss.all, sty.rectangle26)}
+              />
+
+              <IconArrow2Icon
+                className={classNames(projectcss.all, sty.svg___8GvHj)}
+                role={"img"}
+              />
+
+              <IconSettings4Icon
+                className={classNames(projectcss.all, sty.svg__maFh3)}
+                role={"img"}
+              />
+
+              <div
+                data-plasmic-name={"yekst7"}
+                data-plasmic-override={overrides.yekst7}
+                className={classNames(projectcss.all, sty.yekst7)}
+              >
+                <div
+                  data-plasmic-name={"loremIpsum7"}
+                  data-plasmic-override={overrides.loremIpsum7}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.loremIpsum7
+                  )}
+                >
+                  {"Tryb serwisowy"}
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"settingsLoudness"}
+              data-plasmic-override={overrides.settingsLoudness}
+              className={classNames(projectcss.all, sty.settingsLoudness)}
+            >
+              <div
+                data-plasmic-name={"rectangle1123"}
+                data-plasmic-override={overrides.rectangle1123}
+                className={classNames(projectcss.all, sty.rectangle1123)}
+              />
+
+              <div
+                data-plasmic-name={"slider"}
+                data-plasmic-override={overrides.slider}
+                className={classNames(projectcss.all, sty.slider)}
+              >
+                <div
+                  data-plasmic-name={"rectangle1128"}
+                  data-plasmic-override={overrides.rectangle1128}
+                  className={classNames(projectcss.all, sty.rectangle1128)}
+                />
+
+                <div
+                  data-plasmic-name={"rectangle1131"}
+                  data-plasmic-override={overrides.rectangle1131}
+                  className={classNames(projectcss.all, sty.rectangle1131)}
+                />
+
+                <Ellipse296Icon
+                  className={classNames(projectcss.all, sty.svg__iLBi)}
+                  role={"img"}
+                />
+              </div>
+
+              <div
+                data-plasmic-name={"group1321"}
+                data-plasmic-override={overrides.group1321}
+                className={classNames(projectcss.all, sty.group1321)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__prWe
+                  )}
+                >
+                  {"Głośność dzwonka"}
+                </div>
+
+                <IconSound2Icon
+                  className={classNames(projectcss.all, sty.svg__yd0FI)}
+                  role={"img"}
+                />
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"settingsRingBell"}
+              data-plasmic-override={overrides.settingsRingBell}
+              className={classNames(projectcss.all, sty.settingsRingBell)}
+            >
+              <div
+                data-plasmic-name={"rectangle1124"}
+                data-plasmic-override={overrides.rectangle1124}
+                className={classNames(projectcss.all, sty.rectangle1124)}
+              />
+
+              <div
+                data-plasmic-name={"group1322"}
+                data-plasmic-override={overrides.group1322}
+                className={classNames(projectcss.all, sty.group1322)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__y7W3A
+                  )}
+                >
+                  {"Dźwięk dzwonka"}
+                </div>
+
+                <IconEyeiconMusicIcon
+                  className={classNames(projectcss.all, sty.svg__pGhyj)}
+                  role={"img"}
+                />
+              </div>
+
+              <div
+                data-plasmic-name={"ringtones"}
+                data-plasmic-override={overrides.ringtones}
+                className={classNames(projectcss.all, sty.ringtones)}
+              >
+                <div
+                  data-plasmic-name={"circleButtons"}
+                  data-plasmic-override={overrides.circleButtons}
+                  className={classNames(projectcss.all, sty.circleButtons)}
+                >
+                  <Ellipse49Icon
+                    className={classNames(projectcss.all, sty.svg__f93Nd)}
+                    role={"img"}
+                  />
+
+                  <div
+                    data-plasmic-name={"_1"}
+                    data-plasmic-override={overrides._1}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty._1
+                    )}
+                  >
+                    {"2"}
+                  </div>
+                </div>
+
+                <div
+                  data-plasmic-name={"circleButtons2"}
+                  data-plasmic-override={overrides.circleButtons2}
+                  className={classNames(projectcss.all, sty.circleButtons2)}
+                >
+                  <Ellipse49Icon
+                    className={classNames(projectcss.all, sty.svg__fe4Bu)}
+                    role={"img"}
+                  />
+
+                  <div
+                    data-plasmic-name={"_2"}
+                    data-plasmic-override={overrides._2}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty._2
+                    )}
+                  >
+                    {"3"}
+                  </div>
+                </div>
+
+                <div
+                  data-plasmic-name={"circleButtons3"}
+                  data-plasmic-override={overrides.circleButtons3}
+                  className={classNames(projectcss.all, sty.circleButtons3)}
+                >
+                  <Ellipse49Icon
+                    className={classNames(projectcss.all, sty.svg__nwIZb)}
+                    role={"img"}
+                  />
+
+                  <div
+                    data-plasmic-name={"_3"}
+                    data-plasmic-override={overrides._3}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty._3
+                    )}
+                  >
+                    {"4"}
+                  </div>
+                </div>
+
+                <div
+                  data-plasmic-name={"circleButtons4"}
+                  data-plasmic-override={overrides.circleButtons4}
+                  className={classNames(projectcss.all, sty.circleButtons4)}
+                >
+                  <Ellipse49Icon
+                    className={classNames(projectcss.all, sty.svg__siDyh)}
+                    role={"img"}
+                  />
+
+                  <div
+                    data-plasmic-name={"_4"}
+                    data-plasmic-override={overrides._4}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty._4
+                    )}
+                  >
+                    {"5"}
+                  </div>
+                </div>
+
+                <div
+                  data-plasmic-name={"circleButtons5"}
+                  data-plasmic-override={overrides.circleButtons5}
+                  className={classNames(projectcss.all, sty.circleButtons5)}
+                >
+                  <Ellipse3Icon
+                    className={classNames(projectcss.all, sty.svg__m10Kg)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gNzx6
+                    )}
+                  >
+                    {"1"}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"settingsBrightness"}
+              data-plasmic-override={overrides.settingsBrightness}
+              className={classNames(projectcss.all, sty.settingsBrightness)}
+            >
+              <div
+                data-plasmic-name={"rectangle1125"}
+                data-plasmic-override={overrides.rectangle1125}
+                className={classNames(projectcss.all, sty.rectangle1125)}
+              />
+
+              <div
+                data-plasmic-name={"slider2"}
+                data-plasmic-override={overrides.slider2}
+                className={classNames(projectcss.all, sty.slider2)}
+              >
+                <div
+                  data-plasmic-name={"rectangle1129"}
+                  data-plasmic-override={overrides.rectangle1129}
+                  className={classNames(projectcss.all, sty.rectangle1129)}
+                />
+
+                <div
+                  data-plasmic-name={"rectangle1132"}
+                  data-plasmic-override={overrides.rectangle1132}
+                  className={classNames(projectcss.all, sty.rectangle1132)}
+                />
+
+                <Ellipse296Icon
+                  className={classNames(projectcss.all, sty.svg__fisSp)}
+                  role={"img"}
+                />
+              </div>
+
+              <div
+                data-plasmic-name={"group1323"}
+                data-plasmic-override={overrides.group1323}
+                className={classNames(projectcss.all, sty.group1323)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pKr5U
+                  )}
+                >
+                  {"Jasność ekranu"}
+                </div>
+
+                <IconBrightnessIcon
+                  className={classNames(projectcss.all, sty.svg__jvdmn)}
+                  role={"img"}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: [
+    "root",
+    "figmaPaste",
+    "mainLabels",
+    "tryby",
+    "circleButtonSettings",
+    "smartSuggestions",
+    "rectangle20",
+    "yekst",
+    "loremIpsum",
+    "iconSmartOptimization",
+    "petAtHome",
+    "rectangle21",
+    "yekst2",
+    "loremIpsum2",
+    "alwaysOn",
+    "rectangle22",
+    "alwaysOn48X48",
+    "rectangle4486",
+    "yekst3",
+    "loremIpsum3",
+    "favourites",
+    "rectangle23",
+    "yekst4",
+    "loremIpsum4",
+    "wiFi",
+    "rectangle24",
+    "yekst5",
+    "loremIpsum5",
+    "customerService",
+    "rectangle25",
+    "yekst6",
+    "loremIpsum6",
+    "service",
+    "rectangle26",
+    "yekst7",
+    "loremIpsum7",
+    "settingsLoudness",
+    "rectangle1123",
+    "slider",
+    "rectangle1128",
+    "rectangle1131",
+    "group1321",
+    "settingsRingBell",
+    "rectangle1124",
+    "group1322",
+    "ringtones",
+    "circleButtons",
+    "_1",
+    "circleButtons2",
+    "_2",
+    "circleButtons3",
+    "_3",
+    "circleButtons4",
+    "_4",
+    "circleButtons5",
+    "settingsBrightness",
+    "rectangle1125",
+    "slider2",
+    "rectangle1129",
+    "rectangle1132",
+    "group1323"
+  ],
+  figmaPaste: [
+    "figmaPaste",
+    "mainLabels",
+    "tryby",
+    "circleButtonSettings",
+    "smartSuggestions",
+    "rectangle20",
+    "yekst",
+    "loremIpsum",
+    "iconSmartOptimization",
+    "petAtHome",
+    "rectangle21",
+    "yekst2",
+    "loremIpsum2",
+    "alwaysOn",
+    "rectangle22",
+    "alwaysOn48X48",
+    "rectangle4486",
+    "yekst3",
+    "loremIpsum3",
+    "favourites",
+    "rectangle23",
+    "yekst4",
+    "loremIpsum4",
+    "wiFi",
+    "rectangle24",
+    "yekst5",
+    "loremIpsum5",
+    "customerService",
+    "rectangle25",
+    "yekst6",
+    "loremIpsum6",
+    "service",
+    "rectangle26",
+    "yekst7",
+    "loremIpsum7",
+    "settingsLoudness",
+    "rectangle1123",
+    "slider",
+    "rectangle1128",
+    "rectangle1131",
+    "group1321",
+    "settingsRingBell",
+    "rectangle1124",
+    "group1322",
+    "ringtones",
+    "circleButtons",
+    "_1",
+    "circleButtons2",
+    "_2",
+    "circleButtons3",
+    "_3",
+    "circleButtons4",
+    "_4",
+    "circleButtons5",
+    "settingsBrightness",
+    "rectangle1125",
+    "slider2",
+    "rectangle1129",
+    "rectangle1132",
+    "group1323"
+  ],
+  mainLabels: ["mainLabels", "tryby", "circleButtonSettings"],
+  tryby: ["tryby"],
+  circleButtonSettings: ["circleButtonSettings"],
+  smartSuggestions: [
+    "smartSuggestions",
+    "rectangle20",
+    "yekst",
+    "loremIpsum",
+    "iconSmartOptimization"
+  ],
+  rectangle20: ["rectangle20"],
+  yekst: ["yekst", "loremIpsum"],
+  loremIpsum: ["loremIpsum"],
+  iconSmartOptimization: ["iconSmartOptimization"],
+  petAtHome: ["petAtHome", "rectangle21", "yekst2", "loremIpsum2"],
+  rectangle21: ["rectangle21"],
+  yekst2: ["yekst2", "loremIpsum2"],
+  loremIpsum2: ["loremIpsum2"],
+  alwaysOn: [
+    "alwaysOn",
+    "rectangle22",
+    "alwaysOn48X48",
+    "rectangle4486",
+    "yekst3",
+    "loremIpsum3"
+  ],
+  rectangle22: ["rectangle22"],
+  alwaysOn48X48: ["alwaysOn48X48", "rectangle4486"],
+  rectangle4486: ["rectangle4486"],
+  yekst3: ["yekst3", "loremIpsum3"],
+  loremIpsum3: ["loremIpsum3"],
+  favourites: ["favourites", "rectangle23", "yekst4", "loremIpsum4"],
+  rectangle23: ["rectangle23"],
+  yekst4: ["yekst4", "loremIpsum4"],
+  loremIpsum4: ["loremIpsum4"],
+  wiFi: ["wiFi", "rectangle24", "yekst5", "loremIpsum5"],
+  rectangle24: ["rectangle24"],
+  yekst5: ["yekst5", "loremIpsum5"],
+  loremIpsum5: ["loremIpsum5"],
+  customerService: ["customerService", "rectangle25", "yekst6", "loremIpsum6"],
+  rectangle25: ["rectangle25"],
+  yekst6: ["yekst6", "loremIpsum6"],
+  loremIpsum6: ["loremIpsum6"],
+  service: ["service", "rectangle26", "yekst7", "loremIpsum7"],
+  rectangle26: ["rectangle26"],
+  yekst7: ["yekst7", "loremIpsum7"],
+  loremIpsum7: ["loremIpsum7"],
+  settingsLoudness: [
+    "settingsLoudness",
+    "rectangle1123",
+    "slider",
+    "rectangle1128",
+    "rectangle1131",
+    "group1321"
+  ],
+  rectangle1123: ["rectangle1123"],
+  slider: ["slider", "rectangle1128", "rectangle1131"],
+  rectangle1128: ["rectangle1128"],
+  rectangle1131: ["rectangle1131"],
+  group1321: ["group1321"],
+  settingsRingBell: [
+    "settingsRingBell",
+    "rectangle1124",
+    "group1322",
+    "ringtones",
+    "circleButtons",
+    "_1",
+    "circleButtons2",
+    "_2",
+    "circleButtons3",
+    "_3",
+    "circleButtons4",
+    "_4",
+    "circleButtons5"
+  ],
+  rectangle1124: ["rectangle1124"],
+  group1322: ["group1322"],
+  ringtones: [
+    "ringtones",
+    "circleButtons",
+    "_1",
+    "circleButtons2",
+    "_2",
+    "circleButtons3",
+    "_3",
+    "circleButtons4",
+    "_4",
+    "circleButtons5"
+  ],
+  circleButtons: ["circleButtons", "_1"],
+  _1: ["_1"],
+  circleButtons2: ["circleButtons2", "_2"],
+  _2: ["_2"],
+  circleButtons3: ["circleButtons3", "_3"],
+  _3: ["_3"],
+  circleButtons4: ["circleButtons4", "_4"],
+  _4: ["_4"],
+  circleButtons5: ["circleButtons5"],
+  settingsBrightness: [
+    "settingsBrightness",
+    "rectangle1125",
+    "slider2",
+    "rectangle1129",
+    "rectangle1132",
+    "group1323"
+  ],
+  rectangle1125: ["rectangle1125"],
+  slider2: ["slider2", "rectangle1129", "rectangle1132"],
+  rectangle1129: ["rectangle1129"],
+  rectangle1132: ["rectangle1132"],
+  group1323: ["group1323"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  figmaPaste: "div";
+  mainLabels: "div";
+  tryby: "div";
+  circleButtonSettings: "div";
+  smartSuggestions: "div";
+  rectangle20: "div";
+  yekst: "div";
+  loremIpsum: "div";
+  iconSmartOptimization: "div";
+  petAtHome: "div";
+  rectangle21: "div";
+  yekst2: "div";
+  loremIpsum2: "div";
+  alwaysOn: "div";
+  rectangle22: "div";
+  alwaysOn48X48: "div";
+  rectangle4486: "div";
+  yekst3: "div";
+  loremIpsum3: "div";
+  favourites: "div";
+  rectangle23: "div";
+  yekst4: "div";
+  loremIpsum4: "div";
+  wiFi: "div";
+  rectangle24: "div";
+  yekst5: "div";
+  loremIpsum5: "div";
+  customerService: "div";
+  rectangle25: "div";
+  yekst6: "div";
+  loremIpsum6: "div";
+  service: "div";
+  rectangle26: "div";
+  yekst7: "div";
+  loremIpsum7: "div";
+  settingsLoudness: "div";
+  rectangle1123: "div";
+  slider: "div";
+  rectangle1128: "div";
+  rectangle1131: "div";
+  group1321: "div";
+  settingsRingBell: "div";
+  rectangle1124: "div";
+  group1322: "div";
+  ringtones: "div";
+  circleButtons: "div";
+  _1: "div";
+  circleButtons2: "div";
+  _2: "div";
+  circleButtons3: "div";
+  _3: "div";
+  circleButtons4: "div";
+  _4: "div";
+  circleButtons5: "div";
+  settingsBrightness: "div";
+  rectangle1125: "div";
+  slider2: "div";
+  rectangle1129: "div";
+  rectangle1132: "div";
+  group1323: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -160,6 +1176,66 @@ export const PlasmicSettings = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    figmaPaste: makeNodeComponent("figmaPaste"),
+    mainLabels: makeNodeComponent("mainLabels"),
+    tryby: makeNodeComponent("tryby"),
+    circleButtonSettings: makeNodeComponent("circleButtonSettings"),
+    smartSuggestions: makeNodeComponent("smartSuggestions"),
+    rectangle20: makeNodeComponent("rectangle20"),
+    yekst: makeNodeComponent("yekst"),
+    loremIpsum: makeNodeComponent("loremIpsum"),
+    iconSmartOptimization: makeNodeComponent("iconSmartOptimization"),
+    petAtHome: makeNodeComponent("petAtHome"),
+    rectangle21: makeNodeComponent("rectangle21"),
+    yekst2: makeNodeComponent("yekst2"),
+    loremIpsum2: makeNodeComponent("loremIpsum2"),
+    alwaysOn: makeNodeComponent("alwaysOn"),
+    rectangle22: makeNodeComponent("rectangle22"),
+    alwaysOn48X48: makeNodeComponent("alwaysOn48X48"),
+    rectangle4486: makeNodeComponent("rectangle4486"),
+    yekst3: makeNodeComponent("yekst3"),
+    loremIpsum3: makeNodeComponent("loremIpsum3"),
+    favourites: makeNodeComponent("favourites"),
+    rectangle23: makeNodeComponent("rectangle23"),
+    yekst4: makeNodeComponent("yekst4"),
+    loremIpsum4: makeNodeComponent("loremIpsum4"),
+    wiFi: makeNodeComponent("wiFi"),
+    rectangle24: makeNodeComponent("rectangle24"),
+    yekst5: makeNodeComponent("yekst5"),
+    loremIpsum5: makeNodeComponent("loremIpsum5"),
+    customerService: makeNodeComponent("customerService"),
+    rectangle25: makeNodeComponent("rectangle25"),
+    yekst6: makeNodeComponent("yekst6"),
+    loremIpsum6: makeNodeComponent("loremIpsum6"),
+    service: makeNodeComponent("service"),
+    rectangle26: makeNodeComponent("rectangle26"),
+    yekst7: makeNodeComponent("yekst7"),
+    loremIpsum7: makeNodeComponent("loremIpsum7"),
+    settingsLoudness: makeNodeComponent("settingsLoudness"),
+    rectangle1123: makeNodeComponent("rectangle1123"),
+    slider: makeNodeComponent("slider"),
+    rectangle1128: makeNodeComponent("rectangle1128"),
+    rectangle1131: makeNodeComponent("rectangle1131"),
+    group1321: makeNodeComponent("group1321"),
+    settingsRingBell: makeNodeComponent("settingsRingBell"),
+    rectangle1124: makeNodeComponent("rectangle1124"),
+    group1322: makeNodeComponent("group1322"),
+    ringtones: makeNodeComponent("ringtones"),
+    circleButtons: makeNodeComponent("circleButtons"),
+    _1: makeNodeComponent("_1"),
+    circleButtons2: makeNodeComponent("circleButtons2"),
+    _2: makeNodeComponent("_2"),
+    circleButtons3: makeNodeComponent("circleButtons3"),
+    _3: makeNodeComponent("_3"),
+    circleButtons4: makeNodeComponent("circleButtons4"),
+    _4: makeNodeComponent("_4"),
+    circleButtons5: makeNodeComponent("circleButtons5"),
+    settingsBrightness: makeNodeComponent("settingsBrightness"),
+    rectangle1125: makeNodeComponent("rectangle1125"),
+    slider2: makeNodeComponent("slider2"),
+    rectangle1129: makeNodeComponent("rectangle1129"),
+    rectangle1132: makeNodeComponent("rectangle1132"),
+    group1323: makeNodeComponent("group1323"),
 
     // Metadata about props expected for PlasmicSettings
     internalVariantProps: PlasmicSettings__VariantProps,

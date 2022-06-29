@@ -31,6 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import SettingsButton from "../../SettingsButton"; // plasmic-import: 5o0BGUmfu3/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -59,9 +60,12 @@ export const PlasmicTopBar__VariantProps = new Array<VariantPropType>(
   "offline"
 );
 
-export type PlasmicTopBar__ArgsType = {};
+export type PlasmicTopBar__ArgsType = {
+  settingsBtn?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicTopBar__ArgsType;
-export const PlasmicTopBar__ArgProps = new Array<ArgPropType>();
+export const PlasmicTopBar__ArgProps = new Array<ArgPropType>("settingsBtn");
 
 export type PlasmicTopBar__OverridesType = {
   root2?: p.Flex<"div">;
@@ -71,13 +75,13 @@ export type PlasmicTopBar__OverridesType = {
   frame3869?: p.Flex<"div">;
   group39513?: p.Flex<"div">;
   topBarMainPanel2?: p.Flex<"div">;
-  buttonCircleSettings2?: p.Flex<"a">;
-  button?: p.Flex<"svg">;
+  freeBox?: p.Flex<"div">;
   frame3868?: p.Flex<"div">;
   group39512?: p.Flex<"div">;
 };
 
 export interface DefaultTopBarProps {
+  settingsBtn?: React.ReactNode;
   colapsed?: SingleBooleanChoiceArg<"colapsed">;
   offline?: SingleBooleanChoiceArg<"offline">;
   className?: string;
@@ -243,30 +247,24 @@ function PlasmicTopBar__RenderFunc(props: {
             />
           ) : null}
 
-          <a
-            data-plasmic-name={"buttonCircleSettings2"}
-            data-plasmic-override={overrides.buttonCircleSettings2}
-            className={classNames(
-              projectcss.all,
-              projectcss.a,
-              sty.buttonCircleSettings2
-            )}
-            href={"/settings" as const}
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
           >
-            <Ellipse263Icon
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames(projectcss.all, sty.button)}
-              onClick={"click" as const}
-              path={"/settings" as const}
-              role={"img"}
-            />
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <SettingsButton
+                  className={classNames(
+                    "__wab_instance",
+                    sty.settingsButton__xy0Kk
+                  )}
+                />
+              ),
 
-            <IconSettings3Icon
-              className={classNames(projectcss.all, sty.svg__isewu)}
-              role={"img"}
-            />
-          </a>
+              value: args.settingsBtn
+            })}
+          </div>
 
           <div
             data-plasmic-name={"frame3868"}
@@ -316,8 +314,7 @@ const PlasmicDescendants = {
     "frame3869",
     "group39513",
     "topBarMainPanel2",
-    "buttonCircleSettings2",
-    "button",
+    "freeBox",
     "frame3868",
     "group39512"
   ],
@@ -331,15 +328,8 @@ const PlasmicDescendants = {
   buttonCircleSettings: ["buttonCircleSettings"],
   frame3869: ["frame3869", "group39513"],
   group39513: ["group39513"],
-  topBarMainPanel2: [
-    "topBarMainPanel2",
-    "buttonCircleSettings2",
-    "button",
-    "frame3868",
-    "group39512"
-  ],
-  buttonCircleSettings2: ["buttonCircleSettings2", "button"],
-  button: ["button"],
+  topBarMainPanel2: ["topBarMainPanel2", "freeBox", "frame3868", "group39512"],
+  freeBox: ["freeBox"],
   frame3868: ["frame3868", "group39512"],
   group39512: ["group39512"]
 } as const;
@@ -354,8 +344,7 @@ type NodeDefaultElementType = {
   frame3869: "div";
   group39513: "div";
   topBarMainPanel2: "div";
-  buttonCircleSettings2: "a";
-  button: "svg";
+  freeBox: "div";
   frame3868: "div";
   group39512: "div";
 };
@@ -423,8 +412,7 @@ export const PlasmicTopBar = Object.assign(
     frame3869: makeNodeComponent("frame3869"),
     group39513: makeNodeComponent("group39513"),
     topBarMainPanel2: makeNodeComponent("topBarMainPanel2"),
-    buttonCircleSettings2: makeNodeComponent("buttonCircleSettings2"),
-    button: makeNodeComponent("button"),
+    freeBox: makeNodeComponent("freeBox"),
     frame3868: makeNodeComponent("frame3868"),
     group39512: makeNodeComponent("group39512"),
 
