@@ -62,9 +62,6 @@ export interface DefaultRecordingBtnWidgetProps {
   className?: string;
 }
 
-export const defaultRecordingBtnWidget__Args: Partial<PlasmicRecordingBtnWidget__ArgsType> =
-  {};
-
 function PlasmicRecordingBtnWidget__RenderFunc(props: {
   variants: PlasmicRecordingBtnWidget__VariantsArgs;
   args: PlasmicRecordingBtnWidget__ArgsType;
@@ -73,9 +70,19 @@ function PlasmicRecordingBtnWidget__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultRecordingBtnWidget__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -174,12 +181,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicRecordingBtnWidget__ArgProps,
-      internalVariantPropNames: PlasmicRecordingBtnWidget__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicRecordingBtnWidget__ArgProps,
+          internalVariantPropNames: PlasmicRecordingBtnWidget__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicRecordingBtnWidget__RenderFunc({
       variants,

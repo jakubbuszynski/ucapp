@@ -40,6 +40,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_blank_project_mobile_first.module.css"; // plasmic-import: wGQNdEnY25VfiXqc2ZGJrZ/projectcss
 import sty from "./PlasmicLayout.module.css"; // plasmic-import: Pi1SnN7SLJ/css
 
+import IconWifi2Icon from "./icons/PlasmicIcon__IconWifi2"; // plasmic-import: xX_5xOFSAF/icon
+
 export type PlasmicLayout__VariantMembers = {
   shortTopBar: "shortTopBar";
   withoutNavBar: "withoutNavBar";
@@ -61,27 +63,30 @@ export const PlasmicLayout__VariantProps = new Array<VariantPropType>(
 
 export type PlasmicLayout__ArgsType = {
   children?: React.ReactNode;
+  topBar?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicLayout__ArgsType;
-export const PlasmicLayout__ArgProps = new Array<ArgPropType>("children");
+export const PlasmicLayout__ArgProps = new Array<ArgPropType>(
+  "children",
+  "topBar"
+);
 
 export type PlasmicLayout__OverridesType = {
   root?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
-  topBar?: p.Flex<typeof TopBar>;
+  barTop?: p.Flex<"div">;
+  svg?: p.Flex<"svg">;
   navBar?: p.Flex<typeof NavBar>;
 };
 
 export interface DefaultLayoutProps {
   children?: React.ReactNode;
+  topBar?: React.ReactNode;
   shortTopBar?: SingleBooleanChoiceArg<"shortTopBar">;
   withoutNavBar?: SingleBooleanChoiceArg<"withoutNavBar">;
   displayNone?: SingleBooleanChoiceArg<"displayNone">;
   className?: string;
 }
-
-export const defaultLayout__Args: Partial<PlasmicLayout__ArgsType> = {};
 
 function PlasmicLayout__RenderFunc(props: {
   variants: PlasmicLayout__VariantsArgs;
@@ -91,9 +96,19 @@ function PlasmicLayout__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultLayout__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -122,15 +137,16 @@ function PlasmicLayout__RenderFunc(props: {
             variants,
             "withoutNavBar",
             "withoutNavBar"
-          )
+          ),
+          [sty.rootwithoutNavBar_shortTopBar]:
+            hasVariant(variants, "shortTopBar", "shortTopBar") &&
+            hasVariant(variants, "withoutNavBar", "withoutNavBar")
         }
       )}
     >
       <div
-        data-plasmic-name={"freeBox"}
-        data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox, {
-          [sty.freeBoxshortTopBar]: hasVariant(
+        className={classNames(projectcss.all, sty.freeBox__csq8R, {
+          [sty.freeBoxshortTopBar__csq8Rja3Cr]: hasVariant(
             variants,
             "shortTopBar",
             "shortTopBar"
@@ -144,34 +160,85 @@ function PlasmicLayout__RenderFunc(props: {
       </div>
 
       {(hasVariant(variants, "displayNone", "displayNone") ? true : true) ? (
-        <TopBar
-          data-plasmic-name={"topBar"}
-          data-plasmic-override={overrides.topBar}
-          className={classNames("__wab_instance", sty.topBar, {
-            [sty.topBardisplayNone]: hasVariant(
+        <div
+          className={classNames(projectcss.all, sty.freeBox__iIMa9, {
+            [sty.freeBoxdisplayNone__iIMa9CrG6C]: hasVariant(
               variants,
               "displayNone",
               "displayNone"
             ),
-            [sty.topBarshortTopBar]: hasVariant(
+            [sty.freeBoxshortTopBar__iIMa9Ja3Cr]: hasVariant(
               variants,
               "shortTopBar",
               "shortTopBar"
             ),
-            [sty.topBarwithoutNavBar]: hasVariant(
+            [sty.freeBoxwithoutNavBar__iIMa9ET6Gq]: hasVariant(
               variants,
               "withoutNavBar",
               "withoutNavBar"
             )
           })}
-          colapsed={
-            hasVariant(variants, "withoutNavBar", "withoutNavBar")
+        >
+          {(
+            hasVariant(variants, "shortTopBar", "shortTopBar") ? true : true
+          ) ? (
+            <div
+              data-plasmic-name={"barTop"}
+              data-plasmic-override={overrides.barTop}
+              className={classNames(projectcss.all, sty.barTop, {
+                [sty.barTopshortTopBar]: hasVariant(
+                  variants,
+                  "shortTopBar",
+                  "shortTopBar"
+                )
+              })}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___6JxYx
+                )}
+              >
+                {"czwartek, 3 luty"}
+              </div>
+
+              <IconWifi2Icon
+                data-plasmic-name={"svg"}
+                data-plasmic-override={overrides.svg}
+                className={classNames(projectcss.all, sty.svg)}
+                role={"img"}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fj6P
+                )}
+              >
+                {"12:00"}
+              </div>
+            </div>
+          ) : null}
+          {(
+            hasVariant(variants, "displayNone", "displayNone")
               ? true
               : hasVariant(variants, "shortTopBar", "shortTopBar")
-              ? true
-              : undefined
-          }
-        />
+              ? false
+              : true
+          )
+            ? p.renderPlasmicSlot({
+                defaultContents: (
+                  <TopBar
+                    className={classNames("__wab_instance", sty.topBar__nlbm)}
+                  />
+                ),
+
+                value: args.topBar
+              })
+            : null}
+        </div>
       ) : null}
       {(
         hasVariant(variants, "displayNone", "displayNone")
@@ -207,9 +274,9 @@ function PlasmicLayout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "topBar", "navBar"],
-  freeBox: ["freeBox"],
-  topBar: ["topBar"],
+  root: ["root", "barTop", "svg", "navBar"],
+  barTop: ["barTop", "svg"],
+  svg: ["svg"],
   navBar: ["navBar"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -217,8 +284,8 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
-  topBar: typeof TopBar;
+  barTop: "div";
+  svg: "svg";
   navBar: typeof NavBar;
 };
 
@@ -252,12 +319,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicLayout__ArgProps,
-      internalVariantPropNames: PlasmicLayout__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicLayout__ArgProps,
+          internalVariantPropNames: PlasmicLayout__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicLayout__RenderFunc({
       variants,
@@ -279,8 +350,8 @@ export const PlasmicLayout = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
-    topBar: makeNodeComponent("topBar"),
+    barTop: makeNodeComponent("barTop"),
+    svg: makeNodeComponent("svg"),
     navBar: makeNodeComponent("navBar"),
 
     // Metadata about props expected for PlasmicLayout

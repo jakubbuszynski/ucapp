@@ -97,8 +97,6 @@ export interface DefaultHomepageProps {
   className?: string;
 }
 
-export const defaultHomepage__Args: Partial<PlasmicHomepage__ArgsType> = {};
-
 function PlasmicHomepage__RenderFunc(props: {
   variants: PlasmicHomepage__VariantsArgs;
   args: PlasmicHomepage__ArgsType;
@@ -107,9 +105,19 @@ function PlasmicHomepage__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultHomepage__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <React.Fragment>
@@ -365,6 +373,28 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"dateTimeWidget"}
             data-plasmic-override={overrides.dateTimeWidget}
             className={classNames("__wab_instance", sty.dateTimeWidget)}
+            dateText={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ssssr
+                )}
+              >
+                {"Poniedziałek\n30 październik 2022"}
+              </div>
+            }
+            timeText={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__uGvd8
+                )}
+              >
+                {"14:22"}
+              </div>
+            }
           />
         </div>
       ) : null}
@@ -505,12 +535,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicHomepage__ArgProps,
-      internalVariantPropNames: PlasmicHomepage__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicHomepage__ArgProps,
+          internalVariantPropNames: PlasmicHomepage__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicHomepage__RenderFunc({
       variants,

@@ -86,8 +86,6 @@ export interface DefaultSwitchProps extends pp.SwitchProps {
   "aria-labelledby"?: string;
 }
 
-export const defaultSwitch__Args: Partial<PlasmicSwitch__ArgsType> = {};
-
 function PlasmicSwitch__RenderFunc(props: {
   variants: PlasmicSwitch__VariantsArgs;
   args: PlasmicSwitch__ArgsType;
@@ -96,9 +94,19 @@ function PlasmicSwitch__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultSwitch__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
@@ -284,12 +292,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicSwitch__ArgProps,
-      internalVariantPropNames: PlasmicSwitch__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicSwitch__ArgProps,
+          internalVariantPropNames: PlasmicSwitch__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicSwitch__RenderFunc({
       variants,

@@ -87,8 +87,6 @@ export interface DefaultTopBarProps {
   className?: string;
 }
 
-export const defaultTopBar__Args: Partial<PlasmicTopBar__ArgsType> = {};
-
 function PlasmicTopBar__RenderFunc(props: {
   variants: PlasmicTopBar__VariantsArgs;
   args: PlasmicTopBar__ArgsType;
@@ -97,9 +95,19 @@ function PlasmicTopBar__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultTopBar__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -379,12 +387,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicTopBar__ArgProps,
-      internalVariantPropNames: PlasmicTopBar__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicTopBar__ArgProps,
+          internalVariantPropNames: PlasmicTopBar__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicTopBar__RenderFunc({
       variants,

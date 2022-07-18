@@ -46,8 +46,8 @@ export type PlasmicBtn__VariantMembers = {
   showStartIcon: "showStartIcon";
   showEndIcon: "showEndIcon";
   isDisabled: "isDisabled";
-  shape: "short" | "vertical" | "iconOnly";
-  color: "dark" | "highContrast" | "grey";
+  shape: "short" | "vertical" | "iconOnly" | "_36";
+  color: "dark" | "highContrast" | "grey" | "transparent";
   navigation: "unnamedVariant";
 };
 
@@ -55,8 +55,8 @@ export type PlasmicBtn__VariantsArgs = {
   showStartIcon?: SingleBooleanChoiceArg<"showStartIcon">;
   showEndIcon?: SingleBooleanChoiceArg<"showEndIcon">;
   isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
-  shape?: SingleChoiceArg<"short" | "vertical" | "iconOnly">;
-  color?: SingleChoiceArg<"dark" | "highContrast" | "grey">;
+  shape?: SingleChoiceArg<"short" | "vertical" | "iconOnly" | "_36">;
+  color?: SingleChoiceArg<"dark" | "highContrast" | "grey" | "transparent">;
   navigation?: SingleChoiceArg<"unnamedVariant">;
 };
 
@@ -101,12 +101,10 @@ export type PlasmicBtn__OverridesType = {
 };
 
 export interface DefaultBtnProps extends pp.BaseButtonProps {
-  shape?: SingleChoiceArg<"short" | "vertical" | "iconOnly">;
-  color?: SingleChoiceArg<"dark" | "highContrast" | "grey">;
+  shape?: SingleChoiceArg<"short" | "vertical" | "iconOnly" | "_36">;
+  color?: SingleChoiceArg<"dark" | "highContrast" | "grey" | "transparent">;
   navigation?: SingleChoiceArg<"unnamedVariant">;
 }
-
-export const defaultBtn__Args: Partial<PlasmicBtn__ArgsType> = {};
 
 function PlasmicBtn__RenderFunc(props: {
   variants: PlasmicBtn__VariantsArgs;
@@ -116,9 +114,19 @@ function PlasmicBtn__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultBtn__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     (hasVariant(variants, "navigation", "unnamedVariant") ? true : true) ? (
@@ -144,6 +152,11 @@ function PlasmicBtn__RenderFunc(props: {
               "color",
               "highContrast"
             ),
+            [sty.rootcolor_transparent]: hasVariant(
+              variants,
+              "color",
+              "transparent"
+            ),
             [sty.rootisDisabled]: hasVariant(
               variants,
               "isDisabled",
@@ -154,6 +167,7 @@ function PlasmicBtn__RenderFunc(props: {
               "navigation",
               "unnamedVariant"
             ),
+            [sty.rootshape__36]: hasVariant(variants, "shape", "_36"),
             [sty.rootshape_short]: hasVariant(variants, "shape", "short"),
             [sty.rootshape_short_showEndIcon]:
               hasVariant(variants, "showEndIcon", "showEndIcon") &&
@@ -191,6 +205,11 @@ function PlasmicBtn__RenderFunc(props: {
                 "color",
                 "highContrast"
               ),
+              [sty.freeBoxcolor_transparent]: hasVariant(
+                variants,
+                "color",
+                "transparent"
+              ),
               [sty.freeBoxisDisabled]: hasVariant(
                 variants,
                 "isDisabled",
@@ -201,6 +220,7 @@ function PlasmicBtn__RenderFunc(props: {
                 "navigation",
                 "unnamedVariant"
               ),
+              [sty.freeBoxshape__36]: hasVariant(variants, "shape", "_36"),
               [sty.freeBoxshape_iconOnly]: hasVariant(
                 variants,
                 "shape",
@@ -225,11 +245,17 @@ function PlasmicBtn__RenderFunc(props: {
               data-plasmic-override={overrides.frame3947}
               hasGap={true}
               className={classNames(projectcss.all, sty.frame3947, {
+                [sty.frame3947color_transparent]: hasVariant(
+                  variants,
+                  "color",
+                  "transparent"
+                ),
                 [sty.frame3947isDisabled]: hasVariant(
                   variants,
                   "isDisabled",
                   "isDisabled"
                 ),
+                [sty.frame3947shape__36]: hasVariant(variants, "shape", "_36"),
                 [sty.frame3947shape_vertical]: hasVariant(
                   variants,
                   "shape",
@@ -238,7 +264,9 @@ function PlasmicBtn__RenderFunc(props: {
               })}
             >
               {(
-                hasVariant(variants, "shape", "iconOnly")
+                hasVariant(variants, "shape", "_36")
+                  ? true
+                  : hasVariant(variants, "shape", "iconOnly")
                   ? true
                   : hasVariant(variants, "shape", "vertical")
                   ? true
@@ -259,6 +287,11 @@ function PlasmicBtn__RenderFunc(props: {
                         variants,
                         "color",
                         "dark"
+                      ),
+                      [sty.startIconContainershape__36]: hasVariant(
+                        variants,
+                        "shape",
+                        "_36"
                       ),
                       [sty.startIconContainershape_iconOnly]: hasVariant(
                         variants,
@@ -294,62 +327,85 @@ function PlasmicBtn__RenderFunc(props: {
                     }
                   )}
                 >
-                  {p.renderPlasmicSlot({
-                    defaultContents: (
-                      <IconConfirmCallIcon
-                        className={classNames(projectcss.all, sty.svg__oxa8F)}
-                        role={"img"}
-                      />
-                    ),
+                  {(hasVariant(variants, "shape", "_36") ? true : true)
+                    ? p.renderPlasmicSlot({
+                        defaultContents: (
+                          <IconConfirmCallIcon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__oxa8F
+                            )}
+                            role={"img"}
+                          />
+                        ),
 
-                    value: args.startIcon,
-                    className: classNames(sty.slotTargetStartIcon, {
-                      [sty.slotTargetStartIconcolor_dark]: hasVariant(
-                        variants,
-                        "color",
-                        "dark"
-                      ),
-                      [sty.slotTargetStartIconcolor_highContrast]: hasVariant(
-                        variants,
-                        "color",
-                        "highContrast"
-                      ),
-                      [sty.slotTargetStartIconshape_short]: hasVariant(
-                        variants,
-                        "shape",
-                        "short"
-                      ),
-                      [sty.slotTargetStartIconshape_vertical]: hasVariant(
-                        variants,
-                        "shape",
-                        "vertical"
-                      ),
-                      [sty.slotTargetStartIconshowStartIcon]: hasVariant(
-                        variants,
-                        "showStartIcon",
-                        "showStartIcon"
-                      ),
-                      [sty.slotTargetStartIconshowStartIcon_shape_vertical_color_dark]:
-                        hasVariant(
-                          variants,
-                          "showStartIcon",
-                          "showStartIcon"
-                        ) &&
-                        hasVariant(variants, "shape", "vertical") &&
-                        hasVariant(variants, "color", "dark")
-                    })
-                  })}
+                        value: args.startIcon,
+                        className: classNames(sty.slotTargetStartIcon, {
+                          [sty.slotTargetStartIconcolor_dark]: hasVariant(
+                            variants,
+                            "color",
+                            "dark"
+                          ),
+                          [sty.slotTargetStartIconcolor_highContrast]:
+                            hasVariant(variants, "color", "highContrast"),
+                          [sty.slotTargetStartIconshape__36]: hasVariant(
+                            variants,
+                            "shape",
+                            "_36"
+                          ),
+                          [sty.slotTargetStartIconshape_short]: hasVariant(
+                            variants,
+                            "shape",
+                            "short"
+                          ),
+                          [sty.slotTargetStartIconshape_vertical]: hasVariant(
+                            variants,
+                            "shape",
+                            "vertical"
+                          ),
+                          [sty.slotTargetStartIconshowStartIcon]: hasVariant(
+                            variants,
+                            "showStartIcon",
+                            "showStartIcon"
+                          ),
+                          [sty.slotTargetStartIconshowStartIcon_shape_vertical_color_dark]:
+                            hasVariant(
+                              variants,
+                              "showStartIcon",
+                              "showStartIcon"
+                            ) &&
+                            hasVariant(variants, "shape", "vertical") &&
+                            hasVariant(variants, "color", "dark")
+                        })
+                      })
+                    : null}
                 </div>
               ) : null}
-              {(hasVariant(variants, "shape", "iconOnly") ? true : true) ? (
+              {(
+                hasVariant(variants, "shape", "_36")
+                  ? true
+                  : hasVariant(variants, "shape", "iconOnly")
+                  ? true
+                  : true
+              ) ? (
                 <div
                   data-plasmic-name={"contentContainer"}
                   data-plasmic-override={overrides.contentContainer}
                   className={classNames(projectcss.all, sty.contentContainer, {
+                    [sty.contentContainercolor_transparent]: hasVariant(
+                      variants,
+                      "color",
+                      "transparent"
+                    ),
                     [sty.contentContainerisDisabled]: hasVariant(
                       variants,
                       "isDisabled",
                       "isDisabled"
+                    ),
+                    [sty.contentContainershape__36]: hasVariant(
+                      variants,
+                      "shape",
+                      "_36"
                     ),
                     [sty.contentContainershape_iconOnly]: hasVariant(
                       variants,
@@ -386,6 +442,11 @@ function PlasmicBtn__RenderFunc(props: {
                         variants,
                         "isDisabled",
                         "isDisabled"
+                      ),
+                      [sty.slotTargetChildrenshape__36]: hasVariant(
+                        variants,
+                        "shape",
+                        "_36"
                       ),
                       [sty.slotTargetChildrenshape_short]: hasVariant(
                         variants,
@@ -666,12 +727,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicBtn__ArgProps,
-      internalVariantPropNames: PlasmicBtn__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicBtn__ArgProps,
+          internalVariantPropNames: PlasmicBtn__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicBtn__RenderFunc({
       variants,

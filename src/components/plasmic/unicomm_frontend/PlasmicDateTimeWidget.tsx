@@ -65,9 +65,6 @@ export interface DefaultDateTimeWidgetProps {
   className?: string;
 }
 
-export const defaultDateTimeWidget__Args: Partial<PlasmicDateTimeWidget__ArgsType> =
-  {};
-
 function PlasmicDateTimeWidget__RenderFunc(props: {
   variants: PlasmicDateTimeWidget__VariantsArgs;
   args: PlasmicDateTimeWidget__ArgsType;
@@ -76,9 +73,19 @@ function PlasmicDateTimeWidget__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultDateTimeWidget__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -161,12 +168,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicDateTimeWidget__ArgProps,
-      internalVariantPropNames: PlasmicDateTimeWidget__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicDateTimeWidget__ArgProps,
+          internalVariantPropNames: PlasmicDateTimeWidget__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicDateTimeWidget__RenderFunc({
       variants,

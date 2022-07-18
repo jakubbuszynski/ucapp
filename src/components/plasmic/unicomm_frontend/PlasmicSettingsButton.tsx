@@ -46,9 +46,16 @@ export type PlasmicSettingsButton__VariantsArgs = {};
 type VariantPropType = keyof PlasmicSettingsButton__VariantsArgs;
 export const PlasmicSettingsButton__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicSettingsButton__ArgsType = {};
+export type PlasmicSettingsButton__ArgsType = {
+  destination?: string;
+  onClick?: boolean;
+};
+
 type ArgPropType = keyof PlasmicSettingsButton__ArgsType;
-export const PlasmicSettingsButton__ArgProps = new Array<ArgPropType>();
+export const PlasmicSettingsButton__ArgProps = new Array<ArgPropType>(
+  "destination",
+  "onClick"
+);
 
 export type PlasmicSettingsButton__OverridesType = {
   root?: p.Flex<"button">;
@@ -57,11 +64,10 @@ export type PlasmicSettingsButton__OverridesType = {
 };
 
 export interface DefaultSettingsButtonProps {
+  destination?: string;
+  onClick?: boolean;
   className?: string;
 }
-
-export const defaultSettingsButton__Args: Partial<PlasmicSettingsButton__ArgsType> =
-  {};
 
 function PlasmicSettingsButton__RenderFunc(props: {
   variants: PlasmicSettingsButton__VariantsArgs;
@@ -71,9 +77,19 @@ function PlasmicSettingsButton__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultSettingsButton__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <button
@@ -89,6 +105,7 @@ function PlasmicSettingsButton__RenderFunc(props: {
         projectcss.plasmic_mixins,
         sty.root
       )}
+      disabled={args.destination}
     >
       <Ellipse263Icon
         data-plasmic-name={"button"}
@@ -153,12 +170,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicSettingsButton__ArgProps,
-      internalVariantPropNames: PlasmicSettingsButton__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicSettingsButton__ArgProps,
+          internalVariantPropNames: PlasmicSettingsButton__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicSettingsButton__RenderFunc({
       variants,

@@ -74,9 +74,6 @@ export interface DefaultHeatContolWidgetProps {
   className?: string;
 }
 
-export const defaultHeatContolWidget__Args: Partial<PlasmicHeatContolWidget__ArgsType> =
-  {};
-
 function PlasmicHeatContolWidget__RenderFunc(props: {
   variants: PlasmicHeatContolWidget__VariantsArgs;
   args: PlasmicHeatContolWidget__ArgsType;
@@ -85,9 +82,19 @@ function PlasmicHeatContolWidget__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultHeatContolWidget__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -220,12 +227,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicHeatContolWidget__ArgProps,
-      internalVariantPropNames: PlasmicHeatContolWidget__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicHeatContolWidget__ArgProps,
+          internalVariantPropNames: PlasmicHeatContolWidget__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicHeatContolWidget__RenderFunc({
       variants,

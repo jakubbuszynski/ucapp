@@ -41,7 +41,7 @@
         {
           "id": "iBC45mjTXv",
           "name": "Slider",
-          "componentImportPath": "@plasmicpkgs/antd"
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerSlider"
         },
         {
           "id": "tRueht1jub",
@@ -71,7 +71,7 @@
         {
           "id": "F10gpQ1ZhXY",
           "name": "Collapse",
-          "componentImportPath": "@plasmicpkgs/antd"
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerCollapse"
         },
         {
           "id": "SAEWraOT2YV",
@@ -141,7 +141,7 @@
         {
           "id": "cv59X4q0WK",
           "name": "Dropdown",
-          "componentImportPath": "@plasmicpkgs/antd"
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerDropdown"
         },
         {
           "id": "cHUYQj2aKK",
@@ -156,10 +156,14 @@
         {
           "id": "Hb-DVgvuk3",
           "name": "Tabs",
-          "componentImportPath": "@plasmicpkgs/antd"
+          "componentImportPath": "@plasmicpkgs/antd/skinny/registerTabs"
+        },
+        {
+          "id": "Q0BhxRa-Moi",
+          "name": "Rate",
+          "componentImportPath": "antd/lib/rate"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -178,8 +182,7 @@
           "name": "Slider",
           "componentImportPath": "react-slick"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
@@ -434,6 +437,58 @@
             "modulePath": "Home.tsx"
           },
           "cssFilePath": "plasmic/unicomm_frontend/PlasmicHome.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "g6QWLntlsN",
+          "name": "HomeBtn",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicHomeBtn.tsx",
+          "importSpec": {
+            "modulePath": "HomeBtn.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicHomeBtn.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "t5q-SVBQge",
+          "name": "DevicesBtn",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicDevicesBtn.tsx",
+          "importSpec": {
+            "modulePath": "DevicesBtn.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicDevicesBtn.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "K7N9AoXVMq",
+          "name": "ModsBtn",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicModsBtn.tsx",
+          "importSpec": {
+            "modulePath": "ModsBtn.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicModsBtn.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "10hAls6cZY",
+          "name": "NewPage",
+          "type": "managed",
+          "projectId": "wGQNdEnY25VfiXqc2ZGJrZ",
+          "renderModuleFilePath": "plasmic/unicomm_frontend/PlasmicNewPage.tsx",
+          "importSpec": {
+            "modulePath": "NewPage.tsx"
+          },
+          "cssFilePath": "plasmic/unicomm_frontend/PlasmicNewPage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
@@ -893,6 +948,11 @@
           "id": "kZs-sEKbMf",
           "name": "Group680Icon",
           "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__Group680.tsx"
+        },
+        {
+          "id": "Vqsf5V3jgV",
+          "name": "ArrowIcon",
+          "moduleFilePath": "plasmic/unicomm_frontend/icons/PlasmicIcon__Arrow.tsx"
         }
       ],
       "images": [
@@ -939,24 +999,13 @@
       ],
       "indirect": false,
       "globalContextsFilePath": "",
-      "codeComponents": [
-        {
-          "id": "Rpie7ns2U4",
-          "name": "HelloWorld",
-          "componentImportPath": "./src/components/HelloWorld"
-        },
-        {
-          "id": "uY1ZZBopgS",
-          "name": "StackedCarouselComp",
-          "componentImportPath": "./src/components/StackedCarouselComp"
-        }
-      ]
+      "codeComponents": []
     }
   ],
   "globalVariants": {
     "variantGroups": []
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.182",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.182/dist/plasmic.schema.json"
+  "cliVersion": "0.1.184",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.184/dist/plasmic.schema.json"
 }

@@ -408,8 +408,6 @@ export interface DefaultHomeProps {
   className?: string;
 }
 
-export const defaultHome__Args: Partial<PlasmicHome__ArgsType> = {};
-
 function PlasmicHome__RenderFunc(props: {
   variants: PlasmicHome__VariantsArgs;
   args: PlasmicHome__ArgsType;
@@ -418,9 +416,19 @@ function PlasmicHome__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultHome__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <React.Fragment>
@@ -8368,12 +8376,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicHome__ArgProps,
-      internalVariantPropNames: PlasmicHome__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicHome__ArgProps,
+          internalVariantPropNames: PlasmicHome__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicHome__RenderFunc({
       variants,

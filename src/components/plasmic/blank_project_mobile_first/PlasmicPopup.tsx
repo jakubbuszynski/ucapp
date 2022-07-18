@@ -55,8 +55,6 @@ export interface DefaultPopupProps {
   className?: string;
 }
 
-export const defaultPopup__Args: Partial<PlasmicPopup__ArgsType> = {};
-
 function PlasmicPopup__RenderFunc(props: {
   variants: PlasmicPopup__VariantsArgs;
   args: PlasmicPopup__ArgsType;
@@ -65,9 +63,19 @@ function PlasmicPopup__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultPopup__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -126,12 +134,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicPopup__ArgProps,
-      internalVariantPropNames: PlasmicPopup__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicPopup__ArgProps,
+          internalVariantPropNames: PlasmicPopup__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicPopup__RenderFunc({
       variants,

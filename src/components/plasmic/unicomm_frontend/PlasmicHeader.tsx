@@ -31,13 +31,15 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Btn from "../../Btn"; // plasmic-import: s_QabdfozE0/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../blank_project_mobile_first/plasmic_blank_project_mobile_first.module.css"; // plasmic-import: wGQNdEnY25VfiXqc2ZGJrZ/projectcss
 import sty from "./PlasmicHeader.module.css"; // plasmic-import: t1tce5B7Zb/css
 
-import IconArrow2Icon from "./icons/PlasmicIcon__IconArrow2"; // plasmic-import: OMXFNCG8JY/icon
+import ArrowIcon from "./icons/PlasmicIcon__Arrow"; // plasmic-import: Vqsf5V3jgV/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: tnEAR3AGGw-/icon
 
 export type PlasmicHeader__VariantMembers = {};
 
@@ -45,21 +47,25 @@ export type PlasmicHeader__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHeader__VariantsArgs;
 export const PlasmicHeader__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicHeader__ArgsType = {};
+export type PlasmicHeader__ArgsType = {
+  backBtn?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicHeader__ArgsType;
-export const PlasmicHeader__ArgProps = new Array<ArgPropType>();
+export const PlasmicHeader__ArgProps = new Array<ArgPropType>("backBtn");
 
 export type PlasmicHeader__OverridesType = {
   root?: p.Flex<"div">;
-  powiadomienia?: p.Flex<"div">;
-  svg?: p.Flex<"svg">;
+  navBar?: p.Flex<"div">;
+  content?: p.Flex<"div">;
+  title?: p.Flex<"div">;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultHeaderProps {
+  backBtn?: React.ReactNode;
   className?: string;
 }
-
-export const defaultHeader__Args: Partial<PlasmicHeader__ArgsType> = {};
 
 function PlasmicHeader__RenderFunc(props: {
   variants: PlasmicHeader__VariantsArgs;
@@ -69,9 +75,19 @@ function PlasmicHeader__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultHeader__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -88,39 +104,79 @@ function PlasmicHeader__RenderFunc(props: {
       )}
     >
       <div
-        data-plasmic-name={"powiadomienia"}
-        data-plasmic-override={overrides.powiadomienia}
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.powiadomienia
-        )}
+        data-plasmic-name={"navBar"}
+        data-plasmic-override={overrides.navBar}
+        className={classNames(projectcss.all, sty.navBar)}
       >
-        {"UNICOMM"}
-      </div>
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"content"}
+          data-plasmic-override={overrides.content}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.content)}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox___8SrS)}>
+            <div className={classNames(projectcss.all, sty.freeBox__erfVx)}>
+              {p.renderPlasmicSlot({
+                defaultContents: (
+                  <Btn
+                    className={classNames("__wab_instance", sty.btn__nzYWn)}
+                    color={"transparent" as const}
+                    shape={"_36" as const}
+                    showStartIcon={true}
+                    startIcon={
+                      <ArrowIcon
+                        className={classNames(projectcss.all, sty.svg__leKn5)}
+                        role={"img"}
+                      />
+                    }
+                  />
+                ),
 
-      <IconArrow2Icon
-        data-plasmic-name={"svg"}
-        data-plasmic-override={overrides.svg}
-        className={classNames(projectcss.all, sty.svg)}
-        role={"img"}
-      />
+                value: args.backBtn
+              })}
+            </div>
+          </div>
+
+          <div
+            data-plasmic-name={"title"}
+            data-plasmic-override={overrides.title}
+            className={classNames(projectcss.all, sty.title)}
+          >
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text
+              )}
+            >
+              {"UNICOMM"}
+            </div>
+          </div>
+        </p.Stack>
+      </div>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "powiadomienia", "svg"],
-  powiadomienia: ["powiadomienia"],
-  svg: ["svg"]
+  root: ["root", "navBar", "content", "title", "text"],
+  navBar: ["navBar", "content", "title", "text"],
+  content: ["content", "title", "text"],
+  title: ["title", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  powiadomienia: "div";
-  svg: "svg";
+  navBar: "div";
+  content: "div";
+  title: "div";
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -153,12 +209,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicHeader__ArgProps,
-      internalVariantPropNames: PlasmicHeader__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicHeader__ArgProps,
+          internalVariantPropNames: PlasmicHeader__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicHeader__RenderFunc({
       variants,
@@ -180,8 +240,10 @@ export const PlasmicHeader = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    powiadomienia: makeNodeComponent("powiadomienia"),
-    svg: makeNodeComponent("svg"),
+    navBar: makeNodeComponent("navBar"),
+    content: makeNodeComponent("content"),
+    title: makeNodeComponent("title"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicHeader
     internalVariantProps: PlasmicHeader__VariantProps,

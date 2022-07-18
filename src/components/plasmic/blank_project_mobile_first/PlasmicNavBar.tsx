@@ -31,6 +31,9 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import DevicesBtn from "../../DevicesBtn"; // plasmic-import: t5q-SVBQge/component
+import HomeBtn from "../../HomeBtn"; // plasmic-import: g6QWLntlsN/component
+import ModsBtn from "../../ModsBtn"; // plasmic-import: K7N9AoXVMq/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -38,9 +41,6 @@ import projectcss from "./plasmic_blank_project_mobile_first.module.css"; // pla
 import sty from "./PlasmicNavBar.module.css"; // plasmic-import: jXKRlC2FpR/css
 
 import Rectangle105Icon from "./icons/PlasmicIcon__Rectangle105"; // plasmic-import: AQaATkY-uE/icon
-import IconDomIcon from "./icons/PlasmicIcon__IconDom"; // plasmic-import: sOWy2b1yuZ/icon
-import Group4Icon from "./icons/PlasmicIcon__Group4"; // plasmic-import: e7xl9pDzGf/icon
-import IconPanelGlownyIcon from "./icons/PlasmicIcon__IconPanelGlowny"; // plasmic-import: DKDrvPLykl/icon
 
 export type PlasmicNavBar__VariantMembers = {};
 
@@ -54,17 +54,16 @@ export const PlasmicNavBar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNavBar__OverridesType = {
   root?: p.Flex<"div">;
-  dom?: p.Flex<"div">;
-  tryby?: p.Flex<"div">;
-  iconModes?: p.Flex<"div">;
-  glowna?: p.Flex<"a">;
+  svg?: p.Flex<"svg">;
+  freeBox?: p.Flex<"div">;
+  devicesBtn?: p.Flex<typeof DevicesBtn>;
+  homeBtn?: p.Flex<typeof HomeBtn>;
+  modsBtn?: p.Flex<typeof ModsBtn>;
 };
 
 export interface DefaultNavBarProps {
   className?: string;
 }
-
-export const defaultNavBar__Args: Partial<PlasmicNavBar__ArgsType> = {};
 
 function PlasmicNavBar__RenderFunc(props: {
   variants: PlasmicNavBar__VariantsArgs;
@@ -74,9 +73,19 @@ function PlasmicNavBar__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultNavBar__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -93,102 +102,62 @@ function PlasmicNavBar__RenderFunc(props: {
       )}
     >
       <Rectangle105Icon
-        className={classNames(projectcss.all, sty.svg__gHUmt)}
+        data-plasmic-name={"svg"}
+        data-plasmic-override={overrides.svg}
+        className={classNames(projectcss.all, sty.svg)}
         role={"img"}
       />
 
-      <p.Stack
-        as={"div"}
-        data-plasmic-name={"dom"}
-        data-plasmic-override={overrides.dom}
-        hasGap={true}
-        className={classNames(projectcss.all, sty.dom)}
-      >
-        <IconDomIcon
-          className={classNames(projectcss.all, sty.svg__yFmWz)}
-          role={"img"}
-        />
-
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__ahPuq
-          )}
+      {true ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"freeBox"}
+          data-plasmic-override={overrides.freeBox}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox)}
         >
-          {"Dom"}
-        </div>
-      </p.Stack>
-
-      <p.Stack
-        as={"div"}
-        data-plasmic-name={"tryby"}
-        data-plasmic-override={overrides.tryby}
-        hasGap={true}
-        className={classNames(projectcss.all, sty.tryby)}
-      >
-        <div
-          data-plasmic-name={"iconModes"}
-          data-plasmic-override={overrides.iconModes}
-          className={classNames(projectcss.all, sty.iconModes)}
-        >
-          <Group4Icon
-            className={classNames(projectcss.all, sty.svg__v33)}
-            role={"img"}
+          <DevicesBtn
+            data-plasmic-name={"devicesBtn"}
+            data-plasmic-override={overrides.devicesBtn}
+            className={classNames("__wab_instance", sty.devicesBtn)}
           />
-        </div>
 
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__rWwQk
-          )}
-        >
-          {"Tryby"}
-        </div>
-      </p.Stack>
+          <HomeBtn
+            data-plasmic-name={"homeBtn"}
+            data-plasmic-override={overrides.homeBtn}
+            className={classNames("__wab_instance", sty.homeBtn)}
+            click={false}
+          />
 
-      <a
-        data-plasmic-name={"glowna"}
-        data-plasmic-override={overrides.glowna}
-        className={classNames(projectcss.all, projectcss.a, sty.glowna)}
-      >
-        <IconPanelGlownyIcon
-          className={classNames(projectcss.all, sty.svg__dymwd)}
-          role={"img"}
-        />
-
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__rZzz
-          )}
-        >
-          {"Główna"}
-        </div>
-      </a>
+          <ModsBtn
+            data-plasmic-name={"modsBtn"}
+            data-plasmic-override={overrides.modsBtn}
+            className={classNames("__wab_instance", sty.modsBtn)}
+          />
+        </p.Stack>
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dom", "tryby", "iconModes", "glowna"],
-  dom: ["dom"],
-  tryby: ["tryby", "iconModes"],
-  iconModes: ["iconModes"],
-  glowna: ["glowna"]
+  root: ["root", "svg", "freeBox", "devicesBtn", "homeBtn", "modsBtn"],
+  svg: ["svg"],
+  freeBox: ["freeBox", "devicesBtn", "homeBtn", "modsBtn"],
+  devicesBtn: ["devicesBtn"],
+  homeBtn: ["homeBtn"],
+  modsBtn: ["modsBtn"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  dom: "div";
-  tryby: "div";
-  iconModes: "div";
-  glowna: "a";
+  svg: "svg";
+  freeBox: "div";
+  devicesBtn: typeof DevicesBtn;
+  homeBtn: typeof HomeBtn;
+  modsBtn: typeof ModsBtn;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -221,12 +190,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicNavBar__ArgProps,
-      internalVariantPropNames: PlasmicNavBar__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicNavBar__ArgProps,
+          internalVariantPropNames: PlasmicNavBar__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicNavBar__RenderFunc({
       variants,
@@ -248,10 +221,11 @@ export const PlasmicNavBar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    dom: makeNodeComponent("dom"),
-    tryby: makeNodeComponent("tryby"),
-    iconModes: makeNodeComponent("iconModes"),
-    glowna: makeNodeComponent("glowna"),
+    svg: makeNodeComponent("svg"),
+    freeBox: makeNodeComponent("freeBox"),
+    devicesBtn: makeNodeComponent("devicesBtn"),
+    homeBtn: makeNodeComponent("homeBtn"),
+    modsBtn: makeNodeComponent("modsBtn"),
 
     // Metadata about props expected for PlasmicNavBar
     internalVariantProps: PlasmicNavBar__VariantProps,

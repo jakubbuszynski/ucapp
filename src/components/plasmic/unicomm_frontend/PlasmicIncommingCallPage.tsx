@@ -40,8 +40,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "../blank_project_mobile_first/plasmic_blank_project_mobile_first.module.css"; // plasmic-import: wGQNdEnY25VfiXqc2ZGJrZ/projectcss
 import sty from "./PlasmicIncommingCallPage.module.css"; // plasmic-import: 0OH69dlSQ5/css
 
-import IconConfirmCallIcon from "./icons/PlasmicIcon__IconConfirmCall"; // plasmic-import: oO4s45yxlg/icon
+import ArrowIcon from "./icons/PlasmicIcon__Arrow"; // plasmic-import: Vqsf5V3jgV/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: tnEAR3AGGw-/icon
+import IconConfirmCallIcon from "./icons/PlasmicIcon__IconConfirmCall"; // plasmic-import: oO4s45yxlg/icon
 import IconRingIcon from "./icons/PlasmicIcon__IconRing"; // plasmic-import: kHX0obXfnO/icon
 import IconDoorCloseIcon from "./icons/PlasmicIcon__IconDoorClose"; // plasmic-import: da9sopleIS/icon
 
@@ -54,11 +55,19 @@ export const PlasmicIncommingCallPage__VariantProps =
 
 export type PlasmicIncommingCallPage__ArgsType = {
   video?: React.ReactNode;
+  answerBtn?: React.ReactNode;
+  muteRingtoneBtn?: React.ReactNode;
+  openDoorBtn?: React.ReactNode;
+  muteBtn?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicIncommingCallPage__ArgsType;
 export const PlasmicIncommingCallPage__ArgProps = new Array<ArgPropType>(
-  "video"
+  "video",
+  "answerBtn",
+  "muteRingtoneBtn",
+  "openDoorBtn",
+  "muteBtn"
 );
 
 export type PlasmicIncommingCallPage__OverridesType = {
@@ -68,19 +77,17 @@ export type PlasmicIncommingCallPage__OverridesType = {
   image34?: p.Flex<"div">;
   rectangle31?: p.Flex<"div">;
   link?: p.Flex<"a">;
-  muteIcon?: p.Flex<typeof MuteIcon>;
   header?: p.Flex<typeof Header>;
-  odbierz?: p.Flex<"div">;
-  text?: p.Flex<"div">;
 };
 
 export interface DefaultIncommingCallPageProps {
   video?: React.ReactNode;
+  answerBtn?: React.ReactNode;
+  muteRingtoneBtn?: React.ReactNode;
+  openDoorBtn?: React.ReactNode;
+  muteBtn?: React.ReactNode;
   className?: string;
 }
-
-export const defaultIncommingCallPage__Args: Partial<PlasmicIncommingCallPage__ArgsType> =
-  {};
 
 function PlasmicIncommingCallPage__RenderFunc(props: {
   variants: PlasmicIncommingCallPage__VariantsArgs;
@@ -90,9 +97,19 @@ function PlasmicIncommingCallPage__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultIncommingCallPage__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <React.Fragment>
@@ -148,11 +165,18 @@ function PlasmicIncommingCallPage__RenderFunc(props: {
               data-plasmic-override={overrides.link}
               className={classNames(projectcss.all, projectcss.a, sty.link)}
             >
-              <MuteIcon
-                data-plasmic-name={"muteIcon"}
-                data-plasmic-override={overrides.muteIcon}
-                className={classNames("__wab_instance", sty.muteIcon)}
-              />
+              {p.renderPlasmicSlot({
+                defaultContents: (
+                  <MuteIcon
+                    className={classNames(
+                      "__wab_instance",
+                      sty.muteIcon__qIs0T
+                    )}
+                  />
+                ),
+
+                value: args.muteBtn
+              })}
             </a>
 
             <Header
@@ -173,63 +197,85 @@ function PlasmicIncommingCallPage__RenderFunc(props: {
                     hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox__dS3Cx)}
                   >
-                    <Btn
-                      className={classNames("__wab_instance", sty.btn__pQwLx)}
-                      showStartIcon={true}
-                    >
-                      <div
-                        data-plasmic-name={"odbierz"}
-                        data-plasmic-override={overrides.odbierz}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.odbierz
-                        )}
-                      >
-                        {"Odbierz"}
-                      </div>
-                    </Btn>
+                    {p.renderPlasmicSlot({
+                      defaultContents: (
+                        <Btn
+                          className={classNames(
+                            "__wab_instance",
+                            sty.btn__vb629
+                          )}
+                          showStartIcon={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__fbq28
+                            )}
+                          >
+                            {"Odbierz"}
+                          </div>
+                        </Btn>
+                      ),
 
+                      value: args.answerBtn
+                    })}
+
+                    {p.renderPlasmicSlot({
+                      defaultContents: (
+                        <Btn
+                          className={classNames(
+                            "__wab_instance",
+                            sty.btn__otzUu
+                          )}
+                          color={"grey" as const}
+                          shape={"iconOnly" as const}
+                          showStartIcon={true}
+                          startIcon={
+                            <IconRingIcon
+                              className={classNames(
+                                projectcss.all,
+                                sty.svg__jz3Dn
+                              )}
+                              role={"img"}
+                            />
+                          }
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__p3Gkl
+                            )}
+                          >
+                            {"\n"}
+                          </div>
+                        </Btn>
+                      ),
+
+                      value: args.muteRingtoneBtn
+                    })}
+                  </p.Stack>
+                ) : null}
+                {p.renderPlasmicSlot({
+                  defaultContents: (
                     <Btn
-                      className={classNames("__wab_instance", sty.btn___6KPnA)}
-                      color={"grey" as const}
-                      shape={"iconOnly" as const}
+                      className={classNames("__wab_instance", sty.btn__fBUu)}
+                      color={"dark" as const}
                       showStartIcon={true}
                       startIcon={
-                        <IconRingIcon
-                          className={classNames(projectcss.all, sty.svg__gfjoh)}
+                        <IconDoorCloseIcon
+                          className={classNames(projectcss.all, sty.svg__byrhg)}
                           role={"img"}
                         />
                       }
                     >
-                      <div
-                        data-plasmic-name={"text"}
-                        data-plasmic-override={overrides.text}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text
-                        )}
-                      >
-                        {"\n"}
-                      </div>
+                      {"Otwórz drzwi"}
                     </Btn>
-                  </p.Stack>
-                ) : null}
+                  ),
 
-                <Btn
-                  className={classNames("__wab_instance", sty.btn__fJikp)}
-                  color={"dark" as const}
-                  showStartIcon={true}
-                  startIcon={
-                    <IconDoorCloseIcon
-                      className={classNames(projectcss.all, sty.svg__wSu6)}
-                      role={"img"}
-                    />
-                  }
-                >
-                  {"Otwórz drzwi"}
-                </Btn>
+                  value: args.openDoorBtn
+                })}
               </p.Stack>
             ) : null}
           </div>
@@ -247,10 +293,7 @@ const PlasmicDescendants = {
     "image34",
     "rectangle31",
     "link",
-    "muteIcon",
-    "header",
-    "odbierz",
-    "text"
+    "header"
   ],
   _0121DomofonDzwoni: [
     "_0121DomofonDzwoni",
@@ -258,19 +301,13 @@ const PlasmicDescendants = {
     "image34",
     "rectangle31",
     "link",
-    "muteIcon",
-    "header",
-    "odbierz",
-    "text"
+    "header"
   ],
   rectangle50: ["rectangle50"],
   image34: ["image34"],
   rectangle31: ["rectangle31"],
-  link: ["link", "muteIcon"],
-  muteIcon: ["muteIcon"],
-  header: ["header"],
-  odbierz: ["odbierz"],
-  text: ["text"]
+  link: ["link"],
+  header: ["header"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -282,10 +319,7 @@ type NodeDefaultElementType = {
   image34: "div";
   rectangle31: "div";
   link: "a";
-  muteIcon: typeof MuteIcon;
   header: typeof Header;
-  odbierz: "div";
-  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -318,12 +352,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicIncommingCallPage__ArgProps,
-      internalVariantPropNames: PlasmicIncommingCallPage__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicIncommingCallPage__ArgProps,
+          internalVariantPropNames: PlasmicIncommingCallPage__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicIncommingCallPage__RenderFunc({
       variants,
@@ -350,10 +388,7 @@ export const PlasmicIncommingCallPage = Object.assign(
     image34: makeNodeComponent("image34"),
     rectangle31: makeNodeComponent("rectangle31"),
     link: makeNodeComponent("link"),
-    muteIcon: makeNodeComponent("muteIcon"),
     header: makeNodeComponent("header"),
-    odbierz: makeNodeComponent("odbierz"),
-    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicIncommingCallPage
     internalVariantProps: PlasmicIncommingCallPage__VariantProps,

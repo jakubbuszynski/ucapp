@@ -80,8 +80,6 @@ export interface DefaultNoteProps {
   className?: string;
 }
 
-export const defaultNote__Args: Partial<PlasmicNote__ArgsType> = {};
-
 function PlasmicNote__RenderFunc(props: {
   variants: PlasmicNote__VariantsArgs;
   args: PlasmicNote__ArgsType;
@@ -90,9 +88,19 @@ function PlasmicNote__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const args = Object.assign({}, defaultNote__Args, props.args);
-  const $props = args;
+
   const $ctx = ph.useDataEnv?.() || {};
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
+
+  const $props = args;
 
   return (
     <div
@@ -525,12 +533,16 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   const func = function <T extends PropsType>(
     props: T & StrictProps<T, PropsType>
   ) {
-    const { variants, args, overrides } = deriveRenderOpts(props, {
-      name: nodeName,
-      descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicNote__ArgProps,
-      internalVariantPropNames: PlasmicNote__VariantProps
-    });
+    const { variants, args, overrides } = React.useMemo(
+      () =>
+        deriveRenderOpts(props, {
+          name: nodeName,
+          descendantNames: [...PlasmicDescendants[nodeName]],
+          internalArgPropNames: PlasmicNote__ArgProps,
+          internalVariantPropNames: PlasmicNote__VariantProps
+        }),
+      [props, nodeName]
+    );
 
     return PlasmicNote__RenderFunc({
       variants,

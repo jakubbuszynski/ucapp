@@ -1,11 +1,94 @@
 .root {
   width: 448px;
   height: 75px;
-  display: block;
+  display: flex;
   overflow: hidden;
   position: relative;
+  flex-direction: column;
 }
-.powiadomienia {
+.navBar {
+  width: 448px;
+  height: 64px;
+  display: block;
+  flex-shrink: 0;
+}
+.content {
+  flex-direction: row;
+  width: 448px;
+  height: auto;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.content > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: calc(0px - 119px);
+  width: calc(100% + 119px);
+}
+.content > :global(.__wab_flex-container) > *,
+.content > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.content > :global(.__wab_flex-container) > picture > img,
+.content
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 119px;
+}
+.freeBox___8SrS {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.freeBox__erfVx {
+  display: flex;
+  position: absolute;
+  left: 24px;
+  top: 24px;
+}
+.btn__nzYWn:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+.svg__leKn5 {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  color: #fff;
+  transform: scale(1.000000499999875, 0.999999500000375)
+    rotate(-179.94270423958343deg) skew(0.05729570311883569deg, 0deg);
+  width: 24px;
+  height: 24px;
+  display: block;
+  transform-origin: top left;
+  overflow: hidden;
+  left: auto;
+  top: auto;
+}
+.svg__xJgcw {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.title {
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.text {
   display: block;
   font-size: 30px;
   text-align: center;
@@ -14,22 +97,5 @@
   letter-spacing: 0px;
   line-height: 38px;
   color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 6.66%;
-  left: 31.91%;
-}
-.svg {
-  position: absolute;
-  object-fit: cover;
-  max-width: 100%;
-  color: #fff;
-  transform: scale(1.000000499999875, 0.999999500000375)
-    rotate(-179.94270423958343deg) skew(0.05729570311883569deg, 0deg);
-  width: 36px;
-  height: 36px;
-  display: block;
-  transform-origin: top left;
-  top: 56%;
-  left: 8.03%;
-  overflow: hidden;
+  position: relative;
 }

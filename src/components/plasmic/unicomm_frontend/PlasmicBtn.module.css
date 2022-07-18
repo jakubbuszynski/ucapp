@@ -2,7 +2,7 @@
   flex-direction: column;
   display: flex;
   position: relative;
-  background: rgba(255, 255, 255, 1);
+  background: #ffffff00;
   transition-property: background;
   transition-duration: 0.1s;
   width: 100%;
@@ -53,6 +53,10 @@
   height: 140px;
   border-radius: 50%;
   padding: 12px;
+}
+.rootshape__36 {
+  width: 36px;
+  height: 36px;
 }
 .rootcolor_dark {
   background: none;
@@ -111,6 +115,12 @@
   > img {
   margin-top: 10px;
 }
+.freeBoxcolor_grey {
+  background: #e0e0e0;
+}
+.freeBoxcolor_transparent {
+  background: #ffffff00;
+}
 .freeBoxnavigation_unnamedVariant {
   display: none;
 }
@@ -126,24 +136,26 @@
   height: 140px;
   flex-shrink: 0;
 }
+.freeBoxshape__36 {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
 .freeBoxcolor_dark {
   background: #3a3a3a;
 }
 .freeBoxcolor_highContrast {
   border: 2px solid #222222;
 }
-.freeBoxcolor_grey {
-  background: #e0e0e0;
-}
 .root:active .freeBox {
   box-shadow: inset 8px 8px 10px 0px #dfdfdf;
   filter: none;
 }
-.rootcolor_dark:active .freeBoxcolor_dark {
-  box-shadow: inset 8px 8px 10px 0px #000000;
-}
 .rootcolor_grey:active .freeBoxcolor_grey {
   box-shadow: inset 8px 8px 10px 0px #a2a2a2;
+}
+.rootcolor_dark:active .freeBoxcolor_dark {
+  box-shadow: inset 8px 8px 10px 0px #000000;
 }
 .frame3947 {
   flex-direction: row;
@@ -219,6 +231,9 @@
 .startIconContainershape_iconOnly {
   display: flex;
 }
+.startIconContainershape__36 {
+  display: flex;
+}
 .slotTargetStartIcon {
   color: #ededec;
 }
@@ -250,6 +265,9 @@
   justify-content: flex-start;
 }
 .contentContainershape_iconOnly {
+  display: none;
+}
+.contentContainershape__36 {
   display: none;
 }
 .slotTargetChildren {
